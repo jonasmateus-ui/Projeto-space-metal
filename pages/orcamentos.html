@@ -2,91 +2,61 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Gestao de Orcamentos - Space Metal</title>
+    <title>Solicitar Orçamento | Space Metal</title>
 </head>
 <body>
-    <h1>Gestao de Orcamentos</h1>
-    <p><a href="../index.html">Voltar ao Inicio</a></p>
-
-    <h2>Elaborar Novo Orcamento</h2>
-    <form action="#" method="post">
-        <p>
-            <label for="codigo_orcamento">Codigo do Orcamento:</label><br>
-            <input type="text" id="codigo_orcamento" name="codigo_orcamento" required>
-        </p>
-        <p>
-            <label for="cpf_cnpj">Cliente (CPF/CNPJ):</label><br>
-            <select id="cpf_cnpj" name="cpf_cnpj" required>
-                <option value="">Selecione um cliente...</option>
-                <option value="12.345.678/0001-90">12.345.678/0001-90 - Construtora Alfa Ltda</option>
-                <option value="123.456.789-00">123.456.789-00 - Joao da Silva</option>
-            </select>
-            <small>(<a href="clientes.html">Cadastrar novo cliente</a>)</small>
-        </p>
-        <p>
-            <label for="data">Data de Emissao:</label><br>
-            <input type="date" id="data" name="data" required>
-        </p>
-        <p>
-            <label for="prazo_validade">Prazo de Validade (15 dias):</label><br>
-            <input type="date" id="prazo_validade" name="prazo_validade" required>
-        </p>
-        <p>
-            <label for="desconto_aplicado">Desconto Aplicado (%):</label><br>
-            <input type="number" id="desconto_aplicado" name="desconto_aplicado" min="0" max="10" step="0.5">
-        </p>
-        <p>
-            <label for="valor_total">Valor Total (R$):</label><br>
-            <input type="number" id="valor_total" name="valor_total" step="0.01" required>
-        </p>
-        <p>
-            <label for="status">Status do Orcamento:</label><br>
-            <select id="status" name="status">
-                <option value="Pendente">Pendente</option>
-                <option value="Aprovado">Aprovado</option>
-                <option value="Recusado">Recusado</option>
-            </select>
-        </p>
-        <p>
-            <input type="submit" value="Registrar Orcamento">
-        </p>
-    </form>
-
+    <header>
+        <h1>Solicitação de Orçamento</h1>
+        <nav>
+            <a href="../index.html">Início</a> |
+            <a href="produtos.html">Produtos</a> |
+            <a href="orcamentos.html">Orçamentos</a>
+        </nav>
+    </header>
     <hr>
 
-    <h2>Historico de Orcamentos</h2>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Codigo</th>
-                <th>Cliente</th>
-                <th>Data</th>
-                <th>Validade</th>
-                <th>Valor Total</th>
-                <th>Status</th>
-                <th>Acoes</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>ORC-2026-001</td>
-                <td>12.345.678/0001-90</td>
-                <td>2026-09-15</td>
-                <td>2026-09-30</td>
-                <td>R$ 15.000,00</td>
-                <td>Aprovado</td>
-                <td><a href="contratos.html">Gerar Contrato</a></td>
-            </tr>
-            <tr>
-                <td>ORC-2026-002</td>
-                <td>123.456.789-00</td>
-                <td>2026-09-20</td>
-                <td>2026-10-05</td>
-                <td>R$ 3.500,00</td>
-                <td>Recusado</td>
-                <td><a href="#">Ver Detalhes</a></td>
-            </tr>
-        </tbody>
-    </table>
+    <main>
+        <h2>Peça uma Cotação Sob Medida</h2>
+        <form>
+            <fieldset>
+                <legend>Dados de Contacto</legend>
+                <p>
+                    <label for="nome">Nome Completo:</label><br>
+                    <input type="text" id="nome" name="nome" required>
+                </p>
+                <p>
+                    <label for="email">E-mail:</label><br>
+                    <input type="email" id="email" name="email" required>
+                </p>
+                <p>
+                    <label for="telefone">Telefone/WhatsApp:</label><br>
+                    <input type="tel" id="telefone" name="telefone" required>
+                </p>
+            </fieldset>
+
+            <fieldset>
+                <legend>Detalhes do Projeto</legend>
+                <p>
+                    <label for="tipoProjeto">Tipo de Serviço:</label><br>
+                    <select id="tipoProjeto" name="tipoProjeto">
+                        <option value="portao">Portão Automático</option>
+                        <option value="grade">Grades de Segurança</option>
+                        <option value="mezanino">Mezanino / Estrutura Metálica</option>
+                        <option value="cobertura">Cobertura / Telhado</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="medidas">Medidas Aproximadas (Largura x Altura em metros):</label><br>
+                    <input type="text" id="medidas" name="medidas" placeholder="Ex: 3.00m x 2.20m">
+                </p>
+                <p>
+                    <label for="descricao">Descrição do Projeto:</label><br>
+                    <textarea id="descricao" name="descricao" rows="4" cols="40" placeholder="Especifique detalhes adicionais..."></textarea>
+                </p>
+            </fieldset>
+            <br>
+            <button type="submit">Enviar Solicitação</button>
+        </form>
+    </main>
 </body>
 </html>

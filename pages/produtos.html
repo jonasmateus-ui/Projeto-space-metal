@@ -2,69 +2,56 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Cadastro de Produtos - Space Metal</title>
+    <title>Catálogo de Produtos | Space Metal</title>
 </head>
 <body>
-    <h1>Cadastro de Produtos e Materias-Primas</h1>
-    <p><a href="../index.html">Voltar ao Inicio</a></p>
-
-    <h2>Cadastrar Novo Produto / Material</h2>
-    <form action="#" method="post">
-        <p>
-            <label for="codigo_produto">Codigo do Produto:</label><br>
-            <input type="text" id="codigo_produto" name="codigo_produto" required>
-        </p>
-        <p>
-            <label for="nome">Nome do Material:</label><br>
-            <input type="text" id="nome" name="nome" required>
-        </p>
-        <p>
-            <label for="unidade_medida">Unidade de Medida:</label><br>
-            <select id="unidade_medida" name="unidade_medida">
-                <option value="Barra 6m">Barra 6m</option>
-                <option value="Metro Quadrado">Metro Quadrado (m²)</option>
-                <option value="Kg">Quilograma (Kg)</option>
-                <option value="Unidade">Unidade</option>
-            </select>
-        </p>
-        <p>
-            <label for="preco">Preco Unitario (R$):</label><br>
-            <input type="number" id="preco" name="preco" step="0.01" required>
-        </p>
-        <p>
-            <input type="submit" value="Salvar Produto">
-        </p>
-    </form>
-
+    <header>
+        <h1>Catálogo de Produtos</h1>
+        <nav>
+            <a href="../index.html">Início</a> |
+            <a href="produtos.html">Produtos</a> |
+            <a href="servicos.html">Serviços</a> |
+            <a href="orcamentos.html">Solicitar Orçamento</a>
+        </nav>
+    </header>
     <hr>
 
-    <h2>Produtos Cadastrados</h2>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Codigo</th>
-                <th>Nome</th>
-                <th>Unidade</th>
-                <th>Preco Unitario</th>
-                <th>Acoes</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>PROD-001</td>
-                <td>Tubo Quadrado 50x50mm 2mm</td>
-                <td>Barra 6m</td>
-                <td>R$ 120,00</td>
-                <td><a href="estoque.html">Ver Estoque</a></td>
-            </tr>
-            <tr>
-                <td>PROD-002</td>
-                <td>Chapa Xadrez 3mm</td>
-                <td>Metro Quadrado</td>
-                <td>R$ 210,00</td>
-                <td><a href="estoque.html">Ver Estoque</a></td>
-            </tr>
-        </tbody>
-    </table>
+    <main>
+        <h2>Produtos Disponíveis para Encomenda</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Produto</th>
+                    <th>Material Principal</th>
+                    <th>Aplicação</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>P01</td>
+                    <td>Portão Basculante Automático</td>
+                    <td>Aço Galvanizado</td>
+                    <td>Garagens residenciais e comerciais</td>
+                    <td><a href="orcamentos.html">Solicitar Orçamento</a></td>
+                </tr>
+                <tr>
+                    <td>P02</td>
+                    <td>Estrutura para Mezanino</td>
+                    <td>Vigas I e U de Aço Carbono</td>
+                    <td>Galpões e escritórios industriais</td>
+                    <td><a href="orcamentos.html">Solicitar Orçamento</a></td>
+                </tr>
+                <tr>
+                    <td>P03</td>
+                    <td>Grade de Proteção Reforçada</td>
+                    <td>Tubo Quadrado de Aço</td>
+                    <td>Janelas e fechamentos perimetrais</td>
+                    <td><a href="orcamentos.html">Solicitar Orçamento</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
 </body>
 </html>
