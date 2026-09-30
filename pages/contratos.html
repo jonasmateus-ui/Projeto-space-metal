@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestao de Contratos - Space Metal</title>
+</head>
+<body>
+    <h1>Gestao de Contratos</h1>
+    <p><a href="../index.html">Voltar ao Inicio</a></p>
+
+    <h2>Gerar Novo Contrato</h2>
+    <form action="#" method="post">
+        <p>
+            <label for="codigo_contrato">Codigo do Contrato:</label><br>
+            <input type="text" id="codigo_contrato" name="codigo_contrato" required>
+        </p>
+        <p>
+            <label for="id_orcamento">Orcamento Aprovado:</label><br>
+            <select id="id_orcamento" name="id_orcamento" required>
+                <option value="">Selecione o orcamento...</option>
+                <option value="ORC-2026-001">ORC-2026-001 (R$ 15.000,00)</option>
+            </select>
+            <small>(<a href="orcamentos.html">Ver orcamentos</a>)</small>
+        </p>
+        <p>
+            <label for="data_inicio">Data de Inicio:</label><br>
+            <input type="date" id="data_inicio" name="data_inicio" required>
+        </p>
+        <p>
+            <label for="valor">Valor do Contrato (R$):</label><br>
+            <input type="number" id="valor" name="valor" step="0.01" required>
+        </p>
+        <p>
+            <label for="percentual_sinal">Percentual do Sinal (Minimo 30%):</label><br>
+            <input type="number" id="percentual_sinal" name="percentual_sinal" value="30" min="30" max="100" required>
+        </p>
+        <p>
+            <label for="status">Status do Contrato:</label><br>
+            <select id="status" name="status">
+                <option value="Aguardando Sinal">Aguardando Sinal</option>
+                <option value="Em Producao">Em Producao</option>
+                <option value="Concluido">Concluido</option>
+            </select>
+        </p>
+        <p>
+            <input type="submit" value="Formalizar Contrato">
+        </p>
+    </form>
+
+    <hr>
+
+    <h2>Contratos Registrados</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Codigo Contrato</th>
+                <th>Orcamento</th>
+                <th>Data Inicio</th>
+                <th>Valor Total</th>
+                <th>Status</th>
+                <th>Acoes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>CNT-2026-001</td>
+                <td>ORC-2026-001</td>
+                <td>2026-09-25</td>
+                <td>R$ 15.000,00</td>
+                <td>Aguardando Sinal</td>
+                <td>
+                    <a href="pagamentos.html">Registrar Sinal</a> | 
+                    <a href="servicos.html">Acompanhar Servicos</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

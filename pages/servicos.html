@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestao de Servicos - Space Metal</title>
+</head>
+<body>
+    <h1>Gestao de Servicos de Serralheria</h1>
+    <p><a href="../index.html">Voltar ao Inicio</a></p>
+
+    <h2>Cadastrar Novo Servico</h2>
+    <form action="#" method="post">
+        <p>
+            <label for="id_servico">ID do Servico:</label><br>
+            <input type="text" id="id_servico" name="id_servico" required>
+        </p>
+        <p>
+            <label for="tipo_servico">Tipo de Servico:</label><br>
+            <select id="tipo_servico" name="tipo_servico">
+                <option value="Fabricacao e Instalacao de Portao">Fabricacao e Instalacao de Portao</option>
+                <option value="Estrutura Metalica Coberta">Estrutura Metalica Coberta</option>
+                <option value="Guarda-Corpo / Grade">Guarda-Corpo / Grade</option>
+                <option value="Manutencao / Reparo">Manutencao / Reparo</option>
+            </select>
+        </p>
+        <p>
+            <label for="valor">Valor Base (R$):</label><br>
+            <input type="number" id="valor" name="valor" step="0.01" required>
+        </p>
+        <p>
+            <label for="status">Status da Execucao:</label><br>
+            <select id="status" name="status">
+                <option value="Pendente">Pendente</option>
+                <option value="Em Fabricacao">Em Fabricacao</option>
+                <option value="Concluido">Concluido e Entregue</option>
+            </select>
+        </p>
+        <p>
+            <input type="submit" value="Salvar Servico">
+        </p>
+    </form>
+
+    <hr>
+
+    <h2>Lista de Servicos</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Tipo de Servico</th>
+                <th>Valor Base</th>
+                <th>Status</th>
+                <th>Acoes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>SRV-001</td>
+                <td>Estrutura Metalica Coberta</td>
+                <td>R$ 15.000,00</td>
+                <td>Pendente</td>
+                <td>
+                    <a href="funcionarios.html">Alocar Funcionarios</a> | 
+                    <a href="estoque.html">Verificar Materiais no Estoque</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro de Pagamentos - Space Metal</title>
+</head>
+<body>
+    <h1>Registro de Pagamentos</h1>
+    <p><a href="../index.html">Voltar ao Inicio</a></p>
+
+    <h2>Registrar Pagamento / Sinal</h2>
+    <form action="#" method="post">
+        <p>
+            <label for="id_pagamento">ID Pagamento:</label><br>
+            <input type="text" id="id_pagamento" name="id_pagamento" required>
+        </p>
+        <p>
+            <label for="id_contrato">Contrato Vinculado:</label><br>
+            <select id="id_contrato" name="id_contrato" required>
+                <option value="">Selecione o contrato...</option>
+                <option value="CNT-2026-001">CNT-2026-001 (R$ 15.000,00)</option>
+            </select>
+            <small>(<a href="contratos.html">Ver contratos</a>)</small>
+        </p>
+        <p>
+            <label for="valor_pagamento">Valor Pago (R$):</label><br>
+            <input type="number" id="valor_pagamento" name="valor_pagamento" step="0.01" required>
+        </p>
+        <p>
+            <label for="forma_pagamento">Forma de Pagamento:</label><br>
+            <select id="forma_pagamento" name="forma_pagamento">
+                <option value="Pix">Pix</option>
+                <option value="TED">TED</option>
+            </select>
+        </p>
+        <p>
+            <label for="status">Status:</label><br>
+            <select id="status" name="status">
+                <option value="Confirmado (Sinal)">Confirmado (Sinal - Libera Producao)</option>
+                <option value="Confirmado (Parcela)">Confirmado (Parcela)</option>
+                <option value="Pendente">Pendente</option>
+            </select>
+        </p>
+        <p>
+            <input type="submit" value="Registrar Pagamento">
+        </p>
+    </form>
+
+    <hr>
+
+    <h2>Historico de Pagamentos</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Contrato</th>
+                <th>Valor</th>
+                <th>Forma</th>
+                <th>Status</th>
+                <th>Acoes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>PAG-001</td>
+                <td>CNT-2026-001</td>
+                <td>R$ 4.500,00</td>
+                <td>Pix</td>
+                <td>Confirmado (Sinal)</td>
+                <td><a href="servicos.html">Ir para Producao/Servicos</a></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

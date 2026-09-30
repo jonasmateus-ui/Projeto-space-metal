@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Controle de Estoque - Space Metal</title>
+</head>
+<body>
+    <h1>Controle de Estoque</h1>
+    <p><a href="../index.html">Voltar ao Inicio</a></p>
+
+    <h2>Atualizar / Movimentar Estoque</h2>
+    <form action="#" method="post">
+        <p>
+            <label for="codigo_produto">Produto / Material:</label><br>
+            <select id="codigo_produto" name="codigo_produto" required>
+                <option value="">Selecione o produto...</option>
+                <option value="PROD-001">PROD-001 - Tubo Quadrado 50x50mm</option>
+                <option value="PROD-002">PROD-002 - Chapa Xadrez 3mm</option>
+            </select>
+            <small>(<a href="produtos.html">Cadastrar produto</a>)</small>
+        </p>
+        <p>
+            <label for="id_fornecedor">Fornecedor Associado:</label><br>
+            <select id="id_fornecedor" name="id_fornecedor" required>
+                <option value="">Selecione o fornecedor...</option>
+                <option value="FORN-001">Gerdau Acos</option>
+            </select>
+            <small>(<a href="fornecedores.html">Cadastrar fornecedor</a>)</small>
+        </p>
+        <p>
+            <label for="quantidade_atual">Quantidade Atual:</label><br>
+            <input type="number" id="quantidade_atual" name="quantidade_atual" required>
+        </p>
+        <p>
+            <label for="quantidade_minima">Quantidade Minima:</label><br>
+            <input type="number" id="quantidade_minima" name="quantidade_minima" required>
+        </p>
+        <p>
+            <input type="submit" value="Atualizar Estoque">
+        </p>
+    </form>
+
+    <hr>
+
+    <h2>Status do Estoque</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Codigo</th>
+                <th>Material</th>
+                <th>Qtd. Atual</th>
+                <th>Qtd. Minima</th>
+                <th>Fornecedor</th>
+                <th>Acoes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>PROD-001</td>
+                <td>Tubo Quadrado 50x50mm</td>
+                <td>15 barras</td>
+                <td>10 barras</td>
+                <td>Gerdau Acos</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>PROD-002</td>
+                <td>Chapa Xadrez 3mm</td>
+                <td>2 m²</td>
+                <td>5 m²</td>
+                <td>Gerdau Acos</td>
+                <td><a href="fornecedores.html">Comprar do Fornecedor</a></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
