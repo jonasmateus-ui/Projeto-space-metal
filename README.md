@@ -16,6 +16,9 @@
 
 ## 📌 Índice
 
+**Link do site hospedado:** [`https://github.com/jonasmateus-ui/Projeto-space-metal`](https://jonasmateus-ui.github.io/Projeto-space-metal/)
+- **Validação W3C (HTML):** Todas as 10 páginas validadas sem erros ([ver relatório do validador](https://validator.w3.org/nu/))
+
 - [Autores](#-autores-engenharia-de-software)
 - [Sobre o Projeto](#-sobre-o-projeto)
 - [Contexto Acadêmico](#-contexto-acadêmico)
