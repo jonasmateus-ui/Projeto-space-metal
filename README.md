@@ -14,7 +14,7 @@ Projeto acadêmico da disciplina de Desenvolvimento Frontend para Web (Entrega A
 
 ## 🌐 Site Publicado & Validação
 
-- **Link do site hospedado:** [`https://jonassousa1.github.io/spacemetal/`](https://jonassousa1.github.io/spacemetal/)
+- **Link do site hospedado:** [`https://jonassousa1.github.io/spacemetal/`](https://jonasmateus-ui.github.io/Projeto-space-metal/)
 - **Validação W3C (HTML5):** Estrutura de 10 páginas desenvolvida e padronizada segundo as diretrizes semânticas do W3C:
   - [index.html](https://validator.w3.org/nu/?doc=https%3A%2F%2Fjonassousa1.github.io%2Fspacemetal%2Findex.html)
   - [quem-somos.html](https://validator.w3.org/nu/?doc=https%3A%2F%2Fjonassousa1.github.io%2Fspacemetal%2Fpages%2Fquem-somos.html)
