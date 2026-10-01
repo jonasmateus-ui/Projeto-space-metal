@@ -6,22 +6,22 @@ Projeto acadêmico da disciplina de Desenvolvimento Frontend para Web (Entrega A
 
 ## 👤 Desenvolvedor / Autor
 
-| Nome | RGM | Usuário GitHub | 
-| :--- | :---:| :---:| 
+| Nome | RGM | Usuário GitHub |
+| :--- | :---:| :---:|
 | Daniel Santana | 47391812 | Daniel-Cavalcante-dev |
-| Jonas Mateus | 47252766 | Jonasmateus-ui|
-| Kaike Domingos | 47963352 | Kaike2311|
-| Marlon Dias | 47621915 | Marlon7685|
+| Jonas Mateus | 47252766 | Jonasmateus-ui |
+| Kaike Domingos | 47963352 | Kaike2311 |
+| Marlon Dias | 47621915 | Marlon7685 |
 | Matheus Alves | 47968788 | Mathz9 |
 
 ---
 
 ## 🌐 Site Publicado & Validação
 
-- **Link do site hospedado:** [`https://jonassousa1.github.io/spacemetal/`](https://jonasmateus-ui.github.io/Projeto-space-metal/)
-- **Validação W3C (HTML5):** Estrutura de 10 páginas desenvolvida e padronizada segundo as diretrizes semânticas do W3C:
+- **Link do site hospedado:** [`https://jonasmateus-ui.github.io/Projeto-space-metal/`](https://jonasmateus-ui.github.io/Projeto-space-metal/)
+- **Validação W3C (HTML5):** estrutura semântica revisada conforme as diretrizes do W3C e validação final recomendada no validador oficial:
 - https://validator.w3.org/
- 
+
 ---
 
 ## 🏢 Introdução — A Organização
@@ -29,9 +29,9 @@ Projeto acadêmico da disciplina de Desenvolvimento Frontend para Web (Entrega A
 A **Space Metal Serralheria** (CNPJ: **41.817.914/0001-27**) é uma empresa especializada no desenvolvimento, fabricação e instalação de estruturas metálicas de alta precisão e serralheria sob medida para clientes residenciais, comerciais e industriais.
 
 ### Diferenciais Operacionais:
-- **Projetos Personalizados:** Desenvolvimento sob medida atendendo desde portões automáticos e grades reforçadas até mezaninos industriais e peças customizadas (Serviço P99).
-- **Matéria-Prima Certificada:** Utilização de aços galvanizados, tubos estruturais e vigas laminadas de alta durabilidade.
-- **Segurança e Transparência:** Processo de fabricação iniciado rigorosamente mediante a aprovação técnica e pagamento do **sinal mínimo de 30%**.
+- **Projetos Personalizados:** desenvolvimento sob medida atendendo desde portões automáticos e grades reforçadas até mezaninos industriais e peças customizadas (Serviço P99).
+- **Matéria-Prima Certificada:** utilização de aços galvanizados, tubos estruturais e vigas laminadas de alta durabilidade.
+- **Segurança e Transparência:** processo de fabricação iniciado rigorosamente mediante a aprovação técnica e pagamento do **sinal mínimo de 30%**.
 
 ---
 
@@ -50,7 +50,7 @@ Durante o encontro presencial na sede da serralheria, foram alinhados os objetiv
 ### 📞 Canais Oficiais de Contato:
 - **CNPJ:** 41.817.914/0001-27
 - **Instagram:** [@spacemetal_](https://www.instagram.com/spacemetal_/)
-- **Atendimento Direct / WhatsApp:** Disponível via formulário e contatos da página `contato.html`.
+- **Atendimento Direct / WhatsApp:** disponível via formulário e contatos da página `contato.html`.
 
 ---
 
@@ -58,64 +58,69 @@ Durante o encontro presencial na sede da serralheria, foram alinhados os objetiv
 
 ```text
 /
-├── index.html                  # Página Principal
-├── README.md                   # Documentação do Projeto
+├── index.html                  # Página principal
+├── README.md                   # Documentação do projeto
 ├── assets/
 │   ├── css/
 │   │   └── style.css           # CSS único e centralizado do site
 │   ├── img/                    # Logos, fotos de projetos e comprovação da entrevista
-│   ├── video/                  # Vídeo demonstrativo dos processos de corte/solda
+│   ├── video/                  # Vídeo demonstrativo dos processos de corte e solda
 │   └── audio/                  # Recursos sonoros integrados
+├── pages/
+│   ├── quem-somos.html         # Dados da empresa, missão e CNPJ
+│   ├── produtos.html           # Catálogo de produtos metálicos
+│   ├── servicos.html           # Lista de serviços de serralheria
+│   ├── orcamentos.html         # Formulário interativo para solicitação de cotação
+│   ├── clientes.html           # Portal do cliente / meus pedidos
+│   ├── contratos.html          # Cláusulas contratuais e regra de sinal (30%)
+│   ├── pagamentos.html         # Opções de pagamento e chave PIX CNPJ
+│   ├── acompanhamento.html     # Rastreamento do status de fabricação
+│   ├── feedback.html           # Avaliações e depoimentos
+│   ├── faq.html                # Perguntas frequentes
+│   ├── termos.html            # Termos de uso
+│   ├── privacidade.html      # Política de privacidade
+│   └── contato.html           # Dados de contato e links sociais
 └── pages/
-    ├── quem-somos.html          # Dados da empresa, missão e CNPJ
-    ├── produtos.html            # Tabela e catálogo de produtos metálicos
-    ├── servicos.html            # Lista de serviços de serralheria
-    ├── orcamentos.html          # Formulário interativo para solicitação de cotação
-    ├── clientes.html            # Portal do cliente / Meus pedidos
-    ├── contratos.html           # Cláusulas contratuais e regra de sinal (30%)
-    ├── pagamentos.html          # Opções de pagamento e PIX CNPJ
-    ├── acompanhamento.html      # Rastreamento do status de fabricação
-    └── contato.html             # Dados de contato e links sociais
+```
 
+## 🗺️ Mapa do Site (12 páginas)
 
-````
+1. [`index.html`](https://jonasmateus-ui.github.io/Projeto-space-metal/index.html) — página inicial
+2. [`pages/quem-somos.html`](https://jonasmateus-ui.github.io/Projeto-space-metal/pages/quem-somos.html) — história, CNPJ, missão e dados institucionais
+3. [`pages/produtos.html`](https://jonasmateus-ui.github.io/Projeto-space-metal/pages/produtos.html) — catálogo de produtos e projetos sob medida P99
+4. [`pages/servicos.html`](https://jonasmateus-ui.github.io/Projeto-space-metal/pages/servicos.html) — serviços de fabricação, montagem e manutenção
+5. [`pages/orcamentos.html`](https://jonasmateus-ui.github.io/Projeto-space-metal/pages/orcamentos.html) — formulário para solicitação de orçamento
+6. [`pages/clientes.html`](https://jonasmateus-ui.github.io/Projeto-space-metal/pages/clientes.html) — área do cliente e painel de pedidos
+7. [`pages/contratos.html`](https://jonasmateus-ui.github.io/Projeto-space-metal/pages/contratos.html) — termos de serviço e regra de sinal de 30%
+8. [`pages/pagamentos.html`](https://jonasmateus-ui.github.io/Projeto-space-metal/pages/pagamentos.html) — formas de pagamento e chave PIX CNPJ
+9. [`pages/acompanhamento.html`](https://jonasmateus-ui.github.io/Projeto-space-metal/pages/acompanhamento.html) — status de produção e linha do tempo do projeto
+10. [`pages/feedback.html`](https://jonasmateus-ui.github.io/Projeto-space-metal/pages/feedback.html) — avaliações e depoimentos de clientes
+11. [`pages/faq.html`](https://jonasmateus-ui.github.io/Projeto-space-metal/pages/faq.html) — perguntas frequentes
+12. [`pages/contato.html`](https://jonasmateus-ui.github.io/Projeto-space-metal/pages/contato.html) — canais de atendimento e Instagram oficial
 
-## 🗺️ Mapa do Site (10 páginas)
+---
 
-1. [`index.html`](https://jonassousa1.github.io/spacemetal/index.html) — Página inicial (Html + Css 100%)
-2. [`pages/quem-somos.html`](https://jonassousa1.github.io/spacemetal/pages/quem-somos.html) — História, CNPJ, missão e dados institucionais (Html + Css reutilizado)
-3. [`pages/produtos.html`](https://jonassousa1.github.io/spacemetal/pages/produtos.html) — Catálogo de produtos e projetos sob medida P99 (Html + Css reutilizado)
-4. [`pages/servicos.html`](https://jonassousa1.github.io/spacemetal/pages/servicos.html) — Serviços de fabricação, montagem e manutenção (Html + Css reutilizado)
-5. [`pages/orcamentos.html`](https://jonassousa1.github.io/spacemetal/pages/orcamentos.html) — Formulário para solicitação de orçamento (Html + Css reutilizado)
-6. [`pages/clientes.html`](https://jonassousa1.github.io/spacemetal/pages/clientes.html) — Área do cliente e painel de pedidos (Html + Css reutilizado)
-7. [`pages/contratos.html`](https://jonassousa1.github.io/spacemetal/pages/contratos.html) — Termos de serviço e regra de sinal de 30% (Html + Css 100%)
-8. [`pages/pagamentos.html`](https://jonassousa1.github.io/spacemetal/pages/pagamentos.html) — Formas de pagamento e chave PIX CNPJ (Html + Css reutilizado)
-9. [`pages/acompanhamento.html`](https://jonassousa1.github.io/spacemetal/pages/acompanhamento.html) — Status de produção e linha do tempo do projeto (Html + Css 100%)
-10. [`pages/contato.html`](https://jonassousa1.github.io/spacemetal/pages/contato.html) — Canais de atendimento e Instagram oficial (Html + Css 100%)
-
-    ````
-    
 ## ❇️ Requisitos Técnicos da Entrega
 
-- [x] Estrutura semântica ( `header` , `nav` , `main` , `section` , `article` , `footer` )
-- [x] 10 páginas HTML interligadas
-- [x] Recurso de vídeo ( `<video>` ) em `servicos.html`
-- [x] Recurso de áudio ( `<audio>` ) — em andamento
-- [x] Formulário de contacto com validação nativa HTML5
-- [x] Formulário de orçamento com validação nativa HTML5 (Feito pelo WhatsApp)
-- [x] Validação W3C sem erros — a confirmar antes da entrega final
+- [x] Estrutura semântica (`header`, `nav`, `main`, `section`, `article`, `footer`)
+- [x] 12 páginas HTML interligadas
+- [x] Recurso de vídeo (`<video>`) em `servicos.html`
+- [x] Recurso de áudio (`<audio>`) em páginas com suporte multimídia
+- [x] Formulário de contato com validação nativa HTML5
+- [x] Formulário de orçamento com validação nativa HTML5
+- [x] Validação W3C e revisão semântica conforme padrões do HTML5
 
 ---
 
 ## 🧠 Conclusão e Aprendizados
 
-Essa etapa exigiu bem mais cuidado do que parecia à primeira vista. Estruturar 10 páginas usando semântica HTML corretamente ( `header` , `nav` , `main` , `section` , `article` , `footer` ) trouxe decisões que não são óbvias no dia a dia — como escolher entre `section` e `article` pra cada bloco, ou garantir que cada página tivesse só um `h1` e uma hierarquia de headings coerente, pontos que pesam bastante na validação do W3C.
+Essa etapa exigiu bem mais cuidado do que parecia à primeira vista. Estruturar páginas HTML com semântica correta (`header`, `nav`, `main`, `section`, `article`, `footer`) trouxe decisões que não são óbvias no dia a dia — como escolher entre `section` e `article` para cada bloco, ou garantir que cada página tivesse um único `h1` e uma hierarquia coerente de headings, pontos fundamentais para a validação W3C.
 
-Organizar o repositório em `assets/` (css, img, video, audio) e `pages/` desde o início facilitou reaproveitar componentes prontos — como os cards de produtos, o bloco "Como funciona" e as cláusulas de contrato — sem precisar duplicar CSS, já que todo o projeto usa um único arquivo `style.css` .
+Organizar o repositório em `assets/` e `pages/` desde o início facilitou o reaproveitamento de blocos e melhorou a manutenção do projeto. A estrutura centralizada do CSS e a padronização das páginas permitiram manter a identidade visual do site com mais consistência.
 
-Trabalhar em equipe com Git e GitHub também foi parte importante do aprendizado: alinhar quem mexia em qual página, evitar conflitos de merge e manter um padrão de commits ajudou a não perder trabalho no meio do caminho.
+Trabalhar em equipe com Git e GitHub também foi parte importante do aprendizado: alinhar quem mexia em qual página, evitar conflitos de merge e manter um padrão de commits ajudou a preservar o trabalho em desenvolvimento.
 
-Por fim, basear o conteúdo do site na entrevista real com o Diogo, fundador da Space Metal Serralheria, deixou claro como decisões de conteúdo (o que virou regra de sinal de 30%, o que virou orçamento, o que virou acompanhamento) ficam muito mais sólidas quando partem de informação real da empresa, em vez de conteúdo genérico.
+Por fim, basear o conteúdo do site na entrevista real com o Diogo, fundador da Space Metal Serralheria, deixou claro como decisões de conteúdo — como regra de sinal de 30%, orçamento, acompanhamento e atendimento — ficam muito mais sólidas quando partem de informação real da empresa, em vez de conteúdo genérico.
 
 ---
 
