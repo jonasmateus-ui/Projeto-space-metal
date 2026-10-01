@@ -16,18 +16,8 @@ Projeto acadêmico da disciplina de Desenvolvimento Frontend para Web (Entrega A
 
 - **Link do site hospedado:** [`https://jonassousa1.github.io/spacemetal/`](https://jonasmateus-ui.github.io/Projeto-space-metal/)
 - **Validação W3C (HTML5):** Estrutura de 10 páginas desenvolvida e padronizada segundo as diretrizes semânticas do W3C:
-  - [index.html](https://validator.w3.org/nu/?doc=https%3A%2F%2Fjonassousa1.github.io%2Fspacemetal%2Findex.html)
-  - [quem-somos.html](https://validator.w3.org/nu/?doc=https%3A%2F%2Fjonassousa1.github.io%2Fspacemetal%2Fpages%2Fquem-somos.html)
-  - [produtos.html](https://validator.w3.org/nu/?doc=https%3A%2F%2Fjonassousa1.github.io%2Fspacemetal%2Fpages%2Fprodutos.html)
-  - [servicos.html](https://validator.w3.org/nu/?doc=https%3A%2F%2Fjonassousa1.github.io%2Fspacemetal%2Fpages%2Fservicos.html)
-  - [orcamentos.html](https://validator.w3.org/nu/?doc=https%3A%2F%2Fjonassousa1.github.io%2Fspacemetal%2Fpages%2Forcamentos.html)
-  - [clientes.html](https://validator.w3.org/nu/?doc=https%3A%2F%2Fjonassousa1.github.io%2Fspacemetal%2Fpages%2Fclientes.html)
-  - [contratos.html](https://validator.w3.org/nu/?doc=https%3A%2F%2Fjonassousa1.github.io%2Fspacemetal%2Fpages%2Fcontratos.html)
-  - [pagamentos.html](https://validator.w3.org/nu/?doc=https%3A%2F%2Fjonassousa1.github.io%2Fspacemetal%2Fpages%2Fpagamentos.html)
-  - [acompanhamento.html](https://validator.w3.org/nu/?doc=https%3A%2F%2Fjonassousa1.github.io%2Fspacemetal%2Fpages%2Facompanhamento.html)
-  - [contato.html](https://validator.w3.org/nu/?doc=https%3A%2F%2Fjonassousa1.github.io%2Fspacemetal%2Fpages%2Fcontato.html)
-- **Validação W3C (CSS):** [`assets/css/style.css` validado sem erros](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fjonassousa1.github.io%2Fspacemetal%2Fassets%2Fcss%2Fstyle.css)
-
+- https://validator.w3.org/
+ 
 ---
 
 ## 🏢 Introdução — A Organização
