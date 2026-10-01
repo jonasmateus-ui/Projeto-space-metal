@@ -6,9 +6,13 @@ Projeto acadêmico da disciplina de Desenvolvimento Frontend para Web (Entrega A
 
 ## 👤 Desenvolvedor / Autor
 
-| Nome completo | RGM / Matrícula | Usuário GitHub | Instituição |
-|---|---|---|---|
-| Jonas Mateus de Sousa de Araújo | — | JonasSousa1 | UNICID (Universidade Cidade de São Paulo) |
+| Nome | RGM | Usuário GitHub | 
+| :--- | :---:| :---:| 
+| Daniel Santana | 47391812 | Daniel-Cavalcante-dev |
+| Jonas Mateus | 47252766 | Jonasmateus-ui|
+| Kaike Domingos | 47963352 | Kaike2311|
+| Marlon Dias | 47621915 | Marlon7685|
+| Matheus Alves | 47968788 | Mathz9 |
 
 ---
 
