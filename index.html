@@ -5,38 +5,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Início – Space Metal Serralheria</title>
     <link rel="stylesheet" href="style/style.css">
+    <style>
+      /* Ajustes cirúrgicos para corrigir o tamanho e a disposição no ecrã */
+      header {
+        padding: 1rem;
+      }
+      header h1 {
+        font-size: 1.8rem;
+        margin: 0 0 0.3rem 0;
+        display: inline-block;
+      }
+      header p {
+        margin: 0 0 0.5rem 0;
+        font-size: 0.95rem;
+      }
+      hr {
+        border: none;
+        border-top: 1px solid #444;
+        margin: 0.8rem 0;
+      }
+      /* Menu compacto e horizontal que funciona perfeitamente em telemóveis e PC */
+      nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.3rem 0.6rem;
+        font-size: 0.85rem;
+      }
+      nav li {
+        display: inline-block;
+      }
+      nav a {
+        text-decoration: none;
+        color: #f0f0f0;
+        background: #222;
+        padding: 0.2rem 0.5rem;
+        border-radius: 3px;
+        border: 1px solid #444;
+      }
+      nav a:hover {
+        background: #7c3aed;
+        border-color: #7c3aed;
+      }
+      .separador-menu {
+        color: #666;
+        display: none; /* Ocultado pois os botões já têm espaçamento */
+      }
+      .categoria-link-bloco {
+        display: block;
+        text-decoration: none;
+        color: inherit;
+        margin-bottom: 2rem;
+      }
+      .galeria-obras {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+        margin-top: 0.5rem;
+      }
+      .card-obra img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+    </style>
     <script src="style/script.js" defer></script>
   </head>
   <body>
-    <div class="page-wrapper">
-      <header>
-        <h1>Space Metal Serralheria</h1>
-        <p>
-          <b>CNPJ:</b> 41.817.914/0001-27 |
-          <i>Estruturas Metálicas e Serralheria Técnica Sob Medida</i>
-        </p>
-        <hr>
-        <p>
-          <b>Navegação Rápida:</b>
-          <a href="pages/produtos.html">Produtos</a> |
-          <a href="pages/servicos.html">Serviços</a> |
-          <a href="pages/acompanhamento.html">Acompanhamento</a> |
-          <a href="pages/contratos.html">Contratos</a> |
-          <a href="pages/orcamentos.html">Orçamentos</a> |
-          <a href="pages/pagamentos.html">Pagamentos</a> |
-          <a href="pages/clientes.html">Área do Cliente</a> |
-          <a href="pages/contato.html">Contato</a> |
-          <a href="pages/privacidade.html">Privacidade</a> |
-          <a href="pages/quem-somos.html">Quem Somos</a> |
-          <a href="pages/termos.html">Termos de Uso</a> |
-          <a href="pages/faq.html">FAQ</a> |
-          <a href="pages/feedback.html">Feedback</a>
-        </p>
-        <hr>
-      </header>
+    <header>
+      <h1>Space Metal Serralheria</h1>
+      <p><i>Estruturas Metálicas e Serralheria Técnica Sob Medida</i></p>
+      <hr>
+      <nav aria-label="Navegação Principal">
+        <ul>
+          <li><a href="pages/produtos.html">Produtos</a></li>
+          <li><a href="pages/servicos.html">Serviços</a></li>
+          <li><a href="pages/contratos.html">Contratos</a></li>
+          <li><a href="pages/orcamentos.html">Orçamentos</a></li>
+          <li><a href="pages/pagamentos.html">Pagamentos</a></li>
+          <li><a href="pages/clientes.html">Área do Cliente</a></li>
+          <li><a href="pages/contato.html">Contato</a></li>
+          <li><a href="pages/quem-somos.html">Quem Somos</a></li>
+          <li><a href="pages/faq.html">FAQ</a></li>
+          <li><a href="pages/feedback.html">Feedback</a></li>
+        </ul>
+      </nav>
+      <hr>
+    </header>
 
-      <main>
-        <!-- GALERIA COM PRÉVIAS CLICÁVEIS POR CATEGORIA -->
+    <main>
+      <section>
         <h2>Galeria de Obras &amp; Projetos Realizados</h2>
         <p>Explore os nossos trabalhos divididos por categorias. Clique em qualquer categoria para ver todas as fotos:</p>
 
@@ -44,27 +104,21 @@
         <a href="pages/pergolas.html" class="categoria-link-bloco">
           <h3 class="categoria-titulo">Pérgolas Metálicas ➔</h3>
           <div class="galeria-obras">
-            <div class="card-obra">
+            <article class="card-obra">
               <img src="assets/Pérgolas-Metálicas.jpg" alt="Pérgola com Cobertura">
-              <div class="info-obra">
-                <h3>Pérgola com Cobertura</h3>
-                <p>Estrutura para sombreamento e áreas de lazer.</p>
-              </div>
-            </div>
-            <div class="card-obra">
+              <h3>Pérgola com Cobertura</h3>
+              <p>Estrutura para sombreamento e áreas de lazer.</p>
+            </article>
+            <article class="card-obra">
               <img src="assets/Pérgolas-Metálicas%20(3).jpg" alt="Pérgola Residencial">
-              <div class="info-obra">
-                <h3>Pérgola Residencial</h3>
-                <p>Acabamento moderno em aço tratado.</p>
-              </div>
-            </div>
-            <div class="card-obra">
+              <h3>Pérgola Residencial</h3>
+              <p>Acabamento moderno em aço tratado.</p>
+            </article>
+            <article class="card-obra">
               <img src="assets/Pérgolas-Metálicas%20(2).jpg" alt="Pérgola Arquitetônica">
-              <div class="info-obra">
-                <h3>Pérgola Arquitetônica</h3>
-                <p>Integração perfeita com a fachada e o jardim.</p>
-              </div>
-            </div>
+              <h3>Pérgola Arquitetônica</h3>
+              <p>Integração perfeita com a fachada e o jardim.</p>
+            </article>
           </div>
         </a>
 
@@ -72,20 +126,16 @@
         <a href="pages/porticos.html" class="categoria-link-bloco">
           <h3 class="categoria-titulo">Pórticos e Marquesinas ➔</h3>
           <div class="galeria-obras">
-            <div class="card-obra">
+            <article class="card-obra">
               <img src="assets/Pórticos-e-Marquesinas.jpg" alt="Marquesina de Entrada">
-              <div class="info-obra">
-                <h3>Marquesina de Entrada</h3>
-                <p>Proteção e imponência para fachadas.</p>
-              </div>
-            </div>
-            <div class="card-obra">
+              <h3>Marquesina de Entrada</h3>
+              <p>Proteção e imponência para fachadas.</p>
+            </article>
+            <article class="card-obra">
               <img src="assets/Pórticos-e-Marquesinas%20(3).jpg" alt="Pórtico Estrutural">
-              <div class="info-obra">
-                <h3>Pórtico Estrutural</h3>
-                <p>Vãos livres de alta resistência.</p>
-              </div>
-            </div>
+              <h3>Pórtico Estrutural</h3>
+              <p>Vãos livres de alta resistência.</p>
+            </article>
           </div>
         </a>
 
@@ -93,20 +143,16 @@
         <a href="pages/alpendres.html" class="categoria-link-bloco">
           <h3 class="categoria-titulo">Alpendres Metálicos ➔</h3>
           <div class="galeria-obras">
-            <div class="card-obra">
+            <article class="card-obra">
               <img src="assets/Alpendres-Metálicos.jpg" alt="Alpendre Externo">
-              <div class="info-obra">
-                <h3>Alpendre Externo</h3>
-                <p>Cobertura técnica acoplada à edificação.</p>
-              </div>
-            </div>
-            <div class="card-obra">
+              <h3>Alpendre Externo</h3>
+              <p>Cobertura técnica acoplada à edificação.</p>
+            </article>
+            <article class="card-obra">
               <img src="assets/Alpendres-Metálicos%20(2).jpg" alt="Cobertura em Aço">
-              <div class="info-obra">
-                <h3>Cobertura em Aço</h3>
-                <p>Proteção contra intempéries com design limpo.</p>
-              </div>
-            </div>
+              <h3>Cobertura em Aço</h3>
+              <p>Proteção contra intempéries com design limpo.</p>
+            </article>
           </div>
         </a>
 
@@ -114,25 +160,23 @@
         <a href="pages/escadas.html" class="categoria-link-bloco">
           <h3 class="categoria-titulo">Escadas &amp; Guarda-Corpos ➔</h3>
           <div class="galeria-obras">
-            <div class="card-obra">
+            <article class="card-obra">
               <img src="assets/escada.jpg" alt="Escada Metálica">
-              <div class="info-obra">
-                <h3>Escada Metálica</h3>
-                <p>Estrutura segura e de encaixe perfeito.</p>
-              </div>
-            </div>
-            <div class="card-obra">
+              <h3>Escada Metálica</h3>
+              <p>Estrutura segura e de encaixe perfeito.</p>
+            </article>
+            <article class="card-obra">
               <img src="assets/guarda-corpo.jpg" alt="Guarda-Corpo">
-              <div class="info-obra">
-                <h3>Guarda-Corpo de Segurança</h3>
-                <p>Proteção para varandas e mezaninos.</p>
-              </div>
-            </div>
+              <h3>Guarda-Corpo de Segurança</h3>
+              <p>Proteção para varandas e mezaninos.</p>
+            </article>
           </div>
         </a>
+      </section>
 
-        <hr>
+      <hr>
 
+      <section>
         <h2>Produtos &amp; Catálogo Metálico</h2>
         <p>Fabricação e montagem de peças sob medida com aço galvanizado e tubos estruturais:</p>
         <ul>
@@ -140,12 +184,12 @@
           <li><b>Grades e Proteções:</b> Grades reforçadas para janelas e fechamentos de galpão.</li>
           <li><b>Estruturas Especiais (P99):</b> Peças técnicas e projetos industriais customizados.</li>
         </ul>
-        <p>
-          <a href="pages/produtos.html"><b>Acessar catálogo completo de produtos</b></a>
-        </p>
+        <p><a href="pages/produtos.html"><b>Acessar catálogo completo de produtos</b></a></p>
+      </section>
 
-        <hr>
+      <hr>
 
+      <section>
         <h2>Serviços de Serralheria &amp; Fabricação</h2>
         <p>Tudo relacionado à execução dos projetos técnicos no atelier e na obra:</p>
         <ul>
@@ -153,12 +197,12 @@
           <li><b>Montagem de Mezaninos:</b> Expansão de área útil comercial e industrial.</li>
           <li><b>Instalação no Local:</b> Equipe especializada para montagem final do projeto.</li>
         </ul>
-        <p>
-          <a href="pages/servicos.html"><b>Ver todos os serviços técnicos</b></a>
-        </p>
+        <p><a href="pages/servicos.html"><b>Ver todos os serviços técnicos</b></a></p>
+      </section>
 
-        <hr>
+      <hr>
 
+      <section>
         <h2>Financeiro, Valores &amp; Condições</h2>
         <p>Tudo relacionado a orçamentos, regras de sinal e opções de pagamento:</p>
         <ul>
@@ -171,9 +215,11 @@
           <a href="pages/pagamentos.html"><b>[ Informações de Pagamento ]</b></a> |
           <a href="pages/contratos.html"><b>[ Regras de Contrato ]</b></a>
         </p>
+      </section>
 
-        <hr>
+      <hr>
 
+      <section>
         <h2>Área do Cliente, Suporte &amp; Depoimentos</h2>
         <p>Acompanhe seu pedido em andamento e veja a opinião de quem contratou:</p>
         <ul>
@@ -186,31 +232,33 @@
           <a href="pages/acompanhamento.html"><b>[ Acompanhar Pedido ]</b></a> |
           <a href="pages/feedback.html"><b>[ Deixar Feedback ]</b></a>
         </p>
+      </section>
 
-        <hr>
+      <hr>
 
+      <section>
         <h2>Fale Conosco</h2>
         <p>Envie uma mensagem rápida pelo WhatsApp:</p>
         <form data-send>
-          <label>Nome<input name="nome" required ></label>
-          <label>Telefone<input name="telefone" type="tel" required ></label>
-          <label>Mensagem<textarea name="mensagem" rows="3" required></textarea></label>
+          <label>Nome<input name="nome" required></label><br>
+          <label>Telefone<input name="telefone" type="tel" required></label><br>
+          <label>Mensagem<textarea name="mensagem" rows="3" required></textarea></label><br>
           <button type="submit" value="wa">Enviar por WhatsApp</button>
         </form>
-      </main>
+      </section>
+    </main>
 
-      <footer>
-        <hr />
-        <p>
-          <a href="pages/faq.html">Dúvidas Frequentes</a> |
-          <a href="pages/termos.html">Termos de Uso</a> |
-          <a href="pages/privacidade.html">Política de Privacidade</a>
-        </p>
-        <p>
-          <b>Space Metal Serralheria</b> | CNPJ 41.817.914/0001-27 | ©
-          <span class="y">2026</span> Todos os direitos reservados.
-        </p>
-      </footer>
-    </div>
+    <footer>
+      <hr>
+      <p>
+        <a href="pages/faq.html">Dúvidas Frequentes</a> |
+        <a href="pages/termos.html">Termos de Uso</a> |
+        <a href="pages/privacidade.html">Política de Privacidade</a>
+      </p>
+      <p>
+        <b>Space Metal Serralheria</b> | CNPJ 41.817.914/0001-27 | ©
+        <span class="y">2026</span> Todos os direitos reservados.
+      </p>
+    </footer>
   </body>
 </html>
