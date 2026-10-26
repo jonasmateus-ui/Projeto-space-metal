@@ -26,7 +26,6 @@ Projeto acadêmico da disciplina de Desenvolvimento Frontend para Web (Entrega A
 - [index.html](https://validator.w3.org/nu/?doc=https%3A%2F%2Fjonasmateus-ui.github.io%2FProjeto-space-metal%2Findex.html)
 - [produtos.html](https://validator.w3.org/nu/?doc=https%3A%2F%2Fjonasmateus-ui.github.io%2FProjeto-space-metal%2Fpages%2Fprodutos.html)
 - [serviços.html](https://validator.w3.org/nu/?doc=https%3A%2F%2Fjonasmateus-ui.github.io%2FProjeto-space-metal%2Fpages%2Fservicos.html)
-- [acompanhamento.html](https://validator.w3.org/nu/?doc=https%3A%2F%2Fjonasmateus-ui.github.io%2FProjeto-space-metal%2Fpages%2Facompanhamento.html)
 - [Contratos.html](https://validator.w3.org/nu/?doc=https%3A%2F%2Fjonasmateus-ui.github.io%2FProjeto-space-metal%2Fpages%2Fcontratos.html)
 - [Orçamentos.html](https://validator.w3.org/nu/?doc=https%3A%2F%2Fjonasmateus-ui.github.io%2FProjeto-space-metal%2Fpages%2Forcamentos.html)
 - [Pagamentos.html](https://validator.w3.org/nu/?doc=https%3A%2F%2Fjonasmateus-ui.github.io%2FProjeto-space-metal%2Fpages%2Fpagamentos.html)
