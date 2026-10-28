@@ -57,6 +57,12 @@ body {
     var(--bg);
   overflow-x: hidden;
 }
+video {
+    width: 180px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
 
 /* Textura sutil industrial de chapa de aço */
 body::before {
