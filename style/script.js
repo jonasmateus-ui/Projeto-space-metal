@@ -45,7 +45,9 @@ if (
   "IntersectionObserver" in window &&
   !matchMedia("(prefers-reduced-motion: reduce)").matches
 ) {
-  const blocks = document.querySelectorAll(".intro,.panel,.card,details");
+  const blocks = document.querySelectorAll(
+    "main > section, .card-categoria, .card, .panel, .intro, details, .card-foto"
+  );
   const observer = new IntersectionObserver(
     (entries) =>
       entries.forEach((entry) => {
@@ -61,6 +63,46 @@ if (
     observer.observe(el);
   });
 }
+
+// Marcação da página ativa no menu
 document.querySelectorAll("nav a").forEach((a) => {
-  if (a.href === location.href) a.setAttribute("aria-current", "page");
+  const currentPath = location.pathname.split("/").pop() || "index.html";
+  const hrefAttr = a.getAttribute("href") || "";
+  const linkPath = hrefAttr.split("/").pop();
+  if (currentPath === linkPath) {
+    a.setAttribute("aria-current", "page");
+  }
 });
+
+// Modal / Zoom para fotos da galeria
+const modal = document.querySelector("#modalFoto");
+const modalImg = document.querySelector("#imgAmpliada");
+const modalClose = document.querySelector(".modal-fechar");
+
+if (modal && modalImg) {
+  document.querySelectorAll(".img-zoomable, .card-foto img").forEach((img) => {
+    img.addEventListener("click", () => {
+      modal.classList.add("ativo");
+      modalImg.src = img.src;
+      modalImg.alt = img.alt || "Foto Ampliada";
+    });
+  });
+
+  const fecharModal = () => {
+    modal.classList.remove("ativo");
+  };
+
+  modalClose?.addEventListener("click", fecharModal);
+
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      fecharModal();
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal.classList.contains("ativo")) {
+      fecharModal();
+    }
+  });
+}

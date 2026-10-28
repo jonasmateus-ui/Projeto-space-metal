@@ -1,35 +1,37 @@
-
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600;700;800&display=swap");
 
-/* =========================================
-   1. IDENTIDADE VISUAL
-========================================= */
+/* ===================================================
+   1. IDENTIDADE VISUAL — SERRALHERIA INDUSTRIAL CLARA
+   Alta Acessibilidade & Alto Contraste (WCAG AAA)
+=================================================== */
 
 :root {
-  --bg: #17191b;
-  --panel: #242426;
-  --panel2: #303033;
-  --line: #614635;
+  /* Tons de Aço e Metal Claro */
+  --bg: #f1f5f9;           /* Aço galvanizado claro */
+  --bg-card: #ffffff;      /* Painel de precisão branco puro */
+  --panel: #ffffff;
+  --panel-steel: #e2e8f0;  /* Chapa de aço escovado */
+  --line: #cbd5e1;        /* Linha de corte de chapa */
+  --line-strong: #94a3b8; /* Borda reforçada de perfil de aço */
 
-  --text: #fff5e9;
-  --muted: #d3c5b8;
+  /* Tipografia de Alto Contraste para Baixa Visão */
+  --text: #0f172a;        /* Preto grafite aço carbono (18:1 contraste) */
+  --muted: #334155;       /* Cinza chumbo escuro (9.6:1 contraste) */
 
-  --accent: #ff742d;
-  --yellow: #ffcc55;
-  --red: #dc482a;
+  /* Cores de Forja, Solda e Corte Térmico */
+  --accent: #c2410c;      /* Laranja fogo de solda / forja industrial */
+  --accent-glow: #ea580c; /* Laranja arco elétrico */
+  --accent-hover: #9a3412;/* Brasa escura */
+  --steel-blue: #1e293b;  /* Azul industrial / viga de aço */
 
-  --gradient: linear-gradient(
-    110deg,
-    var(--yellow),
-    var(--accent)
-  );
-
-  --shadow: 0 14px 36px #0004;
+  --gradient-weld: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
+  --shadow-industrial: 0 4px 18px rgba(15, 23, 42, 0.08);
+  --shadow-hover: 0 12px 28px rgba(194, 65, 12, 0.18);
 }
 
-/* =========================================
+/* ===================================================
    2. CONFIGURAÇÕES GERAIS
-========================================= */
+=================================================== */
 
 * {
   box-sizing: border-box;
@@ -37,670 +39,461 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 110px;
+  scroll-padding-top: 120px;
 }
 
 body {
   margin: 0;
   min-height: 100vh;
-
   color: var(--text);
-
-  font:
-    16px/1.65 "DM Sans",
-    Arial,
-    sans-serif;
-
+  font: 16px/1.65 "DM Sans", Arial, sans-serif;
+  background-color: var(--bg);
   background:
     radial-gradient(
       circle at 90% 0%,
-      #52291e 0,
+      #ffedd5 0%,
       transparent 38%
     ),
     var(--bg);
-
   overflow-x: hidden;
 }
 
-/* Textura industrial */
-
+/* Textura sutil industrial de chapa de aço */
 body::before {
   content: "";
-
   position: fixed;
   inset: 0;
-
   pointer-events: none;
   z-index: -1;
-
-  opacity: 0.10;
-
+  opacity: 0.035;
   background: repeating-linear-gradient(
     135deg,
-    transparent 0 58px,
-    #ffb04b 59px,
-    transparent 60px
+    transparent 0 45px,
+    #0f172a 46px,
+    transparent 47px
   );
 }
 
 ::selection {
-  background: var(--accent);
-  color: #161616;
+  background: #ffedd5;
+  color: #c2410c;
 }
 
 a {
-  color: inherit;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s, text-decoration 0.2s;
+}
+
+a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
 }
 
 p {
   color: var(--muted);
+  font-size: 1.02rem;
+  line-height: 1.65;
 }
 
 h1,
 h2,
 h3 {
-  font-family:
-    "Barlow Condensed",
-    Impact,
-    sans-serif;
-
+  font-family: "Barlow Condensed", Impact, sans-serif;
+  color: #0f172a;
   text-transform: uppercase;
-  line-height: 1.08;
-  letter-spacing: 0.018em;
+  line-height: 1.15;
+  letter-spacing: 0.025em;
+  font-weight: 800;
 }
 
 h1 {
-  font-size: clamp(34px, 5vw, 64px);
-  max-width: 720px;
-
-  margin: 12px 0;
-
+  font-size: clamp(32px, 4.5vw, 56px);
+  margin: 8px 0;
   text-wrap: balance;
-  text-shadow: 0 6px 25px #0008;
 }
 
 h2 {
-  font-size: clamp(28px, 3vw, 40px);
-  margin: 8px 0 16px;
+  font-size: clamp(26px, 3vw, 36px);
+  margin: 14px 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #0f172a;
+  border-bottom: 2px solid var(--line);
+  padding-bottom: 8px;
+}
+
+h2::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 28px;
+  background: var(--accent);
+  border-radius: 2px;
+  flex-shrink: 0;
 }
 
 h3 {
-  font-size: 25px;
+  font-size: 24px;
+  color: #0f172a;
 }
 
-/* =========================================
-   3. CABEÇALHO
-========================================= */
+hr {
+  border: none;
+  border-top: 1.5px solid var(--line);
+  margin: 18px 0;
+}
+
+/* ===================================================
+   3. CABEÇALHO INDUSTRIAL DE SERRALHERIA
+=================================================== */
 
 header {
   position: sticky;
   top: 0;
   z-index: 100;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-
-  padding: 12px 3%;
-
-  background: rgba(23, 25, 27, 0.97);
-
-  backdrop-filter: blur(16px);
-
-  border-bottom: 2px solid #6b3826;
-
-  box-shadow: 0 8px 35px #0005;
+  display: block;
+  padding: 16px 5%;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(12px);
+  border-top: 4px solid var(--steel-blue);
+  border-bottom: 4px solid var(--accent);
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.08);
 }
 
-/* Nome da empresa */
+header h1 {
+  font-size: clamp(24px, 3.5vw, 36px);
+  margin: 0 0 4px;
+  color: #0f172a;
+  display: inline-block;
+}
 
-.brand {
-  display: inline-flex;
-  align-items: center;
+header p {
+  margin: 0 0 8px;
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
 
-  flex-shrink: 0;
+header hr {
+  margin: 10px 0;
+  border-top: 1px solid var(--line);
+}
 
+/* Links de Navegação Rápida (Subpáginas) */
+header p a {
+  display: inline-block;
   text-decoration: none;
-
-  font:
-    800 19px/1 "Barlow Condensed",
-    sans-serif;
-
-  letter-spacing: 0.015em;
-  white-space: nowrap;
-
-  transition: color 0.25s;
+  color: #0f172a;
+  background: #f1f5f9;
+  padding: 4px 10px;
+  margin: 2px 2px;
+  border-radius: 4px;
+  border: 1.5px solid var(--line);
+  font-size: 0.85rem;
+  font-weight: 700;
+  transition: all 0.2s ease;
 }
 
-.brand span {
-  color: var(--yellow);
+header p a:hover {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+  transform: translateY(-1px);
 }
 
-.brand::before {
-  content: "✦";
+/* ===================================================
+   4. NAVEGAÇÃO PRINCIPAL (NAV)
+=================================================== */
 
-  color: var(--accent);
-
-  font-size: 16px;
-  margin-right: 6px;
-}
-
-.brand:hover {
-  color: var(--yellow);
-}
-
-/* =========================================
-   4. NAVEGAÇÃO DESTACADA
-========================================= */
-
-nav {
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+  gap: 0.4rem 0.6rem;
+}
 
-  flex: 1;
-
-  gap: 7px;
+nav li {
+  display: inline-block;
 }
 
 nav a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
-  padding: 9px 12px;
-
-  background: #352b26;
-
-  color: #fff3e6;
-
-  border: 1px solid #704631;
-  border-radius: 5px;
-
+  padding: 8px 14px;
+  background: #ffffff;
+  color: #0f172a;
+  border: 1.5px solid var(--line);
+  border-radius: 6px;
   text-decoration: none;
-
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 800;
-
   text-transform: uppercase;
   letter-spacing: 0.035em;
-
-  transition:
-    background 0.25s,
-    color 0.25s,
-    transform 0.25s,
-    box-shadow 0.25s;
+  transition: all 0.2s ease;
 }
-
-/* Efeito ao passar o mouse */
 
 nav a:hover {
   background: var(--accent);
-
-  color: #171717;
-
-  border-color: var(--yellow);
-
-  transform: translateY(-3px);
-
-  box-shadow: 0 5px 15px #ff742d55;
+  color: #ffffff;
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(194, 65, 12, 0.25);
 }
-
-/* Página atual */
 
 nav a[aria-current="page"] {
-  background: var(--gradient);
-
-  color: #171717;
-
-  border-color: var(--yellow);
-
-  box-shadow: 0 3px 12px #ff742d44;
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
 }
 
-/* Menu mobile */
-
-.menu {
-  display: none;
-
-  background: var(--gradient);
-
-  color: #171717;
-
-  border: 0;
-  border-radius: 5px;
-
-  padding: 10px 15px;
-
-  font-weight: 800;
-  cursor: pointer;
-}
-
-/* =========================================
-   5. CONTEÚDO PRINCIPAL
-========================================= */
+/* ===================================================
+   5. CONTEÚDO PRINCIPAL & PAINÉIS DE SEÇÃO
+=================================================== */
 
 main {
   max-width: 1300px;
-
   margin: auto;
-
-  padding: 0 5% 80px;
+  padding: 20px 4% 80px;
 }
 
-/* =========================================
-   6. BANNER INDUSTRIAL
-========================================= */
+main > hr {
+  display: none; /* Seções já são delimitadas como painéis industriais */
+}
 
-.hero {
-  position: relative;
-  isolation: isolate;
+main > section,
+main:not(:has(> section)) {
+  background: #ffffff;
+  border: 1.5px solid var(--line);
+  border-left: 6px solid var(--accent);
+  border-radius: 12px;
+  padding: 28px 32px;
+  margin: 32px 0;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.06);
+}
 
-  overflow: hidden;
+/* ===================================================
+   6. GRADE DE CATEGORIAS (CARDS LADO A LADO)
+=================================================== */
 
-  min-height: 270px;
+.grade-categorias {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  margin: 24px 0 10px;
+  width: 100%;
+}
 
+.card-categoria {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-
-  margin: 0 -5%;
-
-  padding: 45px 6% 55px;
-
-  border-bottom: 5px solid var(--accent);
-
-  background:
-    linear-gradient(
-      100deg,
-      rgba(18, 18, 19, 0.97) 4%,
-      rgba(32, 23, 20, 0.87) 53%,
-      rgba(102, 43, 21, 0.5)
-    ),
-    radial-gradient(
-      circle at 80% 45%,
-      #ec6224,
-      #211b19 55%
-    );
-}
-
-/* Engrenagem decorativa */
-
-.hero::before {
-  content: "";
-
-  position: absolute;
-
-  right: -45px;
-  top: -110px;
-
-  width: 400px;
-  height: 400px;
-
-  border: 40px solid #ffb3471b;
-  border-radius: 50%;
-
-  box-shadow:
-    0 0 0 35px #ff7c2420,
-    0 0 0 100px #ff7c240a;
-
-  animation: gear 45s linear infinite;
-
-  z-index: -1;
-}
-
-/* Faixa de segurança industrial */
-
-.hero::after {
-  content: "";
-
-  position: absolute;
-
-  inset: auto 0 0;
-
-  height: 10px;
-
-  background: repeating-linear-gradient(
-    110deg,
-    var(--yellow) 0 26px,
-    #29201d 26px 52px
-  );
-
-  opacity: 0.95;
-}
-
-.hero p {
-  max-width: 540px;
-
-  font-size: 16px;
-
-  color: #fff0e1;
-}
-
-/* Efeito luminoso de soldagem */
-
-.hero .spark {
-  position: absolute;
-
-  right: 8%;
-  bottom: 18%;
-
-  font-size: 40px;
-
-  color: var(--yellow);
-
-  filter: drop-shadow(
-    0 0 22px #ff732b
-  );
-
-  animation: spark 2.5s ease-in-out infinite;
-
-  pointer-events: none;
-}
-
-/* =========================================
-   7. DESTAQUES E ETIQUETAS
-========================================= */
-
-.eyebrow,
-.mark {
-  color: var(--yellow);
-
-  font-weight: 800;
-  font-size: 12px;
-
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-}
-
-.eyebrow::before {
-  content: "";
-
-  display: inline-block;
-
-  width: 30px;
-  height: 3px;
-
-  background: var(--accent);
-
-  vertical-align: middle;
-
-  margin-right: 10px;
-}
-
-.mark {
-  display: inline-block;
-
-  background: #ff742d22;
-
-  border: 1px solid #ff742d55;
-  border-radius: 3px;
-
-  padding: 5px 11px;
-}
-
-/* =========================================
-   8. PAINÉIS E SEÇÕES
-========================================= */
-
-.intro,
-.panel {
-  position: relative;
-
-  padding: 26px;
-
-  margin: 25px 0;
-
-  background: linear-gradient(
-    145deg,
-    #33302d,
-    #242426 75%
-  );
-
-  border: 1px solid #7a4a32;
-  border-left: 5px solid var(--accent);
-
-  border-radius: 5px;
-
-  box-shadow: var(--shadow);
-}
-
-.intro {
-  max-width: 900px;
-}
-
-/* =========================================
-   9. GRID DE PRODUTOS E SERVIÇOS
-========================================= */
-
-.grid {
-  display: grid;
-
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(230px, 1fr)
-  );
-
-  gap: 18px;
-
-  margin-top: 28px;
-}
-
-/* =========================================
-   10. CARTÕES INTERATIVOS
-========================================= */
-
-.card {
-  position: relative;
-
+  background: #ffffff;
+  border: 1.5px solid var(--line);
+  border-top: 5px solid var(--accent);
+  border-radius: 12px;
   overflow: hidden;
-
-  min-height: 170px;
-
-  padding: 22px;
-
-  background: linear-gradient(
-    155deg,
-    #35302c,
-    #232426 75%
-  );
-
-  border: 1px solid #614635;
-  border-top: 4px solid var(--accent);
-
-  border-radius: 5px;
-
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    border-color 0.3s ease;
+  text-decoration: none;
+  color: var(--text);
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.07);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
-/* Detalhe metálico */
-
-.card::after {
-  content: "✦";
-
-  position: absolute;
-
-  right: -8px;
-  bottom: -38px;
-
-  color: #ff8a3420;
-
-  font-size: 130px;
-  line-height: 1;
-
-  pointer-events: none;
+.card-categoria:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent);
+  box-shadow: var(--shadow-hover);
 }
 
-.card:hover {
-  transform: translateY(-7px);
-
-  box-shadow:
-    0 18px 45px #ff742d27;
-
-  border-color: var(--yellow);
-}
-
-.card h2 {
+.card-categoria-img-wrap {
   position: relative;
-  z-index: 1;
-
-  font-size: 26px;
-}
-
-.card p {
-  position: relative;
-  z-index: 1;
-}
-
-/* =========================================
-   11. IMAGENS COMPACTAS
-========================================= */
-
-main img {
-  display: block;
-
-  max-width: 100%;
-
-  height: auto;
-  max-height: 230px;
-
-  object-fit: cover;
-
-  border-radius: 6px;
-}
-
-/* Imagens dos cartões */
-
-.card img {
   width: 100%;
+  height: 220px;
+  overflow: hidden;
+  background: #e2e8f0;
+}
 
-  height: 160px;
-  max-height: 160px;
-
+.card-categoria-img-wrap img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-
-  border-radius: 5px;
-
-  transition:
-    transform 0.4s ease,
-    filter 0.4s ease;
+  object-position: center;
+  display: block;
+  transition: transform 0.4s ease;
 }
 
-.card:hover img {
-  transform: scale(1.025);
-
-  filter: brightness(1.08);
+.card-categoria:hover .card-categoria-img-wrap img {
+  transform: scale(1.05);
 }
 
-/* Imagens dentro de painéis */
-
-.panel img,
-.intro img {
-  max-height: 220px;
-  object-fit: cover;
+/* Placa metálica de contagem de fotos */
+.card-categoria-badge {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: #0f172a;
+  color: #ffedd5;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 4px;
+  border: 1px solid #475569;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* =========================================
-   12. BOTÕES
-========================================= */
+.card-categoria-corpo {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 20px;
+  background: #ffffff;
+}
+
+.card-categoria-corpo h3 {
+  margin: 0 0 8px;
+  color: #0f172a;
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 1.3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.card-categoria-corpo h3 .seta-link {
+  color: var(--accent);
+  transition: transform 0.25s ease;
+  font-size: 1.15rem;
+}
+
+.card-categoria:hover .card-categoria-corpo h3 .seta-link {
+  transform: translateX(5px);
+}
+
+.card-categoria-corpo p {
+  margin: 0 0 16px;
+  color: #334155;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  flex: 1;
+}
+
+/* Botão estilo crachá industrial */
+.btn-ver-mais {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  align-self: flex-start;
+  padding: 7px 14px;
+  background: #fff7ed;
+  color: var(--accent);
+  border: 1.5px solid #fdba74;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  transition: all 0.2s ease;
+}
+
+.card-categoria:hover .btn-ver-mais {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+}
+
+/* ===================================================
+   7. LISTAS, PRODUTOS E ESPECIFICAÇÕES
+=================================================== */
+
+ul {
+  padding-left: 20px;
+}
+
+ul li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+ul li b {
+  color: #0f172a;
+}
+
+/* ===================================================
+   8. BOTÕES & CONTROLES INDUSTRIAIS
+=================================================== */
 
 .btn,
 button[type="submit"] {
   display: inline-block;
-
-  padding: 13px 22px;
-
+  padding: 13px 26px;
   margin-top: 12px;
-
-  background: var(--gradient);
-
-  color: #24150d;
-
+  background: var(--gradient-weld);
+  color: #ffffff;
   border: 0;
-  border-radius: 4px;
-
-  font:
-    800 14px "DM Sans",
-    sans-serif;
-
+  border-radius: 6px;
+  font: 800 14px "DM Sans", sans-serif;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
-
+  letter-spacing: 0.05em;
   text-decoration: none;
-
   cursor: pointer;
-
-  box-shadow:
-    0 5px 0 #9a3c20;
-
-  transition:
-    transform 0.2s,
-    box-shadow 0.2s,
-    filter 0.2s;
+  box-shadow: 0 4px 0 #9a3412;
+  transition: transform 0.15s, box-shadow 0.15s, filter 0.15s;
 }
 
 .btn:hover,
 button[type="submit"]:hover {
-  transform: translateY(-3px);
-
-  box-shadow:
-    0 8px 0 #9a3c20;
-
-  filter: brightness(1.08);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 #9a3412;
+  filter: brightness(1.06);
 }
 
 .btn:active,
 button[type="submit"]:active {
   transform: translateY(2px);
-
-  box-shadow:
-    0 2px 0 #9a3c20;
+  box-shadow: 0 1px 0 #9a3412;
 }
 
-/* =========================================
-   13. FORMULÁRIOS
-========================================= */
+/* ===================================================
+   9. FORMULÁRIOS DE CONTATO E ORÇAMENTO
+=================================================== */
 
 form {
   max-width: 680px;
-
   display: grid;
-
   gap: 16px;
 }
 
 label {
   display: grid;
-
   gap: 6px;
-
   font-weight: 700;
+  color: #0f172a;
 }
 
 input,
 textarea,
 select {
   width: 100%;
-
-  border: 1px solid #89654d;
-  border-radius: 4px;
-
+  border: 1.5px solid var(--line-strong);
+  border-radius: 6px;
   padding: 13px;
-
-  background: #18191b;
-
-  color: white;
-
+  background: #ffffff;
+  color: #0f172a;
   font: inherit;
-
-  transition:
-    border-color 0.25s,
-    box-shadow 0.25s;
+  font-weight: 500;
+  transition: border-color 0.25s, box-shadow 0.25s;
 }
 
 input:hover,
@@ -712,739 +505,383 @@ select:hover {
 input:focus,
 textarea:focus,
 select:focus {
-  outline: 2px solid var(--yellow);
-
+  outline: 3px solid var(--accent);
   outline-offset: 2px;
-
-  box-shadow:
-    0 0 15px #ff742d22;
+  border-color: var(--accent);
+  box-shadow: 0 0 10px rgba(194, 65, 12, 0.15);
 }
 
-.hint {
-  font-size: 13px;
-}
+/* ===================================================
+   10. ANIMAÇÃO DE SCROLL (REVEAL)
+=================================================== */
 
-/* =========================================
-   14. FAQ
-========================================= */
-
-details {
-  padding: 19px;
-
-  border-bottom: 1px solid var(--line);
-
-  background: #ffffff05;
-
-  transition: background 0.25s;
-}
-
-details:hover {
-  background: #ff742d0a;
-}
-
-details[open] {
-  border-left: 3px solid var(--accent);
-
-  background: #ff742d10;
-}
-
-summary {
-  cursor: pointer;
-
-  font-weight: 800;
-
-  color: var(--yellow);
-}
-
-/* =========================================
-   15. ETAPAS DE FABRICAÇÃO
-========================================= */
-
-.steps li {
-  padding: 12px;
-
-  border-left: 3px solid var(--accent);
-
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
   transition:
-    background 0.25s,
-    border-color 0.25s;
+    opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
 }
 
-.steps li:hover {
-  background: #ff742d12;
-
-  border-color: var(--yellow);
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* =========================================
-   16. RODAPÉ
-========================================= */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* ===================================================
+   11. GALERIA DE FOTOS INTERNA (SUBPÁGINAS)
+=================================================== */
+
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+  margin: 25px 0 40px;
+}
+
+.card-foto {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 2px solid var(--line);
+  aspect-ratio: 4 / 3;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.card-foto:hover {
+  transform: translateY(-4px) scale(1.02);
+  border-color: var(--accent);
+  box-shadow: 0 10px 25px rgba(194, 65, 12, 0.2);
+}
+
+.card-foto img,
+.img-zoomable {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.card-foto:hover img {
+  transform: scale(1.05);
+}
+
+/* Modal Lightbox */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(15, 23, 42, 0.88);
+  backdrop-filter: blur(8px);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.modal.ativo,
+.modal.open {
+  display: flex;
+}
+
+.modal-conteudo {
+  max-width: 90vw;
+  max-height: 85vh;
+  border-radius: 8px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6), 0 0 0 2px var(--accent);
+  object-fit: contain;
+  animation: zoomModal 0.3s ease;
+}
+
+@keyframes zoomModal {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.modal-fechar {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #ffffff;
+  font-size: 42px;
+  font-weight: bold;
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.2s, transform 0.2s;
+  user-select: none;
+  z-index: 10000;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.modal-fechar:hover {
+  color: #ea580c;
+  transform: scale(1.15);
+}
+
+/* ===================================================
+   12. RODAPÉ DE ALTO CONTRASTE
+=================================================== */
 
 footer {
   display: flex;
-
   justify-content: space-between;
-
   gap: 20px;
-
   flex-wrap: wrap;
-
-  padding: 30px 5%;
-
+  padding: 35px 5%;
   border-top: 4px solid var(--accent);
-
-  background: #111214;
+  background: #ffffff;
+  color: #334155;
+  box-shadow: 0 -4px 18px rgba(15, 23, 42, 0.05);
 }
 
 footer strong {
-  color: var(--yellow);
-
-  font-family:
-    "Barlow Condensed",
-    sans-serif;
-
-  font-size: 23px;
-
+  color: #0f172a;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 22px;
   text-transform: uppercase;
 }
 
 footer a {
   display: inline-block;
-
   margin-right: 16px;
-
-  color: var(--muted);
-
-  text-decoration: none;
-
-  transition:
-    color 0.25s,
-    transform 0.25s;
+  color: #1e293b;
+  font-weight: 600;
+  text-decoration: underline;
+  transition: color 0.2s, transform 0.2s;
 }
 
 footer a:hover {
-  color: var(--yellow);
-
+  color: var(--accent);
   transform: translateY(-2px);
 }
 
-/* =========================================
-   17. ANIMAÇÕES
-========================================= */
-
-/* Entrada progressiva */
-
-.reveal {
-  opacity: 0;
-
-  transform: translateY(30px);
-
-  transition:
-    opacity 0.65s ease,
-    transform 0.65s ease;
-}
-
-.reveal.visible {
-  opacity: 1;
-
-  transform: none;
-}
-
-/* Entrada do título */
-
-.hero h1 {
-  animation:
-    rise 0.75s ease both;
-}
-
-.hero p {
-  animation:
-    rise 0.85s 0.1s ease both;
-}
-
-/* Animação de entrada */
-
-@keyframes rise {
-  from {
-    opacity: 0;
-
-    transform: translateY(25px);
-  }
-
-  to {
-    opacity: 1;
-
-    transform: none;
-  }
-}
-
-/* Faísca de soldagem */
-
-@keyframes spark {
-  0%,
-  100% {
-    opacity: 0.5;
-
-    transform:
-      scale(0.8)
-      rotate(-15deg);
-  }
-
-  50% {
-    opacity: 1;
-
-    transform:
-      scale(1.2)
-      rotate(15deg);
-  }
-}
-
-/* Engrenagem industrial */
-
-@keyframes gear {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* =========================================
-   18. RESPONSIVIDADE — TABLETS
-========================================= */
-
-@media (max-width: 1100px) {
-
-  header {
-    flex-wrap: wrap;
-
-    justify-content: space-between;
-  }
-
-  nav {
-    flex-basis: 100%;
-
-    flex-wrap: wrap;
-  }
-
-  nav a {
-    font-size: 11px;
-
-    padding: 8px 10px;
-  }
-
-  .hero h1 {
-    font-size: clamp(34px, 5vw, 55px);
-  }
-
-}
-
-/* =========================================
-   19. RESPONSIVIDADE — CELULARES
-========================================= */
-
-@media (max-width: 800px) {
-
-  header {
-    justify-content: space-between;
-
-    gap: 12px;
-  }
-
-  .brand {
-    font-size: 18px;
-  }
-
-  /* Botão do menu */
-
-  .menu {
-    display: block;
-  }
-
-  /* Navegação recolhida */
-
-  nav {
-    display: none;
-
-    flex: none;
-
-    width: 100%;
-
-    flex-direction: column;
-
-    align-items: stretch;
-
-    max-height: 65vh;
-
-    overflow-y: auto;
-
-    gap: 7px;
-
-    padding: 10px 0;
-  }
-
-  /* Navegação aberta pelo JavaScript */
-
-  nav.open {
-    display: flex;
-  }
-
-  nav a {
-    width: 100%;
-
-    justify-content: flex-start;
-
-    padding: 12px;
-
-    font-size: 13px;
-  }
-
-  /* Banner */
-
-  .hero {
-    min-height: 230px;
-
-    padding: 35px 7% 45px;
-  }
-
-  .hero h1 {
-    font-size: 38px;
-  }
-
-  .hero p {
-    font-size: 15px;
-  }
-
-  .hero .spark {
-    right: 7%;
-
-    bottom: 8%;
-
-    font-size: 35px;
-  }
-
-  /* Conteúdo */
-
-  main {
-    padding-bottom: 55px;
-  }
-
-  .intro,
-  .panel {
-    padding: 22px;
-  }
-
-  .grid {
-    gap: 15px;
-  }
-
-  .card {
-    padding: 20px;
-  }
-
-  /* Imagens */
-
-  main img {
-    max-height: 190px;
-  }
-
-  .card img {
-    height: 150px;
-
-    max-height: 150px;
-  }
-
-  /* Rodapé */
-
-  footer {
-    flex-direction: column;
-
-    padding: 25px 5%;
-  }
-
-}
-
-/* =========================================
-   20. TELAS MUITO PEQUENAS
-========================================= */
-
-@media (max-width: 420px) {
-
-  .brand {
-    font-size: 16px;
-  }
-
-  .hero h1 {
-    font-size: 33px;
-  }
-
-  .hero {
-    padding: 30px 7% 40px;
-  }
-
-  .grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .card img {
-    height: 145px;
-  }
-
-  .btn,
-  button[type="submit"] {
-    padding: 12px 17px;
-
-    font-size: 13px;
-  }
-
-}
-
-/* =========================================
-   21. ACESSIBILIDADE
-========================================= */
+/* ===================================================
+   13. ACESSIBILIDADE & FOCO
+=================================================== */
 
 nav a:focus-visible,
-.menu:focus-visible,
 .btn:focus-visible,
 button:focus-visible,
-a:focus-visible {
-  outline: 3px solid var(--yellow);
-
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--accent);
   outline-offset: 3px;
 }
 
-/* Respeita usuários que preferem
-   movimentos reduzidos */
+/* ===================================================
+   14. RESPONSIVIDADE
+=================================================== */
 
-@media (prefers-reduced-motion: reduce) {
-
-  *,
-  *::before,
-  *::after {
-    animation: none !important;
-
-    transition: none !important;
-
-    scroll-behavior: auto !important;
+@media (max-width: 768px) {
+  main > section,
+  main:not(:has(> section)) {
+    padding: 20px 18px;
+    margin: 22px 0;
   }
 
-  .reveal {
-    opacity: 1;
-
-    transform: none;
+  .grade-categorias {
+    grid-template-columns: 1fr;
+    gap: 18px;
   }
 
-}
-/* ==========================================
-   GALERIA DE OBRAS — VERSÃO CORRIGIDA
-========================================== */
+  .card-categoria-img-wrap {
+    height: 200px;
+  }
 
-/* Cada categoria vira um painel completo */
-
-main a.categoria-link-bloco {
-    display: block;
-    width: 100%;
-
-    margin: 32px 0;
-    padding: 24px;
-
-    background: linear-gradient(
-        145deg,
-        #211e1a,
-        #101214
-    );
-
-    border: 1px solid #66502e;
-    border-radius: 20px;
-
-    color: #fff5e9;
-    text-decoration: none;
-
-    transition:
-        border-color 0.3s,
-        box-shadow 0.3s;
+  .galeria-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+  }
 }
 
-main a.categoria-link-bloco:hover {
-    border-color: #ffbd55;
-    box-shadow: 0 12px 35px #ff742d18;
+
+/* ===================================================
+   15. SEÇÃO FALE CONOSCO COM FUNDO DE PÉRGOLAS
+=================================================== */
+
+.secao-fale-conosco-bg {
+  position: relative;
+  background-image:
+    linear-gradient(rgba(15, 23, 42, 0.72), rgba(15, 23, 42, 0.78)),
+    url("../assets/Pérgolas-Metálicas%20(3).jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 14px;
+  padding: 65px 24px !important;
+  margin: 36px 0 !important;
+  border: 1.5px solid #94a3b8 !important;
+  border-left: 6px solid var(--accent) !important;
+  box-shadow: 0 12px 36px rgba(15, 23, 42, 0.2) !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
 }
 
-/* Remove o sublinhado de todo o conteúdo */
-
-.categoria-link-bloco,
-.categoria-link-bloco h3,
-.categoria-link-bloco p {
-    text-decoration: none;
+.card-fale-conosco {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 40px 45px;
+  width: 100%;
+  max-width: 680px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.2);
+  border: 1.5px solid #cbd5e1;
 }
 
-/* Títulos das categorias */
-
-.categoria-link-bloco .categoria-titulo {
-    display: block;
-
-    margin: 0 0 22px;
-
-    color: #ffbd55;
-
-    font-family: "DM Sans", sans-serif;
-    font-size: 26px;
-    font-weight: 800;
-
-    line-height: 1.3;
-    text-transform: none;
-    letter-spacing: 0;
+.titulo-fale-conosco {
+  text-align: center;
+  color: #0f172a;
+  font-family: "Barlow Condensed", Impact, sans-serif;
+  font-size: clamp(30px, 4vw, 42px);
+  margin: 0 0 6px 0 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  display: block !important;
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
 }
 
-/* ==========================================
-   ORGANIZAÇÃO DAS FOTOS
-========================================== */
-
-.categoria-link-bloco .galeria-obras {
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, minmax(0, 1fr));
-
-    gap: 20px;
-
-    width: 100%;
-    margin: 0;
-    padding: 0;
+.titulo-fale-conosco::before {
+  display: none !important;
 }
 
-/* Cartões individuais */
-
-.categoria-link-bloco .card-obra {
-    display: flex;
-    flex-direction: column;
-
-    min-width: 0;
-    overflow: hidden;
-
-    background: #15191f;
-
-    border: 1px solid #3c4149;
-    border-radius: 14px;
-
-    transition:
-        transform 0.3s,
-        border-color 0.3s;
+.subtitulo-fale-conosco {
+  text-align: center;
+  color: #475569;
+  font-size: 0.98rem;
+  margin: 0 0 26px 0;
+  line-height: 1.5;
 }
 
-.categoria-link-bloco .card-obra:hover {
-    transform: translateY(-5px);
-    border-color: #ff742d;
+.form-fale-conosco-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 20px;
+  width: 100%;
+  max-width: none !important;
 }
 
-/* ==========================================
-   IMAGENS
-========================================== */
-
-main .categoria-link-bloco .card-obra img {
-    display: block;
-
-    width: 100%;
-    height: 230px;
-
-    max-width: none;
-    max-height: none;
-
-    margin: 0;
-    padding: 0;
-
-    object-fit: cover;
-    object-position: center;
-
-    border: 0;
-    border-radius: 0;
-
-    transition: transform 0.4s ease;
+.form-fale-conosco-grid .campo-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
-.categoria-link-bloco .card-obra:hover img {
-    transform: scale(1.025);
+.form-fale-conosco-grid .campo-grupo label {
+  color: #0f172a;
+  font-weight: 700;
+  font-size: 0.92rem;
+  letter-spacing: 0.01em;
 }
 
-/* ==========================================
-   INFORMAÇÕES DOS PROJETOS
-========================================== */
-
-.categoria-link-bloco .info-obra {
-    display: block;
-
-    flex: 1;
-
-    padding: 15px 16px 18px;
-
-    background: #15191f;
+.form-fale-conosco-grid .campo-full {
+  grid-column: 1 / -1;
 }
 
-.categoria-link-bloco .info-obra h3 {
-    margin: 0 0 7px;
-
-    color: #ffffff;
-
-    font-family: "DM Sans", sans-serif;
-    font-size: 15px;
-    font-weight: 800;
-
-    line-height: 1.4;
-
-    text-transform: none;
-    text-decoration: none;
-    letter-spacing: 0;
+.form-fale-conosco-grid input,
+.form-fale-conosco-grid select,
+.form-fale-conosco-grid textarea {
+  background: #f8fafc;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 12px 14px;
+  color: #0f172a;
+  font-size: 0.95rem;
+  font-family: inherit;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  width: 100%;
 }
 
-.categoria-link-bloco .info-obra p {
-    margin: 0;
-
-    color: #c4d1df;
-
-    font-family: "DM Sans", sans-serif;
-    font-size: 13px;
-
-    line-height: 1.5;
-    text-decoration: none;
+.form-fale-conosco-grid input:hover,
+.form-fale-conosco-grid select:hover,
+.form-fale-conosco-grid textarea:hover {
+  border-color: #94a3b8;
+  background: #ffffff;
 }
 
-/* ==========================================
-   RESPONSIVIDADE
-========================================== */
-
-/* Tablets */
-
-@media (max-width: 900px) {
-
-    .categoria-link-bloco .galeria-obras {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-    }
-
-    main .categoria-link-bloco .card-obra img {
-        height: 190px;
-    }
-
+.form-fale-conosco-grid input:focus,
+.form-fale-conosco-grid select:focus,
+.form-fale-conosco-grid textarea:focus {
+  background: #ffffff;
+  border-color: var(--accent);
+  outline: 3px solid var(--accent);
+  outline-offset: 1px;
+  box-shadow: 0 0 12px rgba(194, 65, 12, 0.18);
 }
 
-/* Celulares */
-
-@media (max-width: 600px) {
-
-    main a.categoria-link-bloco {
-        padding: 15px;
-        margin: 22px 0;
-
-        border-radius: 12px;
-    }
-
-    .categoria-link-bloco .categoria-titulo {
-        font-size: 21px;
-    }
-
-    .categoria-link-bloco .galeria-obras {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 15px;
-    }
-
-    main .categoria-link-bloco .card-obra img {
-        height: 185px;
-    }
-
-    .categoria-link-bloco .info-obra {
-        padding: 13px 15px;
-    }
-
+.form-fale-conosco-grid .campo-acoes {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
 }
 
-/* IMAGENS DAS CATEGORIAS LADO A LADO */
-
-.categoria-link-bloco .galeria-obras {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 20px;
-    width: 100%;
+.btn-enviar-fale-conosco {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 48px;
+  background: var(--gradient-weld);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #9a3412;
+  transition: all 0.2s ease;
 }
 
-/* CARTÕES DAS IMAGENS */
-
-.categoria-link-bloco .card-obra {
-    min-width: 0;
-    overflow: hidden;
-    background: #15191f;
-    border: 1px solid #3c4149;
-    border-radius: 12px;
+.btn-enviar-fale-conosco:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 #9a3412;
+  filter: brightness(1.08);
 }
 
-/* TAMANHO PADRONIZADO DAS FOTOS */
-
-main .categoria-link-bloco .card-obra img {
-    display: block;
-    width: 100%;
-    height: 210px;
-    max-width: none;
-    max-height: none;
-    object-fit: cover;
-    border-radius: 0;
+.btn-enviar-fale-conosco:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 #9a3412;
 }
 
-/* TABLETS: DUAS COLUNAS */
+@media (max-width: 640px) {
+  .secao-fale-conosco-bg {
+    padding: 35px 14px !important;
+  }
 
-@media (max-width: 900px) {
-    .categoria-link-bloco .galeria-obras {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
+  .card-fale-conosco {
+    padding: 24px 18px;
+  }
 
-/* CELULARES: UMA COLUNA */
-
-@media (max-width: 600px) {
-    .categoria-link-bloco .galeria-obras {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* IMAGENS DAS CATEGORIAS LADO A LADO */
-
-.categoria-link-bloco .galeria-obras {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 20px;
-    width: 100%;
-}
-
-/* CARTÕES DAS IMAGENS */
-
-.categoria-link-bloco .card-obra {
-    min-width: 0;
-    overflow: hidden;
-    background: #15191f;
-    border: 1px solid #3c4149;
-    border-radius: 12px;
-}
-
-/* TAMANHO PADRONIZADO DAS FOTOS */
-
-main .categoria-link-bloco .card-obra img {
-    display: block;
-    width: 100%;
-    height: 210px;
-    max-width: none;
-    max-height: none;
-    object-fit: cover;
-    border-radius: 0;
-}
-
-/* TABLETS: DUAS COLUNAS */
-
-@media (max-width: 900px) {
-    .categoria-link-bloco .galeria-obras {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-/* CELULARES: UMA COLUNA */
-
-@media (max-width: 600px) {
-    .categoria-link-bloco .galeria-obras {
-        grid-template-columns: 1fr;
-    }
+  .form-fale-conosco-grid {
+    grid-template-columns: 1fr;
+  }
 }

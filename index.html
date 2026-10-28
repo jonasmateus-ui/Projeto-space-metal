@@ -5,72 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Início – Space Metal Serralheria</title>
     <link rel="stylesheet" href="style/style.css">
-    <style>
-      /* Ajustes cirúrgicos para corrigir o tamanho e a disposição no ecrã */
-      header {
-        padding: 1rem;
-      }
-      header h1 {
-        font-size: 1.8rem;
-        margin: 0 0 0.3rem 0;
-        display: inline-block;
-      }
-      header p {
-        margin: 0 0 0.5rem 0;
-        font-size: 0.95rem;
-      }
-      hr {
-        border: none;
-        border-top: 1px solid #444;
-        margin: 0.8rem 0;
-      }
-      /* Menu compacto e horizontal que funciona perfeitamente em telemóveis e PC */
-      nav ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.3rem 0.6rem;
-        font-size: 0.85rem;
-      }
-      nav li {
-        display: inline-block;
-      }
-      nav a {
-        text-decoration: none;
-        color: #f0f0f0;
-        background: #222;
-        padding: 0.2rem 0.5rem;
-        border-radius: 3px;
-        border: 1px solid #444;
-      }
-      nav a:hover {
-        background: #7c3aed;
-        border-color: #7c3aed;
-      }
-      .separador-menu {
-        color: #666;
-        display: none; /* Ocultado pois os botões já têm espaçamento */
-      }
-      .categoria-link-bloco {
-        display: block;
-        text-decoration: none;
-        color: inherit;
-        margin-bottom: 2rem;
-      }
-      .galeria-obras {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 1rem;
-        margin-top: 0.5rem;
-      }
-      .card-obra img {
-        width: 100%;
-        height: auto;
-        display: block;
-      }
-    </style>
     <script src="style/script.js" defer></script>
   </head>
   <body>
@@ -80,6 +14,7 @@
       <hr>
       <nav aria-label="Navegação Principal">
         <ul>
+          <li><a href="index.html">Início</a></li>
           <li><a href="pages/produtos.html">Produtos</a></li>
           <li><a href="pages/servicos.html">Serviços</a></li>
           <li><a href="pages/contratos.html">Contratos</a></li>
@@ -100,81 +35,74 @@
         <h2>Galeria de Obras &amp; Projetos Realizados</h2>
         <p>Explore os nossos trabalhos divididos por categorias. Clique em qualquer categoria para ver todas as fotos:</p>
 
-        <!-- CATEGORIA 1: PÉRGOLAS METÁLICAS -->
-        <a href="pages/pergolas.html" class="categoria-link-bloco">
-          <h3 class="categoria-titulo">Pérgolas Metálicas ➔</h3>
-          <div class="galeria-obras">
-            <article class="card-obra">
-              <img src="assets/Pérgolas-Metálicas.jpg" alt="Pérgola com Cobertura">
-              <h3>Pérgola com Cobertura</h3>
-              <p>Estrutura para sombreamento e áreas de lazer.</p>
-            </article>
-            <article class="card-obra">
-              <img src="assets/Pérgolas-Metálicas%20(3).jpg" alt="Pérgola Residencial">
-              <h3>Pérgola Residencial</h3>
-              <p>Acabamento moderno em aço tratado.</p>
-            </article>
-            <article class="card-obra">
-              <img src="assets/Pérgolas-Metálicas%20(2).jpg" alt="Pérgola Arquitetônica">
-              <h3>Pérgola Arquitetônica</h3>
-              <p>Integração perfeita com a fachada e o jardim.</p>
-            </article>
-          </div>
-        </a>
+        <!-- CARDS DE CATEGORIAS LADO A LADO -->
+        <div class="grade-categorias">
+          <!-- CATEGORIA 1: PÉRGOLAS METÁLICAS -->
+          <a href="pages/pergolas.html" class="card-categoria">
+            <div class="card-categoria-img-wrap">
+              <img src="assets/Pérgolas-Metálicas.jpg" alt="Pérgolas Metálicas">
+              <span class="card-categoria-badge">9 Fotos</span>
+            </div>
+            <div class="card-categoria-corpo">
+              <h3>Pérgolas Metálicas <span class="seta-link">➔</span></h3>
+              <p>Estruturas modernas para áreas externas, sombreamento e lazer sob medida.</p>
+              <span class="btn-ver-mais">Ver mais fotos ➔</span>
+            </div>
+          </a>
 
-        <!-- CATEGORIA 2: PÓRTICOS E MARQUESINAS -->
-        <a href="pages/porticos.html" class="categoria-link-bloco">
-          <h3 class="categoria-titulo">Pórticos e Marquesinas ➔</h3>
-          <div class="galeria-obras">
-            <article class="card-obra">
-              <img src="assets/Pórticos-e-Marquesinas.jpg" alt="Marquesina de Entrada">
-              <h3>Marquesina de Entrada</h3>
-              <p>Proteção e imponência para fachadas.</p>
-            </article>
-            <article class="card-obra">
-              <img src="assets/Pórticos-e-Marquesinas%20(3).jpg" alt="Pórtico Estrutural">
-              <h3>Pórtico Estrutural</h3>
-              <p>Vãos livres de alta resistência.</p>
-            </article>
-          </div>
-        </a>
+          <!-- CATEGORIA 2: PÓRTICOS E MARQUESINAS -->
+          <a href="pages/porticos.html" class="card-categoria">
+            <div class="card-categoria-img-wrap">
+              <img src="assets/Pórticos-e-Marquesinas.jpg" alt="Pórticos e Marquesinas">
+              <span class="card-categoria-badge">3 Fotos</span>
+            </div>
+            <div class="card-categoria-corpo">
+              <h3>Pórticos e Marquesinas <span class="seta-link">➔</span></h3>
+              <p>Proteção, imponência arquitetônica e vãos livres para entradas e fachadas.</p>
+              <span class="btn-ver-mais">Ver mais fotos ➔</span>
+            </div>
+          </a>
 
-        <!-- CATEGORIA 3: ALPENDRES METÁLICOS -->
-        <a href="pages/alpendres.html" class="categoria-link-bloco">
-          <h3 class="categoria-titulo">Alpendres Metálicos ➔</h3>
-          <div class="galeria-obras">
-            <article class="card-obra">
-              <img src="assets/Alpendres-Metálicos.jpg" alt="Alpendre Externo">
-              <h3>Alpendre Externo</h3>
-              <p>Cobertura técnica acoplada à edificação.</p>
-            </article>
-            <article class="card-obra">
-              <img src="assets/Alpendres-Metálicos%20(2).jpg" alt="Cobertura em Aço">
-              <h3>Cobertura em Aço</h3>
-              <p>Proteção contra intempéries com design limpo.</p>
-            </article>
-          </div>
-        </a>
+          <!-- CATEGORIA 3: ALPENDRES METÁLICOS -->
+          <a href="pages/alpendres.html" class="card-categoria">
+            <div class="card-categoria-img-wrap">
+              <img src="assets/Alpendres-Metálicos.jpg" alt="Alpendres Metálicos">
+              <span class="card-categoria-badge">4 Fotos</span>
+            </div>
+            <div class="card-categoria-corpo">
+              <h3>Alpendres Metálicos <span class="seta-link">➔</span></h3>
+              <p>Coberturas técnicas em aço estrutural acopladas à edificação com alta durabilidade.</p>
+              <span class="btn-ver-mais">Ver mais fotos ➔</span>
+            </div>
+          </a>
 
-        <!-- CATEGORIA 4: ESCADAS E GUARDA-CORPOS -->
-        <a href="pages/escadas.html" class="categoria-link-bloco">
-          <h3 class="categoria-titulo">Escadas &amp; Guarda-Corpos ➔</h3>
-          <div class="galeria-obras">
-            <article class="card-obra">
-              <img src="assets/escada.jpg" alt="Escada Metálica">
-              <h3>Escada Metálica</h3>
-              <p>Estrutura segura e de encaixe perfeito.</p>
-            </article>
-            <article class="card-obra">
-              <img src="assets/guarda-corpo.jpg" alt="Guarda-Corpo">
-              <h3>Guarda-Corpo de Segurança</h3>
-              <p>Proteção para varandas e mezaninos.</p>
-            </article>
-          </div>
-        </a>
+          <!-- CATEGORIA 4: ESCADAS METÁLICAS -->
+          <a href="pages/escadas.html" class="card-categoria">
+            <div class="card-categoria-img-wrap">
+              <img src="assets/escada.jpg" alt="Escadas Metálicas">
+              <span class="card-categoria-badge">3 Fotos</span>
+            </div>
+            <div class="card-categoria-corpo">
+              <h3>Escadas Metálicas <span class="seta-link">➔</span></h3>
+              <p>Estruturas resistentes com encaixe milimétrico para residências e comércios.</p>
+              <span class="btn-ver-mais">Ver mais fotos ➔</span>
+            </div>
+          </a>
+
+          <!-- CATEGORIA 5: GUARDA-CORPOS -->
+          <a href="pages/guarda-corpo.html" class="card-categoria">
+            <div class="card-categoria-img-wrap">
+              <img src="assets/guarda-corpo.jpg" alt="Guarda-Corpos">
+              <span class="card-categoria-badge">3 Fotos</span>
+            </div>
+            <div class="card-categoria-corpo">
+              <h3>Guarda-Corpos <span class="seta-link">➔</span></h3>
+              <p>Segurança técnica e design refinado para sacadas, escadas e mezaninos.</p>
+              <span class="btn-ver-mais">Ver mais fotos ➔</span>
+            </div>
+          </a>
+        </div>
       </section>
-
-      <hr>
 
       <section>
         <h2>Produtos &amp; Catálogo Metálico</h2>
@@ -184,31 +112,27 @@
           <li><b>Grades e Proteções:</b> Grades reforçadas para janelas e fechamentos de galpão.</li>
           <li><b>Estruturas Especiais (P99):</b> Peças técnicas e projetos industriais customizados.</li>
         </ul>
-        <p><a href="pages/produtos.html"><b>Acessar catálogo completo de produtos</b></a></p>
+        <p><a href="pages/produtos.html"><b>Acessar catálogo completo de produtos ➔</b></a></p>
       </section>
-
-      <hr>
 
       <section>
         <h2>Serviços de Serralheria &amp; Fabricação</h2>
         <p>Tudo relacionado à execução dos projetos técnicos no atelier e na obra:</p>
         <ul>
-          <li><b>Corte, Solda e Usinagem:</b> Processos de alta precisão em aço.</li>
-          <li><b>Montagem de Mezaninos:</b> Expansão de área útil comercial e industrial.</li>
-          <li><b>Instalação no Local:</b> Equipe especializada para montagem final do projeto.</li>
+          <li><b>Corte, Solda e Usinagem:</b> Processos de alta precisão em aço carbono e inox.</li>
+          <li><b>Montagem de Mezaninos:</b> Expansão de área útil comercial e industrial com cálculo de carga.</li>
+          <li><b>Instalação Técnica no Local:</b> Equipe especializada para montagem final do projeto.</li>
         </ul>
-        <p><a href="pages/servicos.html"><b>Ver todos os serviços técnicos</b></a></p>
+        <p><a href="pages/servicos.html"><b>Ver todos os serviços técnicos ➔</b></a></p>
       </section>
-
-      <hr>
 
       <section>
         <h2>Financeiro, Valores &amp; Condições</h2>
         <p>Tudo relacionado a orçamentos, regras de sinal e opções de pagamento:</p>
         <ul>
-          <li><b>Solicitação de Orçamento:</b> Cotação de valores sob medida para o seu projeto.</li>
+          <li><b>Solicitação de Orçamento:</b> Cotação de valores sob medida para o seu projeto técnico.</li>
           <li><b>Regra de Sinal (30%):</b> O início da fabricação ocorre estritamente após a aprovação técnica e pagamento do sinal de 30%.</li>
-          <li><b>Formas de Pagamento:</b> Aceitamos PIX (Chave CNPJ) e parcelamento.</li>
+          <li><b>Formas de Pagamento:</b> Aceitamos PIX (Chave CNPJ) e parcelamento facilitado.</li>
         </ul>
         <p>
           <a href="pages/orcamentos.html"><b>[ Pedir Orçamento ]</b></a> |
@@ -217,15 +141,13 @@
         </p>
       </section>
 
-      <hr>
-
       <section>
         <h2>Área do Cliente, Suporte &amp; Depoimentos</h2>
         <p>Acompanhe seu pedido em andamento e veja a opinião de quem contratou:</p>
         <ul>
           <li><b>Acompanhamento de Projeto:</b> Linha do tempo desde o corte até a instalação.</li>
           <li><b>Portal do Cliente:</b> Consulte seu pedido, contrato e pagamentos com o código do pedido.</li>
-          <li><b>Feedback:</b> Avaliações e depoimentos de clientes.</li>
+          <li><b>Feedback:</b> Avaliações e depoimentos reais de clientes satisfeitos.</li>
         </ul>
         <p>
           <a href="pages/clientes.html"><b>[ Área do Cliente ]</b></a> |
@@ -234,29 +156,64 @@
         </p>
       </section>
 
-      <hr>
+      <!-- SEÇÃO FALE CONOSCO COM IMAGEM DE FUNDO DAS PÉRGOLAS -->
+      <section class="secao-fale-conosco-bg">
+        <div class="card-fale-conosco">
+          <h2 class="titulo-fale-conosco">Fale Conosco</h2>
+          <p class="subtitulo-fale-conosco">Envie sua mensagem ou solicite um atendimento técnico rápido via WhatsApp:</p>
 
-      <section>
-        <h2>Fale Conosco</h2>
-        <p>Envie uma mensagem rápida pelo WhatsApp:</p>
-        <form data-send>
-          <label>Nome<input name="nome" required></label><br>
-          <label>Telefone<input name="telefone" type="tel" required></label><br>
-          <label>Mensagem<textarea name="mensagem" rows="3" required></textarea></label><br>
-          <button type="submit" value="wa">Enviar por WhatsApp</button>
-        </form>
+          <form data-send class="form-fale-conosco-grid">
+            <div class="campo-grupo">
+              <label for="fc-nome">Nome Completo</label>
+              <input id="fc-nome" name="nome" required placeholder="Digite seu nome completo">
+            </div>
+
+            <div class="campo-grupo">
+              <label for="fc-email">E-mail</label>
+              <input id="fc-email" name="email" type="email" placeholder="seuemail@exemplo.com">
+            </div>
+
+            <div class="campo-grupo">
+              <label for="fc-telefone">Telefone / Celular</label>
+              <input id="fc-telefone" name="telefone" type="tel" required placeholder="(XX) 99999-9999">
+            </div>
+
+            <div class="campo-grupo">
+              <label for="fc-servicos">Serviços</label>
+              <select id="fc-servicos" name="servico">
+                <option value="">Selecione o serviço...</option>
+                <option value="Pérgolas Metálicas">Pérgolas Metálicas</option>
+                <option value="Pórticos e Marquesinas">Pórticos e Marquesinas</option>
+                <option value="Alpendres Metálicos">Alpendres Metálicos</option>
+                <option value="Escadas Metálicas">Escadas Metálicas</option>
+                <option value="Guarda-Corpos">Guarda-Corpos</option>
+                <option value="Portões e Fechamentos">Portões e Fechamentos</option>
+                <option value="Estruturas Especiais">Estruturas Especiais (P99)</option>
+                <option value="Outro Projeto">Outro Projeto Sob Medida</option>
+              </select>
+            </div>
+
+            <div class="campo-grupo campo-full">
+              <label for="fc-mensagem">Mensagem</label>
+              <textarea id="fc-mensagem" name="mensagem" rows="4" required placeholder="Descreva brevemente as medidas ou detalhes do seu projeto..."></textarea>
+            </div>
+
+            <div class="campo-acoes">
+              <button type="submit" value="wa" class="btn-enviar-fale-conosco">Enviar ➔</button>
+            </div>
+          </form>
+        </div>
       </section>
     </main>
 
     <footer>
-      <hr>
       <p>
         <a href="pages/faq.html">Dúvidas Frequentes</a> |
         <a href="pages/termos.html">Termos de Uso</a> |
         <a href="pages/privacidade.html">Política de Privacidade</a>
       </p>
       <p>
-        <b>Space Metal Serralheria</b> | CNPJ 41.817.914/0001-27 | ©
+        <strong>Space Metal Serralheria</strong> | CNPJ 41.817.914/0001-27 | ©
         <span class="y">2026</span> Todos os direitos reservados.
       </p>
     </footer>

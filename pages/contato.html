@@ -10,93 +10,120 @@
   <body>
     <header>
       <h1>Space Metal Serralheria</h1>
-      <p>
-        <b>CNPJ:</b>
-        41.817.914/0001-27 |
-        <i>Estruturas Metálicas e Serralheria Técnica Sob Medida</i>
-      </p>
+      <p><i>Estruturas Met&aacute;licas e Serralheria T&eacute;cnica Sob Medida</i></p>
       <hr>
-      <p>
-        <b>Navegação Rápida:</b>
-        <a href="../index.html">Início</a>
-        |
-        <a href="produtos.html">Produtos</a>
-        |
-        <a href="servicos.html">Serviços</a> 
-        |
-        <a href="acompanhamento.html">Acompanhamento</a> 
-        |
-        <a href="contratos.html">Contratos</a> 
-        |
-        <a href="orcamentos.html">Orçamentos</a> 
-        |
-        <a href="pagamentos.html">Pagamentos</a>
-        |
-        <a href="clientes.html">Área do Cliente</a>
-        |
-        <a href="contato.html">Contato</a>
-        |
-        <a href="privacidade.html">Privacidade</a> 
-        |
-        <a href="quem-somos.html">Quem Somos</a> 
-        |
-        <a href="termos.html">Termos de Uso</a>
-        |
-        <a href="faq.html">FAQ</a>
-        |
-        <a href="feedback.html">Feedback</a> 
-        |
-      </p>
+      <nav aria-label="Navega&ccedil;&atilde;o Principal">
+        <ul>
+          <li><a href="../index.html">In&iacute;cio</a></li>
+          <li><a href="produtos.html">Produtos</a></li>
+          <li><a href="servicos.html">Servi&ccedil;os</a></li>
+          <li><a href="contratos.html">Contratos</a></li>
+          <li><a href="orcamentos.html">Or&ccedil;amentos</a></li>
+          <li><a href="pagamentos.html">Pagamentos</a></li>
+          <li><a href="clientes.html">&Aacute;rea do Cliente</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="quem-somos.html">Quem Somos</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+      </nav>
       <hr>
     </header>
+
     <main>
-      <h2>Contato</h2>
-      <ul>
-        <li>
-          <b>E-mail:</b>
-          <a href="mailto:contato@seudominio.com.br">contato@seudominio.com.br</a>
-        </li>
-        <li>
-          <b>Telefone / WhatsApp:</b>
-          <a href="tel:+5511900000000">(11) 90000-0000</a>
-          ·
-          <a href="https://wa.me/5511900000000">chamar no WhatsApp</a>
-        </li>
-        <li>
-          <b>Endereço:</b>
-          [preencher endereço]
-        </li>
-        <li>
-          <b>Horário de atendimento:</b>
-          [preencher horário]
-        </li>
-      </ul>
-      <p>
-        Para orçamentos, prefira o
-        <a href="orcamentos.html">formulário</a>
-        . Assuntos sobre dados pessoais: veja a
-        <a href="privacidade.html">Política de Privacidade</a>
-        .
-      </p>
-      <h3>Redes sociais</h3>
-      <ul>
-        <li><a href="https://instagram.com/seuperfil">Instagram</a></li>
-      </ul>
+      <section>
+        <h2>Canais de Contato Direto</h2>
+        <ul>
+          <li>
+            <b>E-mail:</b>
+            <a href="mailto:contato@seudominio.com.br">contato@seudominio.com.br</a>
+          </li>
+          <li>
+            <b>Telefone / WhatsApp Comercial:</b>
+            <a href="tel:+5511900000000">(11) 90000-0000</a> ·
+            <a href="https://wa.me/5511900000000">Chamar no WhatsApp ➔</a>
+          </li>
+          <li>
+            <b>Endereço da Fábrica / Atelier:</b>
+            Atendimento e fabricação técnica sob medida
+          </li>
+          <li>
+            <b>Horário de Funcionamento:</b>
+            Segunda a Sexta, das 08h às 18h
+          </li>
+        </ul>
+
+        <p>
+          Para orçamentos detalhados com medidas técnicas, envie seu projeto pelo nosso
+          <a href="orcamentos.html">Formulário de Orçamento</a>. Para assuntos sobre proteção de dados, consulte nossa
+          <a href="privacidade.html">Política de Privacidade</a>.
+        </p>
+
+        <h3>Redes Sociais &amp; Obras</h3>
+        <ul>
+          <li><a href="https://instagram.com/cosmusjota" target="_blank" rel="noopener">Instagram Space Metal</a></li>
+        </ul>
+      </section>
+
+      <!-- FORMULÁRIO COM FUNDO DAS PÉRGOLAS -->
+      <section class="secao-fale-conosco-bg">
+        <div class="card-fale-conosco">
+          <h2 class="titulo-fale-conosco">Fale Conosco</h2>
+          <p class="subtitulo-fale-conosco">Envie sua mensagem ou solicite um atendimento técnico rápido via WhatsApp:</p>
+
+          <form data-send class="form-fale-conosco-grid">
+            <div class="campo-grupo">
+              <label for="fc-nome">Nome Completo</label>
+              <input id="fc-nome" name="nome" required placeholder="Digite seu nome completo">
+            </div>
+
+            <div class="campo-grupo">
+              <label for="fc-email">E-mail</label>
+              <input id="fc-email" name="email" type="email" placeholder="seuemail@exemplo.com">
+            </div>
+
+            <div class="campo-grupo">
+              <label for="fc-telefone">Telefone / Celular</label>
+              <input id="fc-telefone" name="telefone" type="tel" required placeholder="(XX) 99999-9999">
+            </div>
+
+            <div class="campo-grupo">
+              <label for="fc-servicos">Serviços</label>
+              <select id="fc-servicos" name="servico">
+                <option value="">Selecione o serviço...</option>
+                <option value="Pérgolas Metálicas">Pérgolas Metálicas</option>
+                <option value="Pórticos e Marquesinas">Pórticos e Marquesinas</option>
+                <option value="Alpendres Metálicos">Alpendres Metálicos</option>
+                <option value="Escadas Metálicas">Escadas Metálicas</option>
+                <option value="Guarda-Corpos">Guarda-Corpos</option>
+                <option value="Portões e Fechamentos">Portões e Fechamentos</option>
+                <option value="Estruturas Especiais">Estruturas Especiais (P99)</option>
+                <option value="Outro Projeto">Outro Projeto Sob Medida</option>
+              </select>
+            </div>
+
+            <div class="campo-grupo campo-full">
+              <label for="fc-mensagem">Mensagem</label>
+              <textarea id="fc-mensagem" name="mensagem" rows="4" required placeholder="Descreva brevemente as medidas ou detalhes do seu projeto..."></textarea>
+            </div>
+
+            <div class="campo-acoes">
+              <button type="submit" value="wa" class="btn-enviar-fale-conosco">Enviar ➔</button>
+            </div>
+          </form>
+        </div>
+      </section>
     </main>
+
     <footer>
-      <hr>
       <p>
-        <a href="faq.html">Dúvidas Frequentes</a>
-        |
-        <a href="termos.html">Termos de Uso</a>
-        |
+        <a href="faq.html">Dúvidas Frequentes</a> |
+        <a href="termos.html">Termos de Uso</a> |
         <a href="privacidade.html">Política de Privacidade</a>
       </p>
       <p>
-        <b>Space Metal Serralheria</b>
-        | CNPJ 41.817.914/0001-27 | ©
-        <span class="y">2026</span>
-        Todos os direitos reservados.
+        <strong>Space Metal Serralheria</strong> | CNPJ 41.817.914/0001-27 | ©
+        <span class="y">2026</span> Todos os direitos reservados.
       </p>
     </footer>
   </body>
