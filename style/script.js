@@ -106,3 +106,31 @@ if (modal && modalImg) {
     }
   });
 }
+
+
+// Envio dos formulários Fale Conosco / Orçamento via WhatsApp
+document.querySelectorAll("form[data-send]").forEach((form) => {
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const d = new FormData(form);
+    const nome = (d.get("nome") || "").toString().trim();
+    const email = (d.get("email") || "").toString().trim();
+    const tel = (d.get("telefone") || "").toString().trim();
+    const servico = (d.get("servico") || "").toString().trim();
+    const msg = (d.get("mensagem") || d.get("descricao") || "").toString().trim();
+
+    const linhas = [
+      "Olá! Gostaria de um orçamento com a Space Metal Serralheria.",
+      "",
+      nome ? `*Nome:* ${nome}` : "",
+      tel ? `*Telefone:* ${tel}` : "",
+      email ? `*E-mail:* ${email}` : "",
+      servico ? `*Serviço:* ${servico}` : "",
+      msg ? `*Mensagem / Projeto:*
+${msg}` : "",
+    ].filter(Boolean);
+
+    const url = `https://wa.me/5519998508696?text=${encodeURIComponent(linhas.join("\n"))}`;
+    window.open(url, "_blank", "noopener,noreferrer");
+  });
+});

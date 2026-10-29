@@ -161,31 +161,73 @@ header {
   top: 0;
   z-index: 100;
   display: block;
-  padding: 16px 5%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
   background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(12px);
   border-top: 4px solid var(--steel-blue);
-  border-bottom: 4px solid var(--accent);
   box-shadow: 0 4px 20px rgba(15, 23, 42, 0.08);
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 14px 4% 12px;
+  max-width: 1400px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.logo-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.site-logo {
+  width: 68px;
+  height: 68px;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 2px solid var(--steel-blue);
+  background-color: #0b0f19;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.16);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  display: block;
+}
+
+.logo-link:hover .site-logo {
+  transform: scale(1.05);
+  border-color: var(--accent);
+  box-shadow: 0 6px 20px rgba(194, 65, 12, 0.35);
+}
+
+.header-titles {
+  display: flex;
+  flex-direction: column;
 }
 
 header h1 {
   font-size: clamp(24px, 3.5vw, 36px);
-  margin: 0 0 4px;
+  margin: 0;
   color: #0f172a;
   display: inline-block;
+  line-height: 1.15;
 }
 
 header p {
-  margin: 0 0 8px;
+  margin: 4px 0 0;
   font-size: 0.95rem;
   color: var(--muted);
   line-height: 1.5;
 }
 
 header hr {
-  margin: 10px 0;
-  border-top: 1px solid var(--line);
+  display: none;
 }
 
 /* Links de Navegação Rápida (Subpáginas) */
@@ -211,16 +253,34 @@ header p a:hover {
 }
 
 /* ===================================================
-   4. NAVEGAÇÃO PRINCIPAL (NAV)
+   4. NAVEGAÇÃO PRINCIPAL (NAV) — 100% LARGURA TOTAL
+   Sem margens laterais, borda e fundo ponta a ponta
 =================================================== */
+
+nav {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 10px 0;
+  background: #ffffff;
+  border-top: 1px solid var(--line);
+  border-bottom: 4px solid var(--accent);
+  box-sizing: border-box;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+}
 
 nav ul {
   list-style: none;
-  padding: 0;
-  margin: 0;
+  padding: 0 16px;
+  margin: 0 auto;
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  gap: 0.4rem 0.6rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem 0.6rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 nav li {
@@ -242,6 +302,7 @@ nav a {
   text-transform: uppercase;
   letter-spacing: 0.035em;
   transition: all 0.2s ease;
+  white-space: nowrap;
 }
 
 nav a:hover {
@@ -889,5 +950,177 @@ select:focus-visible {
 
   .form-fale-conosco-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+
+/* ===================================================
+   15. BOTÃO FLUTUANTE WHATSAPP (CANTO INFERIOR DIREITO)
+=================================================== */
+
+.whatsapp-flutuante {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  border: 2.5px solid #25d366;
+  box-shadow: 0 4px 18px rgba(37, 211, 102, 0.45), 0 2px 8px rgba(0, 0, 0, 0.18);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, border-color 0.25s ease;
+  text-decoration: none;
+  cursor: pointer;
+  animation: whatsapp-pulse 2.8s infinite;
+}
+
+.whatsapp-flutuante img {
+  width: 40px;
+  height: 40px;
+  display: block;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-flutuante:hover {
+  transform: scale(1.12) translateY(-4px);
+  border-color: #1eb954;
+  box-shadow: 0 8px 28px rgba(37, 211, 102, 0.65), 0 4px 14px rgba(0, 0, 0, 0.22);
+  animation: none;
+  text-decoration: none;
+}
+
+.whatsapp-flutuante:hover img {
+  transform: rotate(6deg) scale(1.05);
+}
+
+.whatsapp-flutuante:active {
+  transform: scale(0.94);
+}
+
+/* Tooltip informativo do WhatsApp */
+.whatsapp-flutuante .whatsapp-tooltip {
+  position: absolute;
+  right: 74px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #0f172a;
+  color: #ffffff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: "DM Sans", Arial, sans-serif;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.25);
+  letter-spacing: 0.02em;
+}
+
+.whatsapp-flutuante .whatsapp-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -6px;
+  transform: translateY(-50%);
+  border-width: 6px 0 6px 6px;
+  border-style: solid;
+  border-color: transparent transparent transparent #0f172a;
+}
+
+.whatsapp-flutuante:hover .whatsapp-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-50%) translateX(-4px);
+}
+
+@keyframes whatsapp-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6), 0 4px 18px rgba(37, 211, 102, 0.2);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(37, 211, 102, 0), 0 4px 18px rgba(37, 211, 102, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0), 0 4px 18px rgba(37, 211, 102, 0.2);
+  }
+}
+
+/* Quem Somos - Destaque com Logo */
+.quem-somos-destaque {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-bottom: 24px;
+}
+
+.logo-destaque {
+  width: 120px;
+  height: 120px;
+  border-radius: 14px;
+  object-fit: cover;
+  border: 3px solid var(--steel-blue);
+  background-color: #0b0f19;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.18);
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .header-brand {
+    padding: 12px 16px 8px;
+    gap: 12px;
+  }
+
+  .site-logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  nav {
+    padding: 8px 0;
+  }
+
+  nav ul {
+    padding: 0 10px;
+    gap: 0.35rem 0.45rem;
+  }
+
+  nav a {
+    padding: 6px 11px;
+    font-size: 12px;
+  }
+
+  .whatsapp-flutuante {
+    bottom: 18px;
+    right: 18px;
+    width: 52px;
+    height: 52px;
+  }
+
+  .whatsapp-flutuante img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .whatsapp-flutuante .whatsapp-tooltip {
+    display: none;
+  }
+
+  .quem-somos-destaque {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .logo-destaque {
+    width: 90px;
+    height: 90px;
   }
 }
