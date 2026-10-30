@@ -179,22 +179,6 @@ Space-Metal/
 
 ---
 
-## 🧠 Conclusão e Aprendizados
-
-Essa etapa exigiu bem mais cuidado do que parecia à primeira vista. Estruturar páginas HTML com semântica correta (`header`, `nav`, `main`, `section`, `article`, `footer`) trouxe decisões que não são óbvias no dia a dia — como escolher entre `section` e `article` para cada bloco, ou garantir que cada página tivesse um único `h1` e uma hierarquia coerente de headings, pontos fundamentais para a validação W3C.
-
-Organizar o repositório em `assets/` e `pages/` desde o início facilitou o reaproveitamento de blocos e melhorou a manutenção do projeto. A estrutura centralizada do CSS e a padronização das páginas permitiram manter a identidade visual do site com mais consistência.
-
-Trabalhar em equipe com Git e GitHub também foi parte importante do aprendizado: alinhar quem mexia em qual página, evitar conflitos de merge e manter um padrão de commits ajudou a preservar o trabalho em desenvolvimento.
-
-Por fim, basear o conteúdo do site na entrevista real com o Diogo, fundador da Space Metal Serralheria, deixou claro como decisões de conteúdo — como regra de sinal de 30%, orçamento, acompanhamento e atendimento — ficam muito mais sólidas quando partem de informação real da empresa, em vez de conteúdo genérico.
-
----
-
-*Projeto acadêmico — Desenvolvimento Frontend para Web.*
-
-
----
 
 ## ❇️ Requisitos Técnicos da Entrega
 
