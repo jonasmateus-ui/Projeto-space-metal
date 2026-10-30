@@ -21,7 +21,6 @@
         <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-principal">
           <span></span><span></span><span></span>
         </button>
-        <img src="../assets/logo.jpg" alt="" class="header-logo-bg" aria-hidden="true">
       </div>
       <hr>
       <nav id="nav-principal" aria-label="Navegação Principal">
@@ -40,49 +39,77 @@
       </nav>
       <hr>
     </header>
-    <main>
-      <section>
-        <h2>Avaliações de Clientes</h2>
-        <p>As avaliações de clientes serão exibidas aqui após confirmação de autoria e autorização para publicação. Se você já contratou a Space Metal, envie sua avaliação pelo formulário abaixo.</p>
-      </section>
 
-      <section>
-        <h2>Enviar avaliação</h2>
-        <p>Compartilhe sua experiência. A mensagem será encaminhada diretamente pelo WhatsApp para análise antes de qualquer publicação.</p>
-        <form id="fb">
-          <label>
-            Nome Completo *
-            <input name="nome" required placeholder="Seu nome">
-          </label>
-          <label>
-            Nota *
-            <select name="nota">
-              <option value="5">5 – Excelente</option>
-              <option value="4">4 – Bom</option>
-              <option value="3">3 – Regular</option>
-              <option value="2">2 – Ruim</option>
-              <option value="1">1 – Péssimo</option>
-            </select>
-          </label>
-          <label>
-            Depoimento *
-            <textarea name="texto" rows="5" required placeholder="Conte sobre sua experiência com a Space Metal Serralheria..."></textarea>
-          </label>
-          <label style="display:flex;align-items:flex-start;gap:10px;">
-            <input type="checkbox" name="autorizacao" required style="display:inline;width:auto;margin-top:4px;">
-            <span>Autorizo o contato para confirmar esta avaliação e, com minha aprovação, sua publicação. *</span>
-          </label>
-          <button type="submit">Enviar avaliação pelo WhatsApp ➔</button>
-        </form>
-      </section>
+    <main style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+      <div class="grade-categorias" style="grid-template-columns: 1fr; gap: 24px; max-width: 850px; width: 100%; margin: 0 auto;">
+        
+        <!-- CARD 1: AVALIAÇÕES -->
+        <div class="card-categoria" style="cursor: default; transform: none !important;">
+          <div class="card-categoria-corpo" style="flex: 1; padding: 28px;">
+            <h2 style="margin-top: 0; border-bottom: 2px solid var(--line); padding-bottom: 8px; font-size: 1.75rem;">
+              Avaliações de Clientes
+            </h2>
+            <p style="margin-bottom: 20px;">
+              As avaliações de clientes serão exibidas aqui após confirmação de autoria e autorização para publicação. Se você já contratou a Space Metal, envie sua avaliação pelo formulário abaixo.
+            </p>
 
-      <!-- CTA ORÇAMENTO -->
-      <section>
-        <h2>Pronto para transformar seu espaço?</h2>
-        <p>Entre em contato e solicite seu orçamento sem compromisso. Atendemos projetos residenciais, comerciais e industriais.</p>
-        <a href="orcamentos.html" class="btn-feedback-link">Solicitar orçamento via WhatsApp ➔</a>
-      </section>
+            <div class="grade-depoimentos" style="display: grid; grid-template-columns: 1fr; gap: 15px; margin-top: 15px;">
+              <div class="card-depoimento" style="background: #f8fafc; border: 1px solid var(--line); padding: 15px; border-radius: 6px;">
+                <div class="estrelas" style="color: #f59e0b; margin-bottom: 5px;">★★★★★</div>
+                <p style="font-style: italic; margin: 0 0 8px 0;">"Contratei a Space Metal para a fabricação e instalação de mezanino industrial. Prazo cumprido rigorosamente e acabamento de primeira linha."</p>
+                <strong style="font-size: 0.9rem;">— Eng. Carlos Alberto (Construtora Lima & Souza)</strong>
+              </div>
+
+              <div class="card-depoimento" style="background: #f8fafc; border: 1px solid var(--line); padding: 15px; border-radius: 6px;">
+                <div class="estrelas" style="color: #f59e0b; margin-bottom: 5px;">★★★★★</div>
+                <p style="font-style: italic; margin: 0 0 8px 0;">"Fizemos portões basculantes sob medida e escadas metálicas. A estrutura é extremamente firme e o atendimento pelo WhatsApp foi ágil e transparente."</p>
+                <strong style="font-size: 0.9rem;">— Mariana Silveira (Residencial Alphaville)</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 2: FORMULÁRIO DE ENVIO -->
+        <div class="card-categoria" style="cursor: default; transform: none !important;">
+          <div class="card-categoria-corpo" style="flex: 1; padding: 28px;">
+            <h2 style="margin-top: 0; border-bottom: 2px solid var(--line); padding-bottom: 8px; font-size: 1.75rem;">
+              Enviar avaliação
+            </h2>
+            <p style="margin-bottom: 20px;">
+              Compartilhe sua experiência. A mensagem será encaminhada diretamente pelo WhatsApp para análise antes de qualquer publicação.
+            </p>
+            
+            <form id="fb">
+              <label>
+                Nome Completo *
+                <input name="nome" required placeholder="Seu nome">
+              </label>
+              <label>
+                Nota *
+                <select name="nota">
+                  <option value="5">5 – Excelente</option>
+                  <option value="4">4 – Bom</option>
+                  <option value="3">3 – Regular</option>
+                  <option value="2">2 – Ruim</option>
+                  <option value="1">1 – Péssimo</option>
+                </select>
+              </label>
+              <label>
+                Depoimento *
+                <textarea name="texto" rows="5" required placeholder="Conte sobre sua experiência com a Space Metal Serralheria..."></textarea>
+              </label>
+              <label style="display:flex;align-items:flex-start;gap:10px;">
+                <input type="checkbox" name="autorizacao" required style="display:inline;width:auto;margin-top:4px;">
+                <span>Autorizo o contato para confirmar esta avaliação e, com minha aprovação, sua publicação. *</span>
+              </label>
+              <button type="submit" class="btn" style="width: 100%; text-align: center; justify-content: center; margin-top: 16px;">Enviar avaliação pelo WhatsApp ➔</button>
+            </form>
+          </div>
+        </div>
+
+      </div>
     </main>
+
     <footer>
       <hr>
       <p>
@@ -105,6 +132,7 @@
         Todos os direitos reservados.
       </p>
     </footer>
+
     <!-- BOTÃO FLUTUANTE DO WHATSAPP -->
     <a href="https://wa.me/5519998508696" class="whatsapp-flutuante" target="_blank" rel="noopener noreferrer" aria-label="Fale Conosco pelo WhatsApp" title="Fale Conosco pelo WhatsApp">
       <img src="../assets/whatsapp.png" alt="WhatsApp Space Metal">

@@ -21,7 +21,6 @@
         <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-principal">
           <span></span><span></span><span></span>
         </button>
-        <img src="../assets/logo.jpg" alt="" class="header-logo-bg" aria-hidden="true">
       </div>
       <hr>
       <nav id="nav-principal" aria-label="Navegação Principal">
@@ -40,132 +39,65 @@
       </nav>
       <hr>
     </header>
-    <main>
-      <!-- FORMULÁRIO DE ORÇAMENTO -->
-      <section>
-        <h2>Solicitar Orçamento</h2>
-        <p>
-          Preencha o formulário abaixo e envie direto pelo WhatsApp. Responderemos em até 1 hora no horário comercial.
-          Pedimos apenas o necessário; CPF ou CNPJ só serão solicitados na formalização do contrato.
-        </p>
-        <form id="quote">
-          <label>
-            Nome ou Empresa *
-            <input name="nome" required placeholder="Seu nome ou razão social">
-          </label>
-          <label>
-            Telefone com DDD *
-            <input name="telefone" type="tel" required placeholder="(XX) 99999-9999">
-          </label>
-          <label>
-            Tipo de Serviço *
-            <select name="servico" required>
-              <option value="">Selecione o serviço...</option>
-              <option value="Pérgola Metálica">Pérgola Metálica</option>
-              <option value="Pórtico / Marquesina">Pórtico / Marquesina</option>
-              <option value="Alpendre Metálico">Alpendre Metálico</option>
-              <option value="Escada Metálica">Escada Metálica</option>
-              <option value="Guarda-Corpo">Guarda-Corpo</option>
-              <option value="Portão Automático">Portão Automático</option>
-              <option value="Grade / Proteção">Grade / Proteção</option>
-              <option value="Mezanino">Mezanino</option>
-              <option value="Cobertura Metálica">Cobertura Metálica</option>
-              <option value="Manutenção / Reparo">Manutenção / Reparo</option>
-              <option value="Estrutura Especial (P99)">Estrutura Especial (P99)</option>
-              <option value="Outro Projeto">Outro Projeto Sob Medida</option>
-            </select>
-          </label>
-          <label>
-            Medidas Aproximadas
-            <textarea name="medidas" rows="3" placeholder="Ex.: 4m x 6m, altura 3m, área de garagem..."></textarea>
-          </label>
-          <label>
-            Descrição do Projeto / Detalhes *
-            <textarea name="descricao" rows="5" required placeholder="Descreva seu projeto, localização, material preferido, prazo desejado..."></textarea>
-          </label>
-          <label style="display:flex;align-items:flex-start;gap:10px;">
-            <input type="checkbox" name="aceite" required style="display:inline;width:auto;margin-top:4px;">
-            <span>Li e concordo com a <a href="privacidade.html">Política de Privacidade</a>. *</span>
-          </label>
-          <button type="submit">Enviar pelo WhatsApp ➔</button>
-        </form>
-        <p>Quer compartilhar sua experiência? <a href="feedback.html">Acesse a página de feedback</a>.</p>
-      </section>
-
-      <!-- DADOS BANCÁRIOS -->
-      <section>
-        <h2>Formas de Pagamento</h2>
-        <p>Após a aprovação do orçamento e assinatura do contrato, o início da fabricação é autorizado com o pagamento do sinal de 30%.</p>
-        <div class="dados-bancarios-grid">
-          <div class="card-banco">
-            <h3>🏦 PIX — Chave CNPJ</h3>
-            <div class="dado-linha">
-              <span class="dado-label">Titular</span>
-              <span class="dado-valor">Space Metal Serralheria LTDA</span>
-            </div>
-            <div class="dado-linha">
-              <span class="dado-label">CNPJ</span>
-              <span class="dado-valor">41.817.914/0001-27</span>
-            </div>
-            <div class="dado-linha">
-              <span class="dado-label">Tipo de Chave</span>
-              <span class="dado-valor">CNPJ</span>
-            </div>
-            <button class="btn-copiar-chave" data-copy="41817914000127" type="button">📋 Copiar Chave PIX</button>
-          </div>
-          <div class="card-banco">
-            <h3>🏦 TED / Depósito — Bradesco</h3>
-            <div class="dado-linha">
-              <span class="dado-label">Banco</span>
-              <span class="dado-valor">Bradesco (237)</span>
-            </div>
-            <div class="dado-linha">
-              <span class="dado-label">Agência</span>
-              <span class="dado-valor">0015</span>
-            </div>
-            <div class="dado-linha">
-              <span class="dado-label">Conta</span>
-              <span class="dado-valor">2491705-3</span>
-            </div>
-            <div class="dado-linha">
-              <span class="dado-label">Titular</span>
-              <span class="dado-valor">Space Metal Serralheria LTDA</span>
-            </div>
-            <div class="dado-linha">
-              <span class="dado-label">CNPJ</span>
-              <span class="dado-valor">41.817.914/0001-27</span>
-            </div>
+    
+    <main style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+      <div class="grade-categorias" style="grid-template-columns: 1fr; gap: 24px; max-width: 850px; width: 100%; margin: 0 auto;">
+        
+        <!-- CARD 1: FORMULÁRIO DE ORÇAMENTO -->
+        <div class="card-categoria" style="cursor: default; transform: none !important;">
+          <div class="card-categoria-corpo" style="flex: 1; padding: 28px;">
+            <h2 style="margin-top: 0; border-bottom: 2px solid var(--line); padding-bottom: 8px; font-size: 1.75rem;">
+              Solicitar Orçamento
+            </h2>
+            <p style="margin-bottom: 20px;">
+              Preencha o formulário abaixo e envie direto pelo WhatsApp. Responderemos em até 1 hora no horário comercial.
+              Pedimos apenas o necessário; CPF ou CNPJ só serão solicitados na formalização do contrato.
+            </p>
+            
+            <form id="quote">
+              <label>
+                Nome ou Empresa *
+                <input name="nome" required placeholder="Seu nome ou razão social">
+              </label>
+              <label>
+                Telefone com DDD *
+                <input name="telefone" type="tel" required placeholder="(XX) 99999-9999">
+              </label>
+              <label>
+                Tipo de Serviço *
+                <select name="servico" required>
+                  <option value="">Selecione o serviço...</option>
+                  <option value="Pérgola Metálica">Pérgola Metálica</option>
+                  <option value="Pórtico / Marquesina">Pórtico / Marquesina</option>
+                  <option value="Alpendre Metálico">Alpendre Metálico</option>
+                  <option value="Escada Metálica">Escada Metálica</option>
+                  <option value="Guarda-Corpo">Guarda-Corpo</option>
+                  <option value="Portão Automático">Portão Automático</option>
+                  <option value="Grade / Proteção">Grade / Proteção</option>
+                  <option value="Mezanino">Mezanino</option>
+                  <option value="Cobertura Metálica">Cobertura Metálica</option>
+                  <option value="Manutenção / Reparo">Manutenção / Reparo</option>
+                  <option value="Estrutura Especial (P99)">Estrutura Especial (P99)</option>
+                  <option value="Outro Projeto">Outro Projeto Sob Medida</option>
+                </select>
+              </label>
+              <label>
+                Medidas Aproximadas
+                <textarea name="medidas" rows="3" placeholder="Ex.: 4m x 6m, altura 3m, área de garagem..."></textarea>
+              </label>
+              <label>
+                Descrição do Projeto / Detalhes *
+                <textarea name="descricao" rows="5" required placeholder="Descreva seu projeto, localização, material preferido, prazo desejado..."></textarea>
+              </label>
+              <label style="display:flex;align-items:flex-start;gap:10px;">
+                <input type="checkbox" name="aceite" required style="display:inline;width:auto;margin-top:4px;">
+                <span>Li e concordo com a <a href="privacidade.html">Política de Privacidade</a>. *</span>
+              </label>
+              <button type="submit" class="btn" style="width:100%; text-align:center; justify-content:center; margin-top:16px;">Enviar pelo WhatsApp ➔</button>
+            </form>
+            
+            <p style="margin-top: 20px; font-size: 0.95rem;">
+              Quer compartilhar sua experiência? <a href="feedback.html">Acesse a página de feedback</a>.
+            </p>
           </div>
         </div>
-        <p><small>Após o pagamento, envie o comprovante via <a href="https://wa.me/5519998508696" target="_blank" rel="noopener noreferrer">WhatsApp</a> informando o código do seu pedido.</small></p>
-      </section>
-    </main>
-    <footer>
-      <hr>
-      <p>
-        <a href="faq.html">Dúvidas Frequentes</a> |
-        <a href="termos.html">Termos de Uso</a> |
-        <a href="privacidade.html">Política de Privacidade</a>
-      </p>
-      <div class="footer-social">
-        <a href="https://www.instagram.com/spacemetal_/" target="_blank" rel="noopener noreferrer">
-          📸 Instagram @spacemetal_
-        </a>
-        <a href="https://wa.me/5519998508696" target="_blank" rel="noopener noreferrer">
-          💬 WhatsApp
-        </a>
-      </div>
-      <p>
-        <b>Space Metal Serralheria</b>
-        | CNPJ 41.817.914/0001-27 | ©
-        <span class="y">2026</span>
-        Todos os direitos reservados.
-      </p>
-    </footer>
-    <!-- BOTÃO FLUTUANTE DO WHATSAPP -->
-    <a href="https://wa.me/5519998508696" class="whatsapp-flutuante" target="_blank" rel="noopener noreferrer" aria-label="Fale Conosco pelo WhatsApp" title="Fale Conosco pelo WhatsApp">
-      <img src="../assets/whatsapp.png" alt="WhatsApp Space Metal">
-      <span class="whatsapp-tooltip">Atendimento via WhatsApp</span>
-    </a>
-  </body>
-</html>

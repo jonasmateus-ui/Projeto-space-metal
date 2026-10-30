@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Área do Cliente – Space Metal Serralheria</title>
-   <link rel="icon" type="image/jpeg" href="../assets/logo.jpg">
+    <link rel="icon" type="image/jpeg" href="../assets/logo.jpg">
     <link rel="stylesheet" href="../style/style.css">
     <script src="../style/script.js" defer></script>
   </head>
   <body>
-            <header>
+    <header>
       <div class="header-brand">
         <a href="../index.html" class="logo-link" title="Space Metal Serralheria">
           <img src="../assets/logo.jpg" alt="Logo Space Metal Serralheria" class="site-logo">
@@ -21,7 +21,6 @@
         <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-principal">
           <span></span><span></span><span></span>
         </button>
-        <img src="../assets/logo.jpg" alt="" class="header-logo-bg" aria-hidden="true">
       </div>
       <hr>
       <nav id="nav-principal" aria-label="Navega&ccedil;&atilde;o Principal">
@@ -40,31 +39,46 @@
       </nav>
       <hr>
     </header>
-    <main>
-      <h2>Área do Cliente</h2>
-      <p>Informe o código do pedido recebido no contrato para acompanhar a fabricação.</p>
-      <form action="acompanhamento.html" method="get">
-        <label>
-          Código do pedido
-          <input name="codigo" placeholder="Ex.: SM-0001" required>
-        </label>
-        <button type="submit">Consultar pedido</button>
-      </form>
-      <h3>Atalhos</h3>
-      <ul>
-        <li><a href="contratos.html">Contratos e condições</a></li>
-        <li><a href="pagamentos.html">Pagamentos</a></li>
-        <li><a href="feedback.html">Avaliar o atendimento</a></li>
-        <li><a href="orcamentos.html">Novo orçamento</a></li>
-      </ul>
+    
+    <main style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+      <div class="grade-categorias" style="grid-template-columns: 1fr; gap: 24px; max-width: 850px; width: 100%; margin: 0 auto;">
+        
+        <!-- CARD: ÁREA DO CLIENTE -->
+        <div class="card-categoria" style="cursor: default; transform: none !important;">
+          <div class="card-categoria-corpo" style="flex: 1; padding: 28px;">
+            <h2 style="margin-top: 0; border-bottom: 2px solid var(--line); padding-bottom: 8px; font-size: 1.75rem;">
+              Área do Cliente
+            </h2>
+            <p style="margin-bottom: 20px;">
+              Informe o código do pedido recebido no contrato para acompanhar a fabricação.
+            </p>
+            
+            <form action="acompanhamento.html" method="get" style="margin-bottom: 25px;">
+              <label>
+                Código do pedido
+                <input name="codigo" placeholder="Ex.: SM-0001" required>
+              </label>
+              <button type="submit" class="btn" style="width: 100%; text-align: center; justify-content: center; margin-top: 16px;">Consultar pedido</button>
+            </form>
+
+            <h3 style="font-size: 1.25rem; margin-bottom: 12px; border-bottom: 1.5px solid var(--line); padding-bottom: 6px;">Atalhos Úteis</h3>
+            <ul style="padding-left: 20px; color: var(--muted); line-height: 1.8;">
+              <li><a href="contratos.html">Contratos e condições</a></li>
+              <li><a href="pagamentos.html">Pagamentos</a></li>
+              <li><a href="feedback.html">Avaliar o atendimento</a></li>
+              <li><a href="orcamentos.html">Novo orçamento</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
     </main>
+
     <footer>
       <hr>
       <p>
-        <a href="faq.html">Dúvidas Frequentes</a>
-        |
-        <a href="termos.html">Termos de Uso</a>
-        |
+        <a href="faq.html">Dúvidas Frequentes</a> |
+        <a href="termos.html">Termos de Uso</a> |
         <a href="privacidade.html">Política de Privacidade</a>
       </p>
       <div class="footer-social">
@@ -82,7 +96,8 @@
         Todos os direitos reservados.
       </p>
     </footer>
-      <!-- BOTÃO FLUTUANTE DO WHATSAPP -->
+
+    <!-- BOTÃO FLUTUANTE DO WHATSAPP -->
     <a href="https://wa.me/5519998508696" class="whatsapp-flutuante" target="_blank" rel="noopener noreferrer" aria-label="Fale Conosco pelo WhatsApp" title="Fale Conosco pelo WhatsApp">
       <img src="../assets/whatsapp.png" alt="WhatsApp Space Metal">
       <span class="whatsapp-tooltip">Atendimento via WhatsApp</span>

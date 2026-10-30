@@ -24,26 +24,34 @@
   }
 
   let lastY = window.scrollY;
-window.addEventListener("scroll", () => {
-  const currentY = window.scrollY;
-  
-  if (!mobileViewport.matches) {
-    header?.classList.remove("header-compacto");
+  window.addEventListener("scroll", () => {
+    const currentY = window.scrollY;
+    if (!mobileViewport.matches) {
+      header?.classList.remove("header-compacto");
+      lastY = currentY;
+      return;
+    }
+
+    if (currentY > lastY && currentY > 60) {
+      header?.classList.add("header-compacto");
+      nav?.classList.remove("nav-aberta");
+      if (toggle) {
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Abrir menu");
+      }
+    } else {
+      header?.classList.remove("header-compacto");
+      if (currentY < lastY) {
+        nav?.classList.add("nav-aberta");
+        if (toggle) {
+          toggle.setAttribute("aria-expanded", "true");
+          toggle.setAttribute("aria-label", "Fechar menu");
+        }
+      }
+    }
     lastY = currentY;
-    return;
-  }
-
-  // Se rolar para baixo (passando de 60px): recolhe o cabeçalho (fica compacto)
-  if (currentY > lastY && currentY > 60) {
-    header?.classList.add("header-compacto");
-  } 
-  // Se rolar para cima: o cabeçalho expande e volta ao tamanho normal
-  else if (currentY < lastY) {
-    header?.classList.remove("header-compacto");
-  }
-
-  lastY = currentY;
-}, { passive: true });
+  }, { passive: true });
+})();
 
 // ===================================================
 // FORMULÁRIO DE ORÇAMENTO VIA WHATSAPP (form#quote)

@@ -9,7 +9,7 @@
     <script src="../style/script.js" defer></script>
   </head>
   <body>
-            <header>
+    <header>
       <div class="header-brand">
         <a href="../index.html" class="logo-link" title="Space Metal Serralheria">
           <img src="../assets/logo.jpg" alt="Logo Space Metal Serralheria" class="site-logo">
@@ -21,7 +21,6 @@
         <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-principal">
           <span></span><span></span><span></span>
         </button>
-        <img src="../assets/logo.jpg" alt="" class="header-logo-bg" aria-hidden="true">
       </div>
       <hr>
       <nav id="nav-principal" aria-label="Navega&ccedil;&atilde;o Principal">
@@ -40,65 +39,64 @@
       </nav>
       <hr>
     </header>
-    <main>
-      <div class="quem-somos-destaque">
-        <img src="../assets/logo.jpg" alt="Logo Space Metal Estruturas Metálicas" class="logo-destaque">
-        <div>
-          <h2>Quem somos</h2>
-          <p>
-            A Space Metal é uma serralheria que atua na construção civil e na indústria, com fabricação
-            e instalação de peças metálicas feitas sob medida.
-          </p>
+
+    <main style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+      <div class="grade-categorias" style="grid-template-columns: 1fr; gap: 24px; max-width: 850px; width: 100%; margin: 0 auto;">
+        
+        <div class="card-categoria" style="cursor: default; transform: none !important;">
+          <div class="card-categoria-corpo" style="flex: 1; padding: 28px;">
+            <div class="quem-somos-destaque" style="display: flex; align-items: center; gap: 20px; margin-bottom: 24px; flex-wrap: wrap;">
+              <img src="../assets/logo.jpg" alt="Logo Space Metal Estruturas Metálicas" class="logo-destaque" style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px;">
+              <div style="flex: 1;">
+                <h2 style="margin-top: 0; border-bottom: none; padding-bottom: 0; font-size: 1.75rem;">Quem somos</h2>
+                <p style="margin: 0;">
+                  A Space Metal é uma serralheria que atua na construção civil e na indústria, com fabricação
+                  e instalação de peças metálicas feitas sob medida.
+                </p>
+              </div>
+            </div>
+
+            <h3 style="font-size: 1.25rem; margin-top: 20px; border-bottom: 1.5px solid var(--line); padding-bottom: 6px;">Quem atendemos</h3>
+            <ul style="padding-left: 20px; color: var(--muted); line-height: 1.8; margin-bottom: 20px;">
+              <li>Construtoras e empreiteiras</li>
+              <li>Clientes finais, residenciais e comerciais</li>
+              <li>Empresas do setor industrial</li>
+            </ul>
+
+            <h3 style="font-size: 1.25rem; margin-top: 20px; border-bottom: 1.5px solid var(--line); padding-bottom: 6px;">Nosso compromisso</h3>
+            <ul style="padding-left: 20px; color: var(--muted); line-height: 1.8; margin-bottom: 20px;">
+              <li>Orçamento claro, com prazo de validade informado</li>
+              <li>Comunicação direta sobre prazos e andamento do serviço</li>
+              <li>Fabricação e instalação conforme as medidas e especificações combinadas</li>
+              <li>
+                Uso dos seus dados apenas para o que é necessário (veja a
+                <a href="privacidade.html">Política de Privacidade</a>)
+              </li>
+            </ul>
+
+            <h3 style="font-size: 1.25rem; margin-top: 20px; border-bottom: 1.5px solid var(--line); padding-bottom: 6px;">Dados da empresa</h3>
+            <ul style="padding-left: 20px; color: var(--muted); line-height: 1.8; margin-bottom: 20px; list-style-type: none;">
+              <li><b>Razão social:</b> Diogo Alves da Silva Space Metal</li>
+              <li><b>CNPJ:</b> 41.817.914/0001-27</li>
+              <li><b>Missão:</b> entregar soluções metálicas sob medida, com orçamento claro, prazos informados e instalação conforme o combinado.</li>
+            </ul>
+
+            <p style="margin-top: 20px; font-size: 0.95rem;">
+              Quer falar com a gente? Acesse
+              <a href="contato.html">Contato</a> ou
+              <a href="orcamentos.html">peça um orçamento</a>.
+            </p>
+          </div>
         </div>
+
       </div>
-      <h3>Quem atendemos</h3>
-      <ul>
-        <li>Construtoras e empreiteiras</li>
-        <li>Clientes finais, residenciais e comerciais</li>
-        <li>Empresas do setor industrial</li>
-      </ul>
-      <h3>Nosso compromisso</h3>
-      <ul>
-        <li>Orçamento claro, com prazo de validade informado</li>
-        <li>Comunicação direta sobre prazos e andamento do serviço</li>
-        <li>Fabricação e instalação conforme as medidas e especificações combinadas</li>
-        <li>
-          Uso dos seus dados apenas para o que é necessário (veja a
-          <a href="privacidade.html">Política de Privacidade</a>
-          )
-        </li>
-      </ul>
-      <p>
-        Quer falar com a gente? Acesse
-        <a href="contato.html">Contato</a>
-        ou
-        <a href="orcamentos.html">peça um orçamento</a>
-        .
-      </p>
-      <h3>Dados da empresa</h3>
-      <ul>
-        <li>
-          <b>Razão social:</b>
-          Diogo Alves da Silva Space Metal
-        </li>
-        <li>
-          <b>CNPJ:</b>
-          41.817.914/0001-27
-        </li>
-        <li>
-          <b>Missão:</b>
-          entregar soluções metálicas sob medida, com orçamento claro, prazos informados e
-          instalação conforme o combinado.
-        </li>
-      </ul>
     </main>
+
     <footer>
       <hr>
       <p>
-        <a href="faq.html">Dúvidas Frequentes</a>
-        |
-        <a href="termos.html">Termos de Uso</a>
-        |
+        <a href="faq.html">Dúvidas Frequentes</a> |
+        <a href="termos.html">Termos de Uso</a> |
         <a href="privacidade.html">Política de Privacidade</a>
       </p>
       <div class="footer-social">
@@ -116,7 +114,8 @@
         Todos os direitos reservados.
       </p>
     </footer>
-      <!-- BOTÃO FLUTUANTE DO WHATSAPP -->
+
+    <!-- BOTÃO FLUTUANTE DO WHATSAPP -->
     <a href="https://wa.me/5519998508696" class="whatsapp-flutuante" target="_blank" rel="noopener noreferrer" aria-label="Fale Conosco pelo WhatsApp" title="Fale Conosco pelo WhatsApp">
       <img src="../assets/whatsapp.png" alt="WhatsApp Space Metal">
       <span class="whatsapp-tooltip">Atendimento via WhatsApp</span>
