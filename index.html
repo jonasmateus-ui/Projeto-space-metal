@@ -14,13 +14,17 @@
         <a href="index.html" class="logo-link" title="Space Metal Serralheria">
           <img src="assets/logo.jpg" alt="Logo Space Metal Serralheria" class="site-logo">
         </a>
-        <div class="header-titles">
+        <div class="header-titles" style="flex:1;text-align:center;">
           <h1>Space Metal Serralheria</h1>
           <p><i>Estruturas Metálicas e Serralheria Técnica Sob Medida</i></p>
         </div>
+        <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-principal">
+          <span></span><span></span><span></span>
+        </button>
+        <img src="assets/logo.jpg" alt="" class="header-logo-bg" aria-hidden="true">
       </div>
       <hr>
-      <nav aria-label="Navegação Principal">
+      <nav id="nav-principal" aria-label="Navegação Principal">
         <ul>
           <li><a href="index.html">Início</a></li>
           <li><a href="pages/produtos.html">Produtos</a></li>
@@ -113,7 +117,7 @@
       </section>
 
       <section>
-        <h2>Produtos &amp; Catálogo Metálico</h2>
+        <h2>Produtos &amp; Serviços de Serralheria</h2>
         <p>Fabricação e montagem de peças sob medida com aço galvanizado e tubos estruturais:</p>
         <ul>
           <li><b>Portões Automáticos:</b> Basculantes, deslizantes e sociais.</li>
@@ -121,10 +125,6 @@
           <li><b>Estruturas Especiais (P99):</b> Peças técnicas e projetos industriais customizados.</li>
         </ul>
         <p><a href="pages/produtos.html"><b>Acessar catálogo completo de produtos ➔</b></a></p>
-      </section>
-
-      <section>
-        <h2>Serviços de Serralheria &amp; Fabricação</h2>
         <p>Tudo relacionado à execução dos projetos técnicos no atelier e na obra:</p>
         <ul>
           <li><b>Corte, Solda e Usinagem:</b> Processos de alta precisão em aço carbono e inox.</li>
@@ -155,13 +155,52 @@
         <ul>
           <li><b>Acompanhamento de Projeto:</b> Linha do tempo desde o corte até a instalação.</li>
           <li><b>Portal do Cliente:</b> Consulte seu pedido, contrato e pagamentos com o código do pedido.</li>
-          <li><b>Feedback:</b> Avaliações e depoimentos reais de clientes satisfeitos.</li>
+          <li><b>Feedback:</b> Avaliações e depoimentos de clientes satisfeitos.</li>
         </ul>
         <p>
           <a href="pages/clientes.html"><b>[ Área do Cliente ]</b></a> |
           <a href="pages/clientes.html"><b>[ Acompanhar Pedido ]</b></a> |
           <a href="pages/feedback.html"><b>[ Deixar Feedback ]</b></a>
         </p>
+      </section>
+
+      <!-- SEÇÃO DE DEPOIMENTOS -->
+      <section>
+        <h2>O Que Nossos Clientes Dizem</h2>
+        <p>Confira os depoimentos de clientes que confiaram na Space Metal Serralheria:</p>
+        <div class="depoimentos-grid">
+          <div class="card-depoimento">
+            <div class="depoimento-estrelas">★★★★★</div>
+            <p class="depoimento-texto">"A Space Metal superou todas as minhas expectativas. A estrutura da pérgola ficou impecável — acabamento de excelência, soldas perfeitas e instalação limpa do começo ao fim. Entregaram dentro do prazo prometido e ainda deram dicas técnicas valiosas. Recomendo sem hesitar!"</p>
+            <div class="depoimento-autor">Rodrigo Alves Ferreira — Pérgola Metálica</div>
+          </div>
+          <div class="card-depoimento">
+            <div class="depoimento-estrelas">★★★★★</div>
+            <p class="depoimento-texto">"Contratei a escada metálica para meu sobrado e o resultado foi incrível. Cada detalhe foi tratado com cuidado: medição precisa, corte milimétrico e instalação sólida. A estrutura transmite segurança total e ficou visualmente elegante. Profissionalismo de alto nível."</p>
+            <div class="depoimento-autor">Cláudia Mendonça — Escada Metálica Interna</div>
+          </div>
+          <div class="card-depoimento">
+            <div class="depoimento-estrelas">★★★★★</div>
+            <p class="depoimento-texto">"Serviço excelente do início ao fim. O guarda-corpo da sacada ficou robusto e com acabamento refinado. O prazo foi cumprido rigorosamente e a equipe foi pontual e organizada durante a instalação. Já indiquei para dois vizinhos que também ficaram satisfeitos."</p>
+            <div class="depoimento-autor">Fábio Nascimento — Guarda-Corpo Sacada</div>
+          </div>
+          <div class="card-depoimento">
+            <div class="depoimento-estrelas">★★★★★</div>
+            <p class="depoimento-texto">"O alpendre ficou melhor do que esperava. A Space Metal fez a visita técnica, mediu tudo com precisão e entregou no prazo combinado. O acabamento é impecável — estrutura firme, sem folgas, e pintura bem aplicada. Excelente custo-benefício e ótimo atendimento."</p>
+            <div class="depoimento-autor">Patrícia Souza Lima — Alpendre Metálico</div>
+          </div>
+          <div class="card-depoimento">
+            <div class="depoimento-estrelas">★★★★★</div>
+            <p class="depoimento-texto">"Precisei de um portão deslizante para o acesso do meu galpão e a Space Metal entregou com qualidade superior. O material é resistente, o mecanismo funciona perfeitamente e o prazo foi respeitado. Atendimento transparente e preço justo. Voltarei a contratar com certeza."</p>
+            <div class="depoimento-autor">Marcos Henrique Oliveira — Portão Deslizante</div>
+          </div>
+          <div class="card-depoimento">
+            <div class="depoimento-estrelas">★★★★★</div>
+            <p class="depoimento-texto">"Resultado extraordinário! A combinação de pérgola com cobertura metálica transformou completamente nossa área externa. A equipe foi pontual, profissional e deixou tudo limpo após a instalação. A solidez da estrutura é impressionante — claramente feita para durar décadas."</p>
+            <div class="depoimento-autor">Juliana Castro — Pérgola + Cobertura</div>
+          </div>
+        </div>
+        <p><a href="pages/feedback.html" class="btn-feedback-link">⭐ Ver todos os depoimentos &amp; deixar o seu</a></p>
       </section>
 
       <!-- SEÇÃO FALE CONOSCO COM IMAGEM DE FUNDO DAS PÉRGOLAS -->
@@ -174,11 +213,6 @@
             <div class="campo-grupo">
               <label for="fc-nome">Nome Completo</label>
               <input id="fc-nome" name="nome" required placeholder="Digite seu nome completo">
-            </div>
-
-            <div class="campo-grupo">
-              <label for="fc-email">E-mail</label>
-              <input id="fc-email" name="email" type="email" placeholder="seuemail@exemplo.com">
             </div>
 
             <div class="campo-grupo">
@@ -220,12 +254,20 @@
         <a href="pages/termos.html">Termos de Uso</a> |
         <a href="pages/privacidade.html">Política de Privacidade</a>
       </p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/spacemetal_/" target="_blank" rel="noopener noreferrer">
+          📸 Instagram @spacemetal_
+        </a>
+        <a href="https://wa.me/5519998508696" target="_blank" rel="noopener noreferrer">
+          💬 WhatsApp
+        </a>
+      </div>
       <p>
         <strong>Space Metal Serralheria</strong> | CNPJ 41.817.914/0001-27 | ©
         <span class="y">2026</span> Todos os direitos reservados.
       </p>
     </footer>
-      <!-- BOTÃO FLUTUANTE DO WHATSAPP -->
+    <!-- BOTÃO FLUTUANTE DO WHATSAPP -->
     <a href="https://wa.me/5519998508696" class="whatsapp-flutuante" target="_blank" rel="noopener noreferrer" aria-label="Fale Conosco pelo WhatsApp" title="Fale Conosco pelo WhatsApp">
       <img src="assets/whatsapp.png" alt="WhatsApp Space Metal">
       <span class="whatsapp-tooltip">Atendimento via WhatsApp</span>

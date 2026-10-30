@@ -1,52 +1,131 @@
-document.querySelector(".menu")?.addEventListener("click", (e) => {
+// ===================================================
+// MENU HAMBÚRGUER + SCROLL INTELIGENTE (MOBILE)
+// ===================================================
+(function () {
+  const header = document.querySelector("header");
+  const toggle = document.querySelector(".menu-toggle");
   const nav = document.querySelector("nav");
-  const open = nav.classList.toggle("open");
-  e.currentTarget.setAttribute("aria-expanded", String(open));
-});
+
+  if (toggle && nav) {
+    toggle.addEventListener("click", () => {
+      const isOpen = nav.classList.toggle("nav-aberta");
+      toggle.setAttribute("aria-expanded", String(isOpen));
+    });
+  }
+
+  // Scroll inteligente: oculta nav ao rolar para baixo, mostra ao rolar para cima
+  let lastY = window.scrollY;
+  window.addEventListener("scroll", () => {
+    const currentY = window.scrollY;
+    if (currentY > lastY && currentY > 60) {
+      header?.classList.add("header-compacto");
+      nav?.classList.remove("nav-aberta");
+      if (toggle) toggle.setAttribute("aria-expanded", "false");
+    } else {
+      header?.classList.remove("header-compacto");
+    }
+    lastY = currentY;
+  }, { passive: true });
+})();
+
+// ===================================================
+// FORMULÁRIO DE ORÇAMENTO VIA WHATSAPP (form#quote)
+// ===================================================
 document.querySelector("#quote")?.addEventListener("submit", (e) => {
   e.preventDefault();
   const d = new FormData(e.currentTarget);
-  const msg = [
-    "Solicitação de orçamento",
-    ...["nome", "email", "telefone", "servico", "medidas", "descricao"].map(
-      (k) => k + ": " + (d.get(k) || "Não informado"),
-    ),
-  ].join("\n");
-  document.querySelector("#quote-result").textContent =
-    "Seu aplicativo de e-mail será aberto. Revise o destinatário oficial antes de enviar.";
-  location.href =
-    "mailto:?subject=" +
-    encodeURIComponent("Solicitação de orçamento") +
-    "&body=" +
-    encodeURIComponent(msg);
+  const nome = (d.get("nome") || "").toString().trim();
+  const tel = (d.get("telefone") || "").toString().trim();
+  const servico = (d.get("servico") || "").toString().trim();
+  const medidas = (d.get("medidas") || d.get("cep") || "").toString().trim();
+  const descricao = (d.get("descricao") || "").toString().trim();
+
+  const linhas = [
+    "Olá! Gostaria de solicitar um orçamento com a Space Metal Serralheria.",
+    "",
+    nome ? `*Nome:* ${nome}` : "",
+    tel ? `*Telefone:* ${tel}` : "",
+    servico ? `*Serviço:* ${servico}` : "",
+    medidas ? `*Medidas/CEP:* ${medidas}` : "",
+    descricao ? `*Descrição do Projeto:*\n${descricao}` : "",
+  ].filter(Boolean);
+
+  const url = `https://wa.me/5519998508696?text=${encodeURIComponent(linhas.join("\n"))}`;
+  window.open(url, "_blank", "noopener,noreferrer");
 });
+
+// ===================================================
+// FORMULÁRIOS FALE CONOSCO / DATA-SEND — WHATSAPP
+// ===================================================
+document.querySelectorAll("form[data-send]").forEach((form) => {
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const d = new FormData(form);
+    const nome = (d.get("nome") || "").toString().trim();
+    const tel = (d.get("telefone") || "").toString().trim();
+    const servico = (d.get("servico") || "").toString().trim();
+    const msg = (d.get("mensagem") || d.get("descricao") || "").toString().trim();
+
+    const linhas = [
+      "Olá! Gostaria de um atendimento com a Space Metal Serralheria.",
+      "",
+      nome ? `*Nome:* ${nome}` : "",
+      tel ? `*Telefone:* ${tel}` : "",
+      servico ? `*Serviço:* ${servico}` : "",
+      msg ? `*Mensagem / Projeto:*\n${msg}` : "",
+    ].filter(Boolean);
+
+    const url = `https://wa.me/5519998508696?text=${encodeURIComponent(linhas.join("\n"))}`;
+    window.open(url, "_blank", "noopener,noreferrer");
+  });
+});
+
+// ===================================================
+// ACOMPANHAMENTO DE PEDIDO (#tracking)
+// ===================================================
 document.querySelector("#tracking")?.addEventListener("submit", (e) => {
   e.preventDefault();
   const code = new FormData(e.currentTarget).get("codigo").trim().toUpperCase();
-  document.querySelector("#tracking-result").textContent =
-    code === "DEMO123"
-      ? "Pedido de demonstração DEMO123: em fabricação (informação fictícia)."
-      : "Pedido não encontrado nesta demonstração. Somente DEMO123 está disponível.";
+  const result = document.querySelector("#tracking-result");
+  if (result) {
+    result.textContent = code
+      ? `Pedido ${code}: Para informações atualizadas sobre seu pedido, entre em contato via WhatsApp com o código do pedido.`
+      : "Informe o código do pedido para acompanhamento.";
+  }
 });
-document.querySelector("#feedback")?.addEventListener("submit", (e) => {
+
+// ===================================================
+// FORMULÁRIO DE FEEDBACK (#feedback / #fb)
+// ===================================================
+document.querySelector("#feedback, #fb")?.addEventListener("submit", (e) => {
   e.preventDefault();
-  const d = new FormData(e.currentTarget),
-    box = document.querySelector("#feedback-preview");
-  box.replaceChildren();
-  const h = document.createElement("h2");
-  h.textContent = d.get("nome") + " — " + d.get("nota");
-  const p = document.createElement("p");
-  p.textContent = d.get("comentario");
-  box.append(h, p);
-  document.querySelector("#feedback-result").textContent =
-    "Prévia criada somente neste navegador.";
+  const d = new FormData(e.currentTarget);
+  const box = document.querySelector("#feedback-preview, #lista");
+  if (box) {
+    const card = document.createElement("div");
+    card.className = "card-depoimento";
+    const estrelas = parseInt(d.get("nota") || "5");
+    card.innerHTML = `
+      <div class="depoimento-estrelas">${"★".repeat(estrelas)}${"☆".repeat(5 - estrelas)}</div>
+      <p class="depoimento-texto">"${(d.get("texto") || d.get("comentario") || "").toString()}"</p>
+      <div class="depoimento-autor">${(d.get("nome") || "").toString()}</div>
+    `;
+    box.prepend(card);
+  }
+  const result = document.querySelector("#feedback-result");
+  if (result) result.textContent = "Obrigado pelo seu depoimento!";
+  e.currentTarget.reset();
 });
+
+// ===================================================
+// INTERSECTION OBSERVER — REVEAL ON SCROLL
+// ===================================================
 if (
   "IntersectionObserver" in window &&
   !matchMedia("(prefers-reduced-motion: reduce)").matches
 ) {
   const blocks = document.querySelectorAll(
-    "main > section, .card-categoria, .card, .panel, .intro, details, .card-foto"
+    "main > section, .card-categoria, .card, .panel, .intro, details, .card-foto, .card-depoimento, .card-item, .card-banco"
   );
   const observer = new IntersectionObserver(
     (entries) =>
@@ -56,7 +135,7 @@ if (
           observer.unobserve(entry.target);
         }
       }),
-    { threshold: 0.08 },
+    { threshold: 0.08 }
   );
   blocks.forEach((el) => {
     el.classList.add("reveal");
@@ -64,7 +143,9 @@ if (
   });
 }
 
-// Marcação da página ativa no menu
+// ===================================================
+// MARCAÇÃO DE PÁGINA ATIVA NO MENU
+// ===================================================
 document.querySelectorAll("nav a").forEach((a) => {
   const currentPath = location.pathname.split("/").pop() || "index.html";
   const hrefAttr = a.getAttribute("href") || "";
@@ -74,7 +155,9 @@ document.querySelectorAll("nav a").forEach((a) => {
   }
 });
 
-// Modal / Zoom para fotos da galeria
+// ===================================================
+// MODAL / ZOOM PARA FOTOS DA GALERIA
+// ===================================================
 const modal = document.querySelector("#modalFoto");
 const modalImg = document.querySelector("#imgAmpliada");
 const modalClose = document.querySelector(".modal-fechar");
@@ -88,49 +171,23 @@ if (modal && modalImg) {
     });
   });
 
-  const fecharModal = () => {
-    modal.classList.remove("ativo");
-  };
-
+  const fecharModal = () => modal.classList.remove("ativo");
   modalClose?.addEventListener("click", fecharModal);
-
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      fecharModal();
-    }
-  });
-
+  modal.addEventListener("click", (e) => { if (e.target === modal) fecharModal(); });
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && modal.classList.contains("ativo")) {
-      fecharModal();
-    }
+    if (e.key === "Escape" && modal.classList.contains("ativo")) fecharModal();
   });
 }
 
-
-// Envio dos formulários Fale Conosco / Orçamento via WhatsApp
-document.querySelectorAll("form[data-send]").forEach((form) => {
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const d = new FormData(form);
-    const nome = (d.get("nome") || "").toString().trim();
-    const email = (d.get("email") || "").toString().trim();
-    const tel = (d.get("telefone") || "").toString().trim();
-    const servico = (d.get("servico") || "").toString().trim();
-    const msg = (d.get("mensagem") || d.get("descricao") || "").toString().trim();
-
-    const linhas = [
-      "Olá! Gostaria de um orçamento com a Space Metal Serralheria.",
-      "",
-      nome ? `*Nome:* ${nome}` : "",
-      tel ? `*Telefone:* ${tel}` : "",
-      email ? `*E-mail:* ${email}` : "",
-      servico ? `*Serviço:* ${servico}` : "",
-      msg ? `*Mensagem / Projeto:*
-${msg}` : "",
-    ].filter(Boolean);
-
-    const url = `https://wa.me/5519998508696?text=${encodeURIComponent(linhas.join("\n"))}`;
-    window.open(url, "_blank", "noopener,noreferrer");
+// ===================================================
+// COPIAR CHAVE PIX / DADOS BANCÁRIOS
+// ===================================================
+document.querySelectorAll("[data-copy]").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    navigator.clipboard?.writeText(btn.dataset.copy).then(() => {
+      const orig = btn.textContent;
+      btn.textContent = "✓ Copiado!";
+      setTimeout(() => (btn.textContent = orig), 2000);
+    });
   });
 });

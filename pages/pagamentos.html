@@ -1,34 +1,38 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="pt-BR">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Pagamentos – Space Metal Serralheria</title>
-   <link rel="icon" type="image/jpeg" href="../assets/logo.jpg">
+    <link rel="icon" type="image/jpeg" href="../assets/logo.jpg">
     <link rel="stylesheet" href="../style/style.css">
     <script src="../style/script.js" defer></script>
   </head>
   <body>
-            <header>
+    <header>
       <div class="header-brand">
         <a href="../index.html" class="logo-link" title="Space Metal Serralheria">
           <img src="../assets/logo.jpg" alt="Logo Space Metal Serralheria" class="site-logo">
         </a>
-        <div class="header-titles">
+        <div class="header-titles" style="flex:1;text-align:center;">
           <h1>Space Metal Serralheria</h1>
-          <p><i>Estruturas Met&aacute;licas e Serralheria T&eacute;cnica Sob Medida</i></p>
+          <p><i>Estruturas Metálicas e Serralheria Técnica Sob Medida</i></p>
         </div>
+        <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-principal">
+          <span></span><span></span><span></span>
+        </button>
+        <img src="../assets/logo.jpg" alt="" class="header-logo-bg" aria-hidden="true">
       </div>
       <hr>
-      <nav aria-label="Navega&ccedil;&atilde;o Principal">
+      <nav id="nav-principal" aria-label="Navegação Principal">
         <ul>
-          <li><a href="../index.html">In&iacute;cio</a></li>
+          <li><a href="../index.html">Início</a></li>
           <li><a href="produtos.html">Produtos</a></li>
-          <li><a href="servicos.html">Servi&ccedil;os</a></li>
+          <li><a href="servicos.html">Serviços</a></li>
           <li><a href="contratos.html">Contratos</a></li>
-          <li><a href="orcamentos.html">Or&ccedil;amentos</a></li>
+          <li><a href="orcamentos.html">Orçamentos</a></li>
           <li><a href="pagamentos.html">Pagamentos</a></li>
-          <li><a href="clientes.html">&Aacute;rea do Cliente</a></li>
+          <li><a href="clientes.html">Área do Cliente</a></li>
           <li><a href="contato.html">Contato</a></li>
           <li><a href="quem-somos.html">Quem Somos</a></li>
           <li><a href="faq.html">FAQ</a></li>
@@ -38,36 +42,80 @@
       <hr>
     </header>
     <main>
-      <h2>Pagamentos</h2>
-      <p>Aceitamos Pix e TED, conforme o contrato.</p>
-      <h3>Pix</h3>
-      <p>
-        Chave Pix (CNPJ):
-        <b>41.817.914/0001-27</b>
-        <button type="button" data-copy="41817914000127">Copiar chave</button>
-      </p>
-      <h3>TED</h3>
-      <p>Banco: Bradesco   Agência: 0015   Conta: 2491705-3   Titular: Space Metal</p>
-      <h3>Regras</h3>
-      <ul>
-        <li>Sinal de 30% antes do início dos trabalhos.</li>
-        <li>Parcelas com 30 a 60 dias de prazo entre elas.</li>
-        <li>
-          Envie o comprovante pelo
-          <a href="contato.html">contato</a>
-          informando o código do pedido.
-        </li>
-      </ul>
+      <section>
+        <h2>Formas de Pagamento</h2>
+        <p>Aceitamos PIX e TED/Depósito bancário, conforme condições do contrato. O início da fabricação é autorizado após o pagamento do sinal de 30%.</p>
+
+        <div class="dados-bancarios-grid">
+          <div class="card-banco">
+            <h3>🏦 PIX — Chave CNPJ</h3>
+            <div class="dado-linha">
+              <span class="dado-label">Titular</span>
+              <span class="dado-valor">Space Metal Serralheria LTDA</span>
+            </div>
+            <div class="dado-linha">
+              <span class="dado-label">CNPJ</span>
+              <span class="dado-valor">41.817.914/0001-27</span>
+            </div>
+            <div class="dado-linha">
+              <span class="dado-label">Tipo de Chave</span>
+              <span class="dado-valor">CNPJ</span>
+            </div>
+            <button class="btn-copiar-chave" data-copy="41817914000127" type="button">📋 Copiar Chave PIX</button>
+          </div>
+
+          <div class="card-banco">
+            <h3>🏦 TED / Depósito — Bradesco</h3>
+            <div class="dado-linha">
+              <span class="dado-label">Banco</span>
+              <span class="dado-valor">Bradesco (237)</span>
+            </div>
+            <div class="dado-linha">
+              <span class="dado-label">Agência</span>
+              <span class="dado-valor">0015</span>
+            </div>
+            <div class="dado-linha">
+              <span class="dado-label">Conta Corrente</span>
+              <span class="dado-valor">2491705-3</span>
+            </div>
+            <div class="dado-linha">
+              <span class="dado-label">Titular</span>
+              <span class="dado-valor">Space Metal Serralheria LTDA</span>
+            </div>
+            <div class="dado-linha">
+              <span class="dado-label">CNPJ</span>
+              <span class="dado-valor">41.817.914/0001-27</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Regras de Pagamento</h2>
+        <ul>
+          <li><b>Sinal de 30%:</b> Obrigatório antes do início dos trabalhos, após aprovação do orçamento e assinatura do contrato.</li>
+          <li><b>Parcelas:</b> Prazo entre 30 e 60 dias entre as parcelas, conforme acordado em contrato.</li>
+          <li><b>Comprovante:</b> Envie o comprovante de pagamento via <a href="https://wa.me/5519998508696" target="_blank" rel="noopener noreferrer">WhatsApp</a> informando o código do pedido.</li>
+          <li><b>Prazo de orçamento:</b> O orçamento aprovado tem validade de 15 dias corridos.</li>
+        </ul>
+        <p>Dúvidas sobre pagamento? Entre em contato: <a href="https://wa.me/5519998508696" target="_blank" rel="noopener noreferrer">💬 Falar via WhatsApp</a></p>
+      </section>
     </main>
     <footer>
       <hr>
       <p>
-        <a href="faq.html">Dúvidas Frequentes</a>
-        |
-        <a href="termos.html">Termos de Uso</a>
-        |
+        <a href="faq.html">Dúvidas Frequentes</a> |
+        <a href="termos.html">Termos de Uso</a> |
         <a href="privacidade.html">Política de Privacidade</a>
       </p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/spacemetal_/" target="_blank" rel="noopener noreferrer">
+          📸 Instagram @spacemetal_
+        </a>
+        <a href="https://wa.me/5519998508696" target="_blank" rel="noopener noreferrer">
+          💬 WhatsApp
+        </a>
+      </div>
       <p>
         <b>Space Metal Serralheria</b>
         | CNPJ 41.817.914/0001-27 | ©
@@ -75,7 +123,7 @@
         Todos os direitos reservados.
       </p>
     </footer>
-      <!-- BOTÃO FLUTUANTE DO WHATSAPP -->
+    <!-- BOTÃO FLUTUANTE DO WHATSAPP -->
     <a href="https://wa.me/5519998508696" class="whatsapp-flutuante" target="_blank" rel="noopener noreferrer" aria-label="Fale Conosco pelo WhatsApp" title="Fale Conosco pelo WhatsApp">
       <img src="../assets/whatsapp.png" alt="WhatsApp Space Metal">
       <span class="whatsapp-tooltip">Atendimento via WhatsApp</span>

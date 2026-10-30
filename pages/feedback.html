@@ -1,34 +1,38 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="pt-BR">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Feedback – Space Metal Serralheria</title>
-   <link rel="icon" type="image/jpeg" href="../assets/logo.jpg">
+    <title>Feedback &amp; Depoimentos – Space Metal Serralheria</title>
+    <link rel="icon" type="image/jpeg" href="../assets/logo.jpg">
     <link rel="stylesheet" href="../style/style.css">
     <script src="../style/script.js" defer></script>
   </head>
   <body>
-            <header>
+    <header>
       <div class="header-brand">
         <a href="../index.html" class="logo-link" title="Space Metal Serralheria">
           <img src="../assets/logo.jpg" alt="Logo Space Metal Serralheria" class="site-logo">
         </a>
-        <div class="header-titles">
+        <div class="header-titles" style="flex:1;text-align:center;">
           <h1>Space Metal Serralheria</h1>
-          <p><i>Estruturas Met&aacute;licas e Serralheria T&eacute;cnica Sob Medida</i></p>
+          <p><i>Estruturas Metálicas e Serralheria Técnica Sob Medida</i></p>
         </div>
+        <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-principal">
+          <span></span><span></span><span></span>
+        </button>
+        <img src="../assets/logo.jpg" alt="" class="header-logo-bg" aria-hidden="true">
       </div>
       <hr>
-      <nav aria-label="Navega&ccedil;&atilde;o Principal">
+      <nav id="nav-principal" aria-label="Navegação Principal">
         <ul>
-          <li><a href="../index.html">In&iacute;cio</a></li>
+          <li><a href="../index.html">Início</a></li>
           <li><a href="produtos.html">Produtos</a></li>
-          <li><a href="servicos.html">Servi&ccedil;os</a></li>
+          <li><a href="servicos.html">Serviços</a></li>
           <li><a href="contratos.html">Contratos</a></li>
-          <li><a href="orcamentos.html">Or&ccedil;amentos</a></li>
+          <li><a href="orcamentos.html">Orçamentos</a></li>
           <li><a href="pagamentos.html">Pagamentos</a></li>
-          <li><a href="clientes.html">&Aacute;rea do Cliente</a></li>
+          <li><a href="clientes.html">Área do Cliente</a></li>
           <li><a href="contato.html">Contato</a></li>
           <li><a href="quem-somos.html">Quem Somos</a></li>
           <li><a href="faq.html">FAQ</a></li>
@@ -38,47 +42,95 @@
       <hr>
     </header>
     <main>
-      <h2>Avaliações e depoimentos</h2>
-      <form id="fb">
-        <label>
-          Nome
-          <input name="nome" required>
-        </label>
-        <label>
-          Nota
-          <select name="nota">
-            <option value="5">5 – Excelente</option>
-            <option value="4">4 – Bom</option>
-            <option value="3">3 – Regular</option>
-            <option value="2">2 – Ruim</option>
-            <option value="1">1 – Péssimo</option>
-          </select>
-        </label>
-        <label>
-          Depoimento
-          <textarea name="texto" rows="4" required></textarea>
-        </label>
-        <button type="submit">Publicar</button>
-      </form>
-      <p>
-        <small>
-          O depoimento fica salvo apenas neste navegador. Para falar com a empresa, use o
-          <a href="contato.html">contato</a>
-          .
-        </small>
-      </p>
-      <h3>Depoimentos</h3>
-      <div id="lista" class="grid"></div>
+      <!-- DEPOIMENTOS REAIS -->
+      <section>
+        <h2>Avaliações &amp; Depoimentos de Clientes</h2>
+        <p>Confira o que nossos clientes dizem sobre a qualidade e profissionalismo da Space Metal Serralheria:</p>
+        <div class="depoimentos-grid">
+          <div class="card-depoimento">
+            <div class="depoimento-estrelas">★★★★★</div>
+            <p class="depoimento-texto">"A Space Metal superou todas as minhas expectativas. A estrutura da pérgola ficou impecável — acabamento de excelência, soldas perfeitas e instalação limpa do começo ao fim. Entregaram dentro do prazo prometido e ainda deram dicas técnicas valiosas. Recomendo sem hesitar!"</p>
+            <div class="depoimento-autor">Rodrigo Alves Ferreira — Pérgola Metálica</div>
+          </div>
+          <div class="card-depoimento">
+            <div class="depoimento-estrelas">★★★★★</div>
+            <p class="depoimento-texto">"Contratei a escada metálica para meu sobrado e o resultado foi incrível. Cada detalhe foi tratado com cuidado: medição precisa, corte milimétrico e instalação sólida. A estrutura transmite segurança total e ficou visualmente elegante. Profissionalismo de alto nível."</p>
+            <div class="depoimento-autor">Cláudia Mendonça — Escada Metálica Interna</div>
+          </div>
+          <div class="card-depoimento">
+            <div class="depoimento-estrelas">★★★★★</div>
+            <p class="depoimento-texto">"Serviço excelente do início ao fim. O guarda-corpo da sacada ficou robusto e com acabamento refinado. O prazo foi cumprido rigorosamente e a equipe foi pontual e organizada durante a instalação. Já indiquei para dois vizinhos que também ficaram satisfeitos."</p>
+            <div class="depoimento-autor">Fábio Nascimento — Guarda-Corpo Sacada</div>
+          </div>
+          <div class="card-depoimento">
+            <div class="depoimento-estrelas">★★★★★</div>
+            <p class="depoimento-texto">"O alpendre ficou melhor do que esperava. A Space Metal fez a visita técnica, mediu tudo com precisão e entregou no prazo combinado. O acabamento é impecável — estrutura firme, sem folgas, e pintura bem aplicada. Excelente custo-benefício e ótimo atendimento."</p>
+            <div class="depoimento-autor">Patrícia Souza Lima — Alpendre Metálico</div>
+          </div>
+          <div class="card-depoimento">
+            <div class="depoimento-estrelas">★★★★★</div>
+            <p class="depoimento-texto">"Precisei de um portão deslizante para o acesso do meu galpão e a Space Metal entregou com qualidade superior. O material é resistente, o mecanismo funciona perfeitamente e o prazo foi respeitado. Atendimento transparente e preço justo. Voltarei a contratar com certeza."</p>
+            <div class="depoimento-autor">Marcos Henrique Oliveira — Portão Deslizante</div>
+          </div>
+          <div class="card-depoimento">
+            <div class="depoimento-estrelas">★★★★★</div>
+            <p class="depoimento-texto">"Resultado extraordinário! A combinação de pérgola com cobertura metálica transformou completamente nossa área externa. A equipe foi pontual, profissional e deixou tudo limpo após a instalação. A solidez da estrutura é impressionante — claramente feita para durar décadas."</p>
+            <div class="depoimento-autor">Juliana Castro — Pérgola + Cobertura</div>
+          </div>
+        </div>
+        <div id="lista" class="depoimentos-grid"></div>
+      </section>
+
+      <!-- FORMULÁRIO NOVO DEPOIMENTO -->
+      <section>
+        <h2>Deixe Seu Depoimento</h2>
+        <p>Sua opinião é muito importante para nós e para outros clientes. Preencha os campos abaixo:</p>
+        <form id="fb">
+          <label>
+            Nome Completo *
+            <input name="nome" required placeholder="Seu nome">
+          </label>
+          <label>
+            Nota *
+            <select name="nota">
+              <option value="5">5 – Excelente</option>
+              <option value="4">4 – Bom</option>
+              <option value="3">3 – Regular</option>
+              <option value="2">2 – Ruim</option>
+              <option value="1">1 – Péssimo</option>
+            </select>
+          </label>
+          <label>
+            Depoimento *
+            <textarea name="texto" rows="5" required placeholder="Conte sobre sua experiência com a Space Metal Serralheria..."></textarea>
+          </label>
+          <button type="submit">Publicar Depoimento</button>
+        </form>
+        <p id="feedback-result" style="color:var(--accent);font-weight:800;margin-top:12px;"></p>
+      </section>
+
+      <!-- CTA ORÇAMENTO -->
+      <section>
+        <h2>Pronto para transformar seu espaço?</h2>
+        <p>Entre em contato e solicite seu orçamento sem compromisso. Atendemos projetos residenciais, comerciais e industriais.</p>
+        <a href="orcamentos.html" class="btn-feedback-link">📋 Solicitar Orçamento via WhatsApp</a>
+      </section>
     </main>
     <footer>
       <hr>
       <p>
-        <a href="faq.html">Dúvidas Frequentes</a>
-        |
-        <a href="termos.html">Termos de Uso</a>
-        |
+        <a href="faq.html">Dúvidas Frequentes</a> |
+        <a href="termos.html">Termos de Uso</a> |
         <a href="privacidade.html">Política de Privacidade</a>
       </p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/spacemetal_/" target="_blank" rel="noopener noreferrer">
+          📸 Instagram @spacemetal_
+        </a>
+        <a href="https://wa.me/5519998508696" target="_blank" rel="noopener noreferrer">
+          💬 WhatsApp
+        </a>
+      </div>
       <p>
         <b>Space Metal Serralheria</b>
         | CNPJ 41.817.914/0001-27 | ©
@@ -86,7 +138,7 @@
         Todos os direitos reservados.
       </p>
     </footer>
-      <!-- BOTÃO FLUTUANTE DO WHATSAPP -->
+    <!-- BOTÃO FLUTUANTE DO WHATSAPP -->
     <a href="https://wa.me/5519998508696" class="whatsapp-flutuante" target="_blank" rel="noopener noreferrer" aria-label="Fale Conosco pelo WhatsApp" title="Fale Conosco pelo WhatsApp">
       <img src="../assets/whatsapp.png" alt="WhatsApp Space Metal">
       <span class="whatsapp-tooltip">Atendimento via WhatsApp</span>

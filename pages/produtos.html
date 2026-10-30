@@ -1,34 +1,38 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="pt-BR">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Produtos – Space Metal Serralheria</title>
-   <link rel="icon" type="image/jpeg" href="../assets/logo.jpg">
+    <title>Catálogo &amp; Serviços – Space Metal Serralheria</title>
+    <link rel="icon" type="image/jpeg" href="../assets/logo.jpg">
     <link rel="stylesheet" href="../style/style.css">
     <script src="../style/script.js" defer></script>
   </head>
   <body>
-            <header>
+    <header>
       <div class="header-brand">
         <a href="../index.html" class="logo-link" title="Space Metal Serralheria">
           <img src="../assets/logo.jpg" alt="Logo Space Metal Serralheria" class="site-logo">
         </a>
-        <div class="header-titles">
+        <div class="header-titles" style="flex:1;text-align:center;">
           <h1>Space Metal Serralheria</h1>
-          <p><i>Estruturas Met&aacute;licas e Serralheria T&eacute;cnica Sob Medida</i></p>
+          <p><i>Estruturas Metálicas e Serralheria Técnica Sob Medida</i></p>
         </div>
+        <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-principal">
+          <span></span><span></span><span></span>
+        </button>
+        <img src="../assets/logo.jpg" alt="" class="header-logo-bg" aria-hidden="true">
       </div>
       <hr>
-      <nav aria-label="Navega&ccedil;&atilde;o Principal">
+      <nav id="nav-principal" aria-label="Navegação Principal">
         <ul>
-          <li><a href="../index.html">In&iacute;cio</a></li>
+          <li><a href="../index.html">Início</a></li>
           <li><a href="produtos.html">Produtos</a></li>
-          <li><a href="servicos.html">Servi&ccedil;os</a></li>
+          <li><a href="servicos.html">Serviços</a></li>
           <li><a href="contratos.html">Contratos</a></li>
-          <li><a href="orcamentos.html">Or&ccedil;amentos</a></li>
+          <li><a href="orcamentos.html">Orçamentos</a></li>
           <li><a href="pagamentos.html">Pagamentos</a></li>
-          <li><a href="clientes.html">&Aacute;rea do Cliente</a></li>
+          <li><a href="clientes.html">Área do Cliente</a></li>
           <li><a href="contato.html">Contato</a></li>
           <li><a href="quem-somos.html">Quem Somos</a></li>
           <li><a href="faq.html">FAQ</a></li>
@@ -38,58 +42,134 @@
       <hr>
     </header>
     <main>
-      <h2>Produtos &amp; Catálogo Metálico</h2>
-      <p>
-        Fabricação e montagem de peças sob medida com aço galvanizado e tubos estruturais. O valor
-        depende de medidas e material, por isso trabalhamos com orçamento.
-      </p>
-      <ul>
-        <li>
-          <b>Portões Automáticos:</b>
-          Basculantes, deslizantes e sociais.
-          <a href="orcamentos.html?item=Portão">[ Pedir orçamento ]</a>
-        </li>
-        <li>
-          <b>Grades e Proteções:</b>
-          Grades reforçadas para janelas e fechamentos de galpão.
-          <a href="orcamentos.html?item=Grade">[ Pedir orçamento ]</a>
-        </li>
-        <li>
-          <b>Estruturas Especiais (P99):</b>
-          Peças técnicas e projetos industriais customizados.
-          <a href="orcamentos.html?item=Estrutura-metálica">[ Pedir orçamento ]</a>
-        </li>
-        <li>
-          <b>Guarda-corpos:</b>
-          Para escadas, sacadas e varandas.
-          <a href="orcamentos.html?item=Guarda-corpo">[ Pedir orçamento ]</a>
-        </li>
-        <li>
-          <b>Escadas Metálicas:</b>
-          Internas e externas.
-          <a href="orcamentos.html?item=Escada">[ Pedir orçamento ]</a>
-        </li>
-        <li>
-          <b>Coberturas:</b>
-          Garagens, áreas externas e galpões.
-          <a href="orcamentos.html?item=Cobertura">[ Pedir orçamento ]</a>
-        </li>
-        <li>
-          <b>Mezaninos:</b>
-          Expansão de área útil comercial e industrial.
-          <a href="orcamentos.html?item=Mezanino">[ Pedir orçamento ]</a>
-        </li>
-      </ul>
+      <section>
+        <h2>Catálogo &amp; Serviços — Space Metal Serralheria</h2>
+        <p>
+          Fabricação e montagem de estruturas metálicas sob medida. O valor depende de medidas e material — trabalhamos com orçamento personalizado.
+          Os itens abaixo são tanto <span class="badge-tipo badge-catalogo">Catálogo</span> (produtos fabricados) quanto <span class="badge-tipo badge-servico">Serviço</span> (execução técnica).
+        </p>
+
+        <!-- CATÁLOGO DE PRODUTOS -->
+        <div class="secao-tipo-header">
+          <span class="badge-tipo badge-catalogo">📦 Catálogo de Produtos</span>
+          <span style="color:#64748b;font-size:0.9rem;">Fabricação sob medida com aço galvanizado e tubos estruturais</span>
+        </div>
+        <div class="cards-unificados">
+          <div class="card-item item-catalogo">
+            <span class="badge-tipo badge-catalogo">Catálogo</span>
+            <h3>Portões Automáticos</h3>
+            <p>Basculantes, deslizantes e sociais. Fabricação em aço galvanizado com sistema de automação motorizado.</p>
+            <a href="orcamentos.html">[ Solicitar orçamento ➔ ]</a>
+          </div>
+          <div class="card-item item-catalogo">
+            <span class="badge-tipo badge-catalogo">Catálogo</span>
+            <h3>Grades e Proteções</h3>
+            <p>Grades reforçadas para janelas, portas e fechamentos de galpão. Alta resistência e acabamento refinado.</p>
+            <a href="orcamentos.html">[ Solicitar orçamento ➔ ]</a>
+          </div>
+          <div class="card-item item-catalogo">
+            <span class="badge-tipo badge-catalogo">Catálogo</span>
+            <h3>Guarda-Corpos</h3>
+            <p>Para escadas, sacadas e varandas. Design técnico e seguro com acabamento em pintura eletrostática.</p>
+            <a href="orcamentos.html">[ Solicitar orçamento ➔ ]</a>
+          </div>
+          <div class="card-item item-catalogo">
+            <span class="badge-tipo badge-catalogo">Catálogo</span>
+            <h3>Escadas Metálicas</h3>
+            <p>Internas e externas, com corrimão e degraus antiderrapantes. Para residências, comércios e galpões.</p>
+            <a href="orcamentos.html">[ Solicitar orçamento ➔ ]</a>
+          </div>
+          <div class="card-item item-catalogo">
+            <span class="badge-tipo badge-catalogo">Catálogo</span>
+            <h3>Coberturas Metálicas</h3>
+            <p>Para garagens, áreas externas e galpões. Estrutura em aço com telhas termoacústicas ou policarbonato.</p>
+            <a href="orcamentos.html">[ Solicitar orçamento ➔ ]</a>
+          </div>
+          <div class="card-item item-catalogo">
+            <span class="badge-tipo badge-catalogo">Catálogo</span>
+            <h3>Mezaninos</h3>
+            <p>Expansão de área útil comercial e industrial com cálculo de carga e projeto técnico aprovado.</p>
+            <a href="orcamentos.html">[ Solicitar orçamento ➔ ]</a>
+          </div>
+          <div class="card-item item-catalogo">
+            <span class="badge-tipo badge-catalogo">Catálogo</span>
+            <h3>Estruturas Especiais (P99)</h3>
+            <p>Peças técnicas e projetos industriais customizados. Execução de protótipos e peças únicas sob especificação.</p>
+            <a href="orcamentos.html">[ Solicitar orçamento ➔ ]</a>
+          </div>
+        </div>
+
+        <!-- SERVIÇOS TÉCNICOS -->
+        <div class="secao-tipo-header">
+          <span class="badge-tipo badge-servico">🔧 Serviços Técnicos</span>
+          <span style="color:#64748b;font-size:0.9rem;">Execução especializada no atelier e na obra</span>
+        </div>
+        <div class="cards-unificados">
+          <div class="card-item item-servico">
+            <span class="badge-tipo badge-servico">Serviço</span>
+            <h3>Corte, Solda e Usinagem</h3>
+            <p>Processos de alta precisão em aço carbono e inox. Corte por plasma, solda MIG/MAG e acabamento profissional.</p>
+            <a href="orcamentos.html">[ Solicitar orçamento ➔ ]</a>
+          </div>
+          <div class="card-item item-servico">
+            <span class="badge-tipo badge-servico">Serviço</span>
+            <h3>Pérgolas Metálicas</h3>
+            <p>Estruturas modernas para áreas externas, sombreamento e lazer. Projeto, fabricação e montagem completa.</p>
+            <a href="orcamentos.html">[ Solicitar orçamento ➔ ]</a>
+          </div>
+          <div class="card-item item-servico">
+            <span class="badge-tipo badge-servico">Serviço</span>
+            <h3>Pórticos e Marquesinas</h3>
+            <p>Proteção e imponência arquitetônica para entradas e fachadas. Vãos livres com estrutura robusta.</p>
+            <a href="orcamentos.html">[ Solicitar orçamento ➔ ]</a>
+          </div>
+          <div class="card-item item-servico">
+            <span class="badge-tipo badge-servico">Serviço</span>
+            <h3>Alpendres Metálicos</h3>
+            <p>Coberturas técnicas acopladas à edificação. Alta durabilidade e acabamento alinhado à fachada existente.</p>
+            <a href="orcamentos.html">[ Solicitar orçamento ➔ ]</a>
+          </div>
+          <div class="card-item item-servico">
+            <span class="badge-tipo badge-servico">Serviço</span>
+            <h3>Visita Técnica</h3>
+            <p>Levantamento de medidas no local do projeto. Avaliação e consultoria técnica para definição do escopo.</p>
+            <a href="orcamentos.html">[ Solicitar orçamento ➔ ]</a>
+          </div>
+          <div class="card-item item-servico">
+            <span class="badge-tipo badge-servico">Serviço</span>
+            <h3>Instalação Técnica no Local</h3>
+            <p>Equipe especializada para montagem final do projeto com acabamento impecável e limpeza do canteiro.</p>
+            <a href="orcamentos.html">[ Solicitar orçamento ➔ ]</a>
+          </div>
+          <div class="card-item item-servico">
+            <span class="badge-tipo badge-servico">Serviço</span>
+            <h3>Manutenção e Reparos</h3>
+            <p>Conservação de estruturas metálicas existentes, retoques de pintura, solda e ajustes de mecanismos.</p>
+            <a href="orcamentos.html">[ Solicitar orçamento ➔ ]</a>
+          </div>
+        </div>
+
+        <p style="margin-top:24px;">
+          Não encontrou o que precisa?
+          <a href="https://wa.me/5519998508696" target="_blank" rel="noopener noreferrer"><b>Fale conosco pelo WhatsApp ➔</b></a>
+        </p>
+      </section>
     </main>
     <footer>
       <hr>
       <p>
-        <a href="faq.html">Dúvidas Frequentes</a>
-        |
-        <a href="termos.html">Termos de Uso</a>
-        |
+        <a href="faq.html">Dúvidas Frequentes</a> |
+        <a href="termos.html">Termos de Uso</a> |
         <a href="privacidade.html">Política de Privacidade</a>
       </p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/spacemetal_/" target="_blank" rel="noopener noreferrer">
+          📸 Instagram @spacemetal_
+        </a>
+        <a href="https://wa.me/5519998508696" target="_blank" rel="noopener noreferrer">
+          💬 WhatsApp
+        </a>
+      </div>
       <p>
         <b>Space Metal Serralheria</b>
         | CNPJ 41.817.914/0001-27 | ©
@@ -97,7 +177,7 @@
         Todos os direitos reservados.
       </p>
     </footer>
-      <!-- BOTÃO FLUTUANTE DO WHATSAPP -->
+    <!-- BOTÃO FLUTUANTE DO WHATSAPP -->
     <a href="https://wa.me/5519998508696" class="whatsapp-flutuante" target="_blank" rel="noopener noreferrer" aria-label="Fale Conosco pelo WhatsApp" title="Fale Conosco pelo WhatsApp">
       <img src="../assets/whatsapp.png" alt="WhatsApp Space Metal">
       <span class="whatsapp-tooltip">Atendimento via WhatsApp</span>
