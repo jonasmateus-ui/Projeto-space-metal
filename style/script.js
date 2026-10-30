@@ -5,32 +5,51 @@
   const header = document.querySelector("header");
   const toggle = document.querySelector(".menu-toggle");
   const nav = document.querySelector("nav");
+  const mobileViewport = window.matchMedia("(max-width: 768px)");
 
   if (toggle && nav) {
     toggle.addEventListener("click", () => {
       const isOpen = nav.classList.toggle("nav-aberta");
       toggle.setAttribute("aria-expanded", String(isOpen));
+      toggle.setAttribute("aria-label", isOpen ? "Fechar menu" : "Abrir menu");
+    });
+
+    nav.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        nav.classList.remove("nav-aberta");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Abrir menu");
+      });
     });
   }
 
-  // Scroll inteligente: oculta nav ao rolar para baixo, mostra ao rolar para cima
   let lastY = window.scrollY;
-  window.addEventListener("scroll", () => {
-    const currentY = window.scrollY;
-    if (currentY > lastY && currentY > 60) {
-      header?.classList.add("header-compacto");
-      nav?.classList.remove("nav-aberta");
-      if (toggle) toggle.setAttribute("aria-expanded", "false");
-    } else {
-      header?.classList.remove("header-compacto");
-    }
+window.addEventListener("scroll", () => {
+  const currentY = window.scrollY;
+  
+  if (!mobileViewport.matches) {
+    header?.classList.remove("header-compacto");
     lastY = currentY;
-  }, { passive: true });
-})();
+    return;
+  }
+
+  // Se rolar para baixo (passando de 60px): recolhe o cabeçalho (fica compacto)
+  if (currentY > lastY && currentY > 60) {
+    header?.classList.add("header-compacto");
+  } 
+  // Se rolar para cima: o cabeçalho expande e volta ao tamanho normal
+  else if (currentY < lastY) {
+    header?.classList.remove("header-compacto");
+  }
+
+  lastY = currentY;
+}, { passive: true });
 
 // ===================================================
 // FORMULÁRIO DE ORÇAMENTO VIA WHATSAPP (form#quote)
 // ===================================================
+const whatsappNumber = "5519998508696";
+
 document.querySelector("#quote")?.addEventListener("submit", (e) => {
   e.preventDefault();
   const d = new FormData(e.currentTarget);
@@ -43,15 +62,15 @@ document.querySelector("#quote")?.addEventListener("submit", (e) => {
   const linhas = [
     "Olá! Gostaria de solicitar um orçamento com a Space Metal Serralheria.",
     "",
-    nome ? `*Nome:* ${nome}` : "",
-    tel ? `*Telefone:* ${tel}` : "",
-    servico ? `*Serviço:* ${servico}` : "",
-    medidas ? `*Medidas/CEP:* ${medidas}` : "",
-    descricao ? `*Descrição do Projeto:*\n${descricao}` : "",
-  ].filter(Boolean);
+    `*Nome:* ${nome}`,
+    `*Telefone:* ${tel}`,
+    `*Serviço:* ${servico}`,
+    `*Medidas:* ${medidas || "Não informado"}`,
+    `*Descrição:* ${descricao}`,
+  ];
 
-  const url = `https://wa.me/5519998508696?text=${encodeURIComponent(linhas.join("\n"))}`;
-  window.open(url, "_blank", "noopener,noreferrer");
+  const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(linhas.join("\n"))}`;
+  window.location.assign(url);
 });
 
 // ===================================================
@@ -75,8 +94,8 @@ document.querySelectorAll("form[data-send]").forEach((form) => {
       msg ? `*Mensagem / Projeto:*\n${msg}` : "",
     ].filter(Boolean);
 
-    const url = `https://wa.me/5519998508696?text=${encodeURIComponent(linhas.join("\n"))}`;
-    window.open(url, "_blank", "noopener,noreferrer");
+    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(linhas.join("\n"))}`;
+    window.location.assign(url);
   });
 });
 
@@ -100,21 +119,20 @@ document.querySelector("#tracking")?.addEventListener("submit", (e) => {
 document.querySelector("#feedback, #fb")?.addEventListener("submit", (e) => {
   e.preventDefault();
   const d = new FormData(e.currentTarget);
-  const box = document.querySelector("#feedback-preview, #lista");
-  if (box) {
-    const card = document.createElement("div");
-    card.className = "card-depoimento";
-    const estrelas = parseInt(d.get("nota") || "5");
-    card.innerHTML = `
-      <div class="depoimento-estrelas">${"★".repeat(estrelas)}${"☆".repeat(5 - estrelas)}</div>
-      <p class="depoimento-texto">"${(d.get("texto") || d.get("comentario") || "").toString()}"</p>
-      <div class="depoimento-autor">${(d.get("nome") || "").toString()}</div>
-    `;
-    box.prepend(card);
-  }
-  const result = document.querySelector("#feedback-result");
-  if (result) result.textContent = "Obrigado pelo seu depoimento!";
-  e.currentTarget.reset();
+  const nome = (d.get("nome") || "").toString().trim();
+  const nota = (d.get("nota") || "").toString();
+  const texto = (d.get("texto") || d.get("comentario") || "").toString().trim();
+  const autorizacao = d.get("autorizacao") ? "Sim, autorizo contato e confirmação antes da publicação." : "Não";
+  const linhas = [
+    "Olá! Gostaria de enviar uma avaliação para a Space Metal Serralheria.",
+    "",
+    `*Nome:* ${nome}`,
+    `*Avaliação:* ${nota} de 5 estrelas`,
+    `*Comentário:*\n${texto}`,
+    `*Autorização:* ${autorizacao}`,
+  ];
+  const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(linhas.join("\n"))}`;
+  window.location.assign(url);
 });
 
 // ===================================================

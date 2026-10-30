@@ -43,6 +43,8 @@ html {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   margin: 0;
   min-height: 100vh;
   color: var(--text);
@@ -171,7 +173,8 @@ header {
 }
 
 .header-brand {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
   gap: 18px;
   padding: 14px 4% 12px;
@@ -181,6 +184,8 @@ header {
 }
 
 .logo-link {
+  grid-column: 1;
+  justify-self: start;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -207,8 +212,13 @@ header {
 }
 
 .header-titles {
+  grid-column: 2;
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
+  text-align: center;
+  align-items: center;
 }
 
 header h1 {
@@ -324,6 +334,7 @@ nav a[aria-current="page"] {
 =================================================== */
 
 main {
+  flex: 1 0 auto;
   max-width: 1300px;
   margin: auto;
   padding: 20px 4% 80px;
@@ -1130,6 +1141,10 @@ select:focus-visible {
    MENU HAMBÚRGUER MOBILE
 =================================================== */
 .menu-toggle {
+  grid-column: 3;
+  justify-self: end;
+  position: relative;
+  z-index: 2;
   display: none;
   background: none;
   border: none;
@@ -1164,13 +1179,13 @@ select:focus-visible {
   right: 5%;
   top: 50%;
   transform: translateY(-50%);
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   object-fit: contain;
-  opacity: 0.10;
+  opacity: 0.2;
   border-radius: 8px;
   pointer-events: none;
-  filter: grayscale(1);
+  filter: grayscale(0.65);
 }
 
 /* Seção de Depoimentos */
@@ -1414,6 +1429,21 @@ header.header-compacto nav {
   border: none;
   transition: max-height 0.3s ease, padding 0.3s ease;
 }
+header.header-compacto .logo-link,
+header.header-compacto .header-titles p,
+header.header-compacto .menu-toggle {
+  display: none;
+}
+header.header-compacto .header-brand {
+  min-height: 56px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+header.header-compacto .header-logo-bg {
+  right: 4%;
+  transform: translateY(-50%);
+  opacity: 0.2;
+}
 header nav {
   max-height: 500px;
   transition: max-height 0.35s ease, padding 0.3s ease;
@@ -1421,8 +1451,20 @@ header nav {
 }
 
 @media (max-width: 768px) {
+  .header-brand {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 3fr) minmax(0, 1fr);
+  }
+  .header-titles h1 {
+    font-size: clamp(20px, 5vw, 30px);
+  }
+  .header-logo-bg {
+    width: 78px;
+    height: 78px;
+    right: 5%;
+  }
   .menu-toggle {
     display: flex;
+    background: rgba(255, 255, 255, 0.94);
   }
   header nav {
     max-height: 0;
@@ -1456,5 +1498,59 @@ header nav {
   }
   .cards-unificados {
     grid-template-columns: 1fr;
+  }
+}
+
+body:not(.pagina-inicial) main > section {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  padding: 28px 12px;
+  margin: 24px 0;
+  box-shadow: none;
+}
+/* ===================================================
+   CABEÇALHO INDUSTRIAL E COMPORTAMENTO DE SCROLL
+=================================================== */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 18px 5%;
+  background: rgba(255, 255, 255, 0.95);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)), url("../assets/logo.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(10px);
+  border-top: 4px solid var(--steel-blue);
+  border-bottom: 4px solid var(--accent);
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.08);
+  /* Transição suave para evitar qualquer efeito de piscar */
+  transition: padding 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  /* Estado compacto ao rolar para baixo (perfeito para prints e otimização de tela) */
+  header.header-compacto {
+    padding: 8px 5% !important;
+  }
+
+  /* Oculta os elementos secundários quando compacto, mantendo a marca e o título visíveis */
+  header.header-compacto p,
+  header.header-compacto nav,
+  header.header-compacto .menu {
+    display: none !important;
+  }
+
+  header.header-compacto h1 {
+    font-size: 20px !important;
+    margin: 0 !important;
   }
 }
