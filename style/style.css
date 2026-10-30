@@ -1510,3 +1510,34 @@ body:not(.pagina-inicial) main > section {
   margin: 24px 0;
   box-shadow: none;
 }
+/* Reseta margens e preenchimentos globais para ocupar toda a tela */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* Evita barra de rolagem horizontal indesejada */
+  background-color: #ffffff; /* Ou a cor de fundo padrão que preferires */
+}
+
+/* Garante que o container principal ou o body preencha a largura total */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Faz com que o conteúdo principal e o rodapé ocupem 100% da largura, com um padding lateral fluido */
+main {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 20px 4%; /* Margem interna lateral para o conteúdo não colar nas bordas extremas */
+  margin: 0 !important;
+}
+
+header, footer {
+  width: 100% !important;
+}
