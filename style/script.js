@@ -39,15 +39,8 @@
         toggle.setAttribute("aria-expanded", "false");
         toggle.setAttribute("aria-label", "Abrir menu");
       }
-    } else {
+    } else if (currentY < lastY) {
       header?.classList.remove("header-compacto");
-      if (currentY < lastY) {
-        nav?.classList.add("nav-aberta");
-        if (toggle) {
-          toggle.setAttribute("aria-expanded", "true");
-          toggle.setAttribute("aria-label", "Fechar menu");
-        }
-      }
     }
     lastY = currentY;
   }, { passive: true });
