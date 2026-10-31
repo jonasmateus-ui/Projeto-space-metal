@@ -1,53 +1,59 @@
 // ===================================================
-// MENU HAMBÚRGUER + SCROLL INTELIGENTE (MOBILE)
+// 1. MENU HAMBÚRGUER MOBILE + CONTROLE DE NAVEGAÇÃO
 // ===================================================
 (function () {
   const header = document.querySelector("header");
   const toggle = document.querySelector(".menu-toggle");
   const nav = document.querySelector("nav");
-  const mobileViewport = window.matchMedia("(max-width: 768px)");
 
   if (toggle && nav) {
-    toggle.addEventListener("click", () => {
+    const fecharMenu = () => {
+      nav.classList.remove("nav-aberta");
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-label", "Abrir menu");
+    };
+
+    const alternarMenu = () => {
       const isOpen = nav.classList.toggle("nav-aberta");
       toggle.setAttribute("aria-expanded", String(isOpen));
       toggle.setAttribute("aria-label", isOpen ? "Fechar menu" : "Abrir menu");
+    };
+
+    toggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      alternarMenu();
     });
 
+    // Fechar ao clicar em qualquer link
     nav.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        nav.classList.remove("nav-aberta");
-        toggle.setAttribute("aria-expanded", "false");
-        toggle.setAttribute("aria-label", "Abrir menu");
-      });
+      link.addEventListener("click", fecharMenu);
+    });
+
+    // Fechar ao clicar fora do menu/header
+    document.addEventListener("click", (e) => {
+      if (nav.classList.contains("nav-aberta") && header && !header.contains(e.target)) {
+        fecharMenu();
+      }
+    });
+
+    // Fechar suavemente ao rolar a página caso esteja aberto
+    window.addEventListener("scroll", () => {
+      if (nav.classList.contains("nav-aberta")) {
+        fecharMenu();
+      }
+    }, { passive: true });
+
+    // Fechar com tecla ESC
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && nav.classList.contains("nav-aberta")) {
+        fecharMenu();
+      }
     });
   }
-
-  let lastY = window.scrollY;
-  window.addEventListener("scroll", () => {
-    const currentY = window.scrollY;
-    if (!mobileViewport.matches) {
-      header?.classList.remove("header-compacto");
-      lastY = currentY;
-      return;
-    }
-
-    if (currentY > lastY && currentY > 60) {
-      header?.classList.add("header-compacto");
-      nav?.classList.remove("nav-aberta");
-      if (toggle) {
-        toggle.setAttribute("aria-expanded", "false");
-        toggle.setAttribute("aria-label", "Abrir menu");
-      }
-    } else if (currentY < lastY) {
-      header?.classList.remove("header-compacto");
-    }
-    lastY = currentY;
-  }, { passive: true });
 })();
 
 // ===================================================
-// FORMULÁRIO DE ORÇAMENTO VIA WHATSAPP (form#quote)
+// 2. FORMULÁRIO DE ORÇAMENTO VIA WHATSAPP (form#quote)
 // ===================================================
 const whatsappNumber = "5519998508696";
 
@@ -75,7 +81,7 @@ document.querySelector("#quote")?.addEventListener("submit", (e) => {
 });
 
 // ===================================================
-// FORMULÁRIOS FALE CONOSCO / DATA-SEND — WHATSAPP
+// 3. FORMULÁRIOS FALE CONOSCO / DATA-SEND — WHATSAPP
 // ===================================================
 document.querySelectorAll("form[data-send]").forEach((form) => {
   form.addEventListener("submit", (e) => {
@@ -101,13 +107,14 @@ document.querySelectorAll("form[data-send]").forEach((form) => {
 });
 
 // ===================================================
-// ACOMPANHAMENTO DE PEDIDO (#tracking)
+// 4. ACOMPANHAMENTO DE PEDIDO (#tracking)
 // ===================================================
 document.querySelector("#tracking")?.addEventListener("submit", (e) => {
   e.preventDefault();
-  const code = new FormData(e.currentTarget).get("codigo").trim().toUpperCase();
+  const code = (new FormData(e.currentTarget).get("codigo") || "").toString().trim().toUpperCase();
   const result = document.querySelector("#tracking-result");
   if (result) {
+    result.style.display = "block";
     result.textContent = code
       ? `Pedido ${code}: Para informações atualizadas sobre seu pedido, entre em contato via WhatsApp com o código do pedido.`
       : "Informe o código do pedido para acompanhamento.";
@@ -115,7 +122,7 @@ document.querySelector("#tracking")?.addEventListener("submit", (e) => {
 });
 
 // ===================================================
-// FORMULÁRIO DE FEEDBACK (#feedback / #fb)
+// 5. FORMULÁRIO DE FEEDBACK (#feedback / #fb)
 // ===================================================
 document.querySelector("#feedback, #fb")?.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -137,33 +144,38 @@ document.querySelector("#feedback, #fb")?.addEventListener("submit", (e) => {
 });
 
 // ===================================================
-// INTERSECTION OBSERVER — REVEAL ON SCROLL
+// 6. ANIMAÇÕES DE SCROLL — ATIVAS APENAS NO DESKTOP
 // ===================================================
 if (
   "IntersectionObserver" in window &&
-  !matchMedia("(prefers-reduced-motion: reduce)").matches
+  !window.matchMedia("(prefers-reduced-motion: reduce)").matches
 ) {
-  const blocks = document.querySelectorAll(
-    "main > section, .card-categoria, .card, .panel, .intro, details, .card-foto, .card-depoimento, .card-item, .card-banco"
-  );
-  const observer = new IntersectionObserver(
-    (entries) =>
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        }
-      }),
-    { threshold: 0.08 }
-  );
-  blocks.forEach((el) => {
-    el.classList.add("reveal");
-    observer.observe(el);
-  });
+  // No mobile, desativamos atrasos e translateY para rolagem nativa 60/120fps sem jank
+  const isMobile = window.matchMedia("(max-width: 768px)").matches;
+  if (!isMobile) {
+    const blocks = document.querySelectorAll(
+      "main > section, .card-categoria, .card-banco, .card-depoimento, .showcase-video-box, .card-cta-personalizado"
+    );
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.08, rootMargin: "0px 0px -30px 0px" }
+    );
+    blocks.forEach((el) => {
+      el.classList.add("reveal");
+      observer.observe(el);
+    });
+  }
 }
 
 // ===================================================
-// MARCAÇÃO DE PÁGINA ATIVA NO MENU
+// 7. MARCAÇÃO DE PÁGINA ATIVA NO MENU
 // ===================================================
 document.querySelectorAll("nav a").forEach((a) => {
   const currentPath = location.pathname.split("/").pop() || "index.html";
@@ -175,7 +187,7 @@ document.querySelectorAll("nav a").forEach((a) => {
 });
 
 // ===================================================
-// MODAL / ZOOM PARA FOTOS DA GALERIA
+// 8. MODAL / ZOOM PARA FOTOS DA GALERIA
 // ===================================================
 const modal = document.querySelector("#modalFoto");
 const modalImg = document.querySelector("#imgAmpliada");
@@ -192,14 +204,16 @@ if (modal && modalImg) {
 
   const fecharModal = () => modal.classList.remove("ativo");
   modalClose?.addEventListener("click", fecharModal);
-  modal.addEventListener("click", (e) => { if (e.target === modal) fecharModal(); });
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) fecharModal();
+  });
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && modal.classList.contains("ativo")) fecharModal();
   });
 }
 
 // ===================================================
-// COPIAR CHAVE PIX / DADOS BANCÁRIOS
+// 9. COPIAR CHAVE PIX / DADOS BANCÁRIOS
 // ===================================================
 document.querySelectorAll("[data-copy]").forEach((btn) => {
   btn.addEventListener("click", () => {
