@@ -51,15 +51,17 @@ A **Space Metal Serralheria** (CNPJ: **41.817.914/0001-27**) é uma empresa espe
 
 ## 🎤 Contato com a Organização (Comprovação da Entrevista)
 
-A entrevista foi realizada **presencialmente** com o CEO e proprietário da Space Metal, **Diogo Souza**, no dia **26/09/2026**.
+A entrevista foi realizada via **videoconferência (chamada de vídeo)** com o CEO e proprietário da Space Metal, **Diogo Souza**, no dia **26/09/2026**.
 
-Durante o encontro presencial na sede da serralheria, foram alinhados os objetivos do projeto web, levantadas as necessidades técnicas da empresa e detalhados os processos operacionais. Diogo enfatizou a importância de oferecer aos clientes um canal direto e transparente para solicitação de orçamentos, consulta dos prazos de fabricação e acompanhamento das etapas dos projetos metálicos sob medida.
+Durante a reunião remota, foram alinhados os objetivos do projeto web, levantadas as necessidades técnicas da empresa e detalhados os processos operacionais. Diogo enfatizou a importância de oferecer aos clientes um canal direto e transparente para solicitação de orçamentos, consulta dos prazos de fabricação e acompanhamento das etapas dos projetos metálicos sob medida.
 
 ### 📸 Comprovação do Contato:
 
-![Entrevista presencial com o CEO Diogo Souza - Space Metal](assets/img/entrevista.jpg)
-
-*Registro da entrevista presencial realizada com o CEO Diogo Souza nas instalações da Space Metal — 26/09/2026.*
+<p align="center">
+  <img src="assets/entrevista.jpg" alt="Entrevista por videochamada com o CEO Diogo Souza - Space Metal" width="300" style="border-radius: 8px;">
+  <br>
+  <em>Registro da reunião e alinhamento por videochamada com o CEO Diogo Souza — Space Metal (26/09/2026).</em>
+</p>
 
 ### 📞 Canais Oficiais de Contato:
 - **CNPJ:** 41.817.914/0001-27
@@ -127,6 +129,7 @@ Space-Metal/
 │   └── script.js
 │
 ├── assets/
+│   ├── entrevista.jpg
 │   ├── Pérgolas-Metálicas.jpg
 │   ├── Pérgolas-Metálicas (2).jpg
 │   ├── Pérgolas-Metálicas (3).jpg
@@ -171,21 +174,9 @@ Space-Metal/
 ## ❇️ Requisitos Técnicos da Entrega
 
 - [x] Estrutura semântica (`header`, `nav`, `main`, `section`, `article`, `footer`)
-- [x] 12 páginas HTML interligadas
-- [x] Recurso de vídeo (`<video>`) em `servicos.html`
-- [x] Recurso de áudio (`<audio>`) em páginas com suporte multimídia
-- [x] Formulário de contato com validação nativa HTML5
-- [x] Formulário de orçamento com validação nativa HTML5
-- [x] Validação W3C e revisão semântica conforme padrões do HTML5
-
----
-
-
-## ❇️ Requisitos Técnicos da Entrega
-
-- [x] Estrutura semântica (`header`, `nav`, `main`, `section`, `article`, `footer`)
 - [x] 19 páginas HTML interligadas
 - [x] Recurso de vídeo (`<video>`) em `servicos.html`
+- [x] Recurso de áudio (`<audio>`) em páginas com suporte multimídia
 - [x] Formulário de contato com validação nativa HTML5
 - [x] Formulário de orçamento com validação nativa HTML5
 - [x] Validação W3C e revisão semântica conforme padrões do HTML5
