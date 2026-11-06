@@ -57,11 +57,9 @@ Durante a reunião remota, foram alinhados os objetivos do projeto web, levantad
 
 ### 📸 Comprovação do Contato:
 
-<p align="center">
-  <img src="assets/entrevista.jpg" alt="Entrevista por videochamada com o CEO Diogo Souza - Space Metal" width="300" style="border-radius: 8px;">
-  <br>
-  <em>Registro da reunião e alinhamento por videochamada com o CEO Diogo Souza — Space Metal (26/09/2026).</em>
-</p>
+![Entrevista por videochamada com o CEO Diogo Souza - Space Metal](assets/entrevista.jpg)
+
+*Registro da reunião e alinhamento por videochamada com o CEO Diogo Souza — Space Metal (26/09/2026).*
 
 ### 📞 Canais Oficiais de Contato:
 - **CNPJ:** 41.817.914/0001-27
