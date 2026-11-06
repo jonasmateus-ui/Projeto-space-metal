@@ -67,7 +67,35 @@ Durante a reunião remota, foram alinhados os objetivos do projeto web, levantad
 - **Atendimento Direct / WhatsApp:** disponível via formulário e contatos da página `contato.html`.
 
 ---
+---
 
+## 🎨 Identidade Visual, Tipografia e Acessibilidade
+
+### Paleta de Cores
+A identidade visual foi desenvolvida com inspiração no ambiente industrial da Space Metal Serralheria:
+
+- **Cinza-claro (`#f1f5f9`) e branco (`#ffffff`):** representam o aço e proporcionam uma aparência limpa e organizada.
+- **Grafite (`#0f172a`) e cinza-chumbo (`#334155`):** transmitem seriedade, profissionalismo e facilitam a leitura.
+- **Laranja (`#c2410c`):** representa o fogo da solda e da forja, destacando botões e elementos importantes.
+- **Azul-escuro (`#1e293b`):** reforça a identidade industrial e transmite confiança.
+
+### Tipografia
+Foram utilizadas duas fontes do Google Fonts:
+
+- **Barlow Condensed:** utilizada em títulos e elementos de destaque, trazendo uma aparência forte e industrial.
+- **DM Sans:** aplicada nos textos gerais, proporcionando uma leitura mais confortável e clara.
+
+### Acessibilidade e Responsividade
+O projeto considera princípios de acessibilidade e facilidade de navegação:
+
+- Contraste entre textos e fundos para melhorar a legibilidade.
+- Destaque visual nos elementos durante a navegação pelo teclado, utilizando `:focus-visible`.
+- Estilização dos campos de formulários para facilitar a interação.
+- Layout responsivo, adaptando menus, cards e conteúdos para diferentes tamanhos de tela, incluindo dispositivos móveis.
+
+Essas escolhas buscam manter uma identidade visual coerente com o segmento de serralheria, oferecendo uma experiência organizada, funcional e acessível.
+
+---
 
 ## 🗺️ Mapa Completo do Site (19 páginas)
 
